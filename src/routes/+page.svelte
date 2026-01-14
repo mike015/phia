@@ -1,7 +1,8 @@
-<svelte:head>
-	<title>Phia's Smulparadijs - Surinaams-Creoolse Keuken in Den Haag</title>
-	<meta name="description" content="Kom en geniet van de Surinaams-Creoolse Keuken! Phia's gerechten en snacks zijn vanaf 13:30u verkrijgbaar. Voorkom lange wachttijden en bel ons van te voren." />
-</svelte:head>
+<script lang="ts">
+	import SEO from '$lib/components/SEO.svelte';
+</script>
+
+<SEO />
 
 <!-- Hero Section with Video -->
 <section class="relative h-[70vh] md:h-[85vh] overflow-hidden">
