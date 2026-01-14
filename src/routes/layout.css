@@ -1,3 +1,50 @@
 @import 'tailwindcss';
 @plugin '@tailwindcss/forms';
 @plugin '@tailwindcss/typography';
+
+/* Design tokens and custom styles */
+@theme {
+	/* Spacing system: 8px base */
+	--spacing-xs: 0.5rem;    /* 8px */
+	--spacing-sm: 1rem;      /* 16px */
+	--spacing-md: 1.5rem;    /* 24px */
+	--spacing-lg: 2rem;      /* 32px */
+	--spacing-xl: 3rem;      /* 48px */
+	--spacing-2xl: 4rem;     /* 64px */
+	--spacing-3xl: 6rem;     /* 96px */
+	
+	/* Colors - warm, food-focused palette */
+	--color-primary: #d97706;     /* Orange-600 */
+	--color-primary-dark: #b45309; /* Orange-700 */
+	--color-accent: #dc2626;      /* Red-600 */
+	--color-dark: #1f2937;        /* Gray-800 */
+	--color-light: #f9fafb;       /* Gray-50 */
+}
+
+/* Global styles */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	font-family: system-ui, -apple-system, sans-serif;
+	line-height: 1.6;
+	color: var(--color-dark);
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+	}
+}
