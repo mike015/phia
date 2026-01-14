@@ -1,0 +1,117 @@
+@import 'tailwindcss';
+@plugin '@tailwindcss/forms';
+@plugin '@tailwindcss/typography';
+
+/* PHIA'S DESIGN SYSTEM - EXACT SPECIFICATION */
+@theme {
+	/* Spacing system: 8px base - 64px, 96px, 140px sections */
+	--spacing-xs: 0.5rem;      /* 8px */
+	--spacing-sm: 1rem;        /* 16px */
+	--spacing-md: 1.5rem;      /* 24px */
+	--spacing-lg: 2rem;        /* 32px */
+	--spacing-xl: 3rem;        /* 48px */
+	--spacing-2xl: 4rem;       /* 64px - small section spacing */
+	--spacing-3xl: 6rem;       /* 96px - normal section spacing */
+	--spacing-4xl: 8.75rem;    /* 140px - large section spacing */
+	
+	/* EXACT COLOR SYSTEM */
+	/* Base Colors */
+	--color-bg-dark: #0E0E0E;
+	--color-surface-dark: #161616;
+	--color-bg-light: #F6F6F6;
+	--color-white: #FFFFFF;
+	
+	/* Accent Color - Pepper Red (food-inspired) */
+	--color-accent: #C5342F;
+	--color-accent-hover: #A02822;
+	
+	/* Typography Colors */
+	--color-text-dark: #0E0E0E;
+	--color-text-light: #FFFFFF;
+	--color-text-muted: #6B6B6B;
+}
+
+/* Global styles */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	scroll-behavior: smooth;
+	font-size: 16px; /* Base for rem calculations */
+}
+
+body {
+	font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', system-ui, sans-serif;
+	line-height: 1.6;
+	color: var(--color-text-dark);
+	background-color: var(--color-white);
+	font-weight: 400;
+}
+
+/* Typography Scale - EXACT SPECIFICATION */
+h1 {
+	font-size: 4rem;        /* 64px */
+	line-height: 1.05;
+	font-weight: 700;
+	letter-spacing: -0.02em;
+}
+
+h2 {
+	font-size: 2.75rem;     /* 44px */
+	line-height: 1.1;
+	font-weight: 700;
+	letter-spacing: -0.01em;
+}
+
+h3 {
+	font-size: 1.875rem;    /* 30px */
+	line-height: 1.2;
+	font-weight: 700;
+}
+
+body, p {
+	font-size: 1.125rem;    /* 18px */
+	line-height: 1.6;
+}
+
+small, .text-small {
+	font-size: 0.875rem;    /* 14px */
+}
+
+/* Max text width for readability - 60-65 characters */
+.prose {
+	max-width: 65ch;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+	}
+}
+
+/* Mobile Typography Adjustments */
+@media (max-width: 768px) {
+	h1 {
+		font-size: 2.5rem;   /* 40px */
+	}
+	
+	h2 {
+		font-size: 2rem;     /* 32px */
+	}
+	
+	h3 {
+		font-size: 1.5rem;   /* 24px */
+	}
+	
+	body, p {
+		font-size: 1rem;     /* 16px */
+	}
+}

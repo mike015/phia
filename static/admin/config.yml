@@ -1,0 +1,109 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: static/images/uploads
+public_folder: /images/uploads
+
+collections:
+  - name: "menu"
+    label: "Menu Items"
+    folder: "content/menu"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Name", name: "name", widget: "string"}
+      - {label: "Prijs", name: "price", widget: "string"}
+      - {label: "Categorie", name: "category", widget: "select", options: ["broodjes-halal", "overige", "gerechten", "snacks", "dranken"]}
+      - {label: "HALAL", name: "halal", widget: "boolean", default: true}
+      - {label: "Beschrijving", name: "description", widget: "text", required: false}
+      - {label: "Opmerking", name: "note", widget: "string", required: false}
+      - {label: "Afbeelding", name: "image", widget: "image", required: false}
+      - {label: "Beschikbaar", name: "available", widget: "boolean", default: true}
+
+  - name: "dagspecials"
+    label: "Dag Specials"
+    folder: "content/specials"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}"
+    fields:
+      - {label: "Datum", name: "date", widget: "datetime"}
+      - {label: "Titel", name: "title", widget: "string"}
+      - {label: "Beschrijving", name: "description", widget: "text"}
+      - {label: "Prijs", name: "price", widget: "string", required: false}
+      - {label: "Afbeelding", name: "image", widget: "image", required: false}
+      - {label: "YouTube Video ID", name: "youtube_id", widget: "string", required: false}
+
+  - name: "fotos"
+    label: "Foto's"
+    folder: "content/photos"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Titel", name: "title", widget: "string"}
+      - {label: "Afbeelding", name: "image", widget: "image"}
+      - {label: "Beschrijving", name: "alt", widget: "string"}
+      - {label: "Categorie", name: "category", widget: "select", options: ["gerechten", "broodjes", "interieur", "special"], required: false}
+      - {label: "Publicatie Datum", name: "date", widget: "datetime"}
+
+  - name: "reviews"
+    label: "Reviews"
+    folder: "content/reviews"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Naam", name: "name", widget: "string"}
+      - {label: "Beoordeling", name: "rating", widget: "number", min: 1, max: 5, value_type: "int"}
+      - {label: "Review Tekst", name: "text", widget: "text"}
+      - {label: "Datum", name: "date", widget: "datetime"}
+      - {label: "Weergeven", name: "featured", widget: "boolean", default: false}
+
+  - name: "updates"
+    label: "Updates & Mededelingen"
+    folder: "content/updates"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Titel", name: "title", widget: "string"}
+      - {label: "Type", name: "type", widget: "select", options: ["aangepaste_openingstijden", "huishoudelijk", "special"]}
+      - {label: "Bericht", name: "message", widget: "markdown"}
+      - {label: "Publicatie Datum", name: "date", widget: "datetime"}
+      - {label: "Verloopdatum", name: "expires", widget: "datetime", required: false}
+      - {label: "Actief", name: "active", widget: "boolean", default: true}
+
+  - name: "pages"
+    label: "Pagina's"
+    files:
+      - label: "Over Ons"
+        name: "about"
+        file: "content/pages/about.md"
+        fields:
+          - {label: "Titel", name: "title", widget: "string"}
+          - {label: "Inhoud", name: "body", widget: "markdown"}
+
+      - label: "Contact Info"
+        name: "contact"
+        file: "content/pages/contact.md"
+        fields:
+          - {label: "Adres", name: "address", widget: "text"}
+          - {label: "Telefoon", name: "phone", widget: "string"}
+          - {label: "Catering Telefoon", name: "catering_phone", widget: "string"}
+          - {label: "Email", name: "email", widget: "string", required: false}
+          - {label: "KvK Nummer", name: "kvk", widget: "string"}
+
+      - label: "Openingstijden"
+        name: "hours"
+        file: "content/pages/hours.md"
+        fields:
+          - label: "Openingstijden"
+            name: "hours"
+            widget: "object"
+            fields:
+              - {label: "Maandag", name: "monday", widget: "string"}
+              - {label: "Dinsdag", name: "tuesday", widget: "string"}
+              - {label: "Woensdag", name: "wednesday", widget: "string"}
+              - {label: "Donderdag", name: "thursday", widget: "string"}
+              - {label: "Vrijdag", name: "friday", widget: "string"}
+              - {label: "Zaterdag", name: "saturday", widget: "string"}
+              - {label: "Zondag", name: "sunday", widget: "string"}
+          - {label: "Speciale Opmerking", name: "note", widget: "text", required: false}
