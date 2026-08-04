@@ -1,0 +1,108 @@
+{
+	"meta": { "htmlLang": "en", "localeOg": "en_GB", "label": "English" },
+	"nav": {
+		"home": "Home",
+		"menu": "Menu",
+		"about": "About us",
+		"dish": "Meal or Soup",
+		"photos": "Photos",
+		"contact": "Contact",
+		"callCta": "Call & order",
+		"skip": "Skip to content",
+		"langSwitch": "Schakel naar Nederlands",
+		"langMenu": "Language",
+		"openMenu": "Open menu",
+		"closeMenu": "Close menu"
+	},
+	"status": {
+		"openToday": "Open today",
+		"closedToday": "Closed today",
+		"from": "from",
+		"summary": "Tue–Sat 12:00–19:00 · closed Sun & Mon",
+		"kitchen": "Kitchen from 13:30",
+		"holiday": "During holiday periods opening hours may differ.",
+		"closedNow": "Closed now",
+		"reopen": "Open again",
+		"today": "today",
+		"at": "at"
+	},
+	"home": {
+		"kicker": "Meal or soup · today",
+		"h1Fallback": "Freshly cooked, every single day",
+		"sub": "Every day Phia cooks a fresh meal or soup and posts the video on YouTube. See what’s in the pan today — or call to order right away.",
+		"ctaMenu": "View the menu",
+		"playLabel": "Play today’s video",
+		"todayBadge": "Today",
+		"watchYoutube": "Watch on YouTube",
+		"noticeLabel": "Adjusted opening hours",
+		"noticeExample": "Temporary changes to our opening hours always appear here right away.",
+		"menuHeading": "From Phia’s kitchen",
+		"menuSub": "A taste of the menu — with prices",
+		"menuMore": "View the full menu",
+		"bandQuote": "“You don’t see food with this much passion and heart nowadays.”",
+		"bandSource": "4.8 on Google (294) · 4.9 on Facebook (110)",
+		"reviewsHeading": "What guests say",
+		"reviewsScorePre": "",
+		"onGoogle": "on Google",
+		"onFacebook": "on Facebook",
+		"instaLabel": "Follow us on Instagram",
+		"instaFollow": "Follow @phiassmulparadijs",
+		"aboutEyebrow": "Welcome to Phia's Smulparadijs",
+		"aboutTitle": "Fresh Surinamese-Creole takeaway in The Hague",
+		"aboutText": "At Phia's Smulparadijs, Phia & Dwight cook fresh Surinamese-Creole dishes with love every day. Call, order and collect — always fresh."
+	},
+	"pages": {
+		"menu": {
+			"title": "Menu",
+			"lead": "The full menu of Phia’s Smulparadijs — fresh Surinamese-Creole dishes, sandwiches, snacks and soups. Prices from the July 2026 edition.",
+			"note": "Prices and availability may change; errors excepted. Call to order on 070-7851813 — we do not deliver, you collect yourself.",
+			"downloadPdf": "Download the menu (PDF)",
+			"downloadHint": "The full menu as a PDF",
+			"notesHeading": "Good to know",
+			"allergensHeading": "Allergens",
+			"examplesHeading": "Examples of meals & soups",
+			"badges": { "halal": "Halal", "nietHalal": "Not halal", "vega": "Vegetarian" }
+		},
+		"about": {
+			"title": "About us",
+			"lead": "Phia and Dwight have cooked the Surinamese-Creole kitchen with love in The Hague for years.",
+			"body": "At Phia’s Smulparadijs it’s all about fresh, honest food, prepared with love. Every day there’s something different in the pan — from a rich saoto to a hearty roti. Come by, taste and enjoy. Soso Lobi ❤"
+		},
+		"dish": {
+			"title": "Today’s Meal or Soup",
+			"lead": "Every day Phia shares on YouTube which fresh meal or soup is ready that day.",
+			"body": "Watch the latest video above and browse the archive of earlier dishes. Seen something you like? Call 070-7851813 to order.",
+			"archive": "Recent videos"
+		},
+		"photos": {
+			"title": "Photos",
+			"lead": "A peek into the kitchen and the smulparadijs — dishes, atmosphere and guests."
+		},
+		"contact": {
+			"title": "Contact",
+			"lead": "Calling and reserving is done by phone. Online ordering is not available.",
+			"addressLabel": "Address",
+			"phoneLabel": "Phone",
+			"hoursLabel": "Opening hours",
+			"mapTitle": "Map — Phia’s Smulparadijs, Bouwlustlaan 111, The Hague",
+			"route": "Directions in Google Maps"
+		}
+	},
+	"footer": {
+		"rights": "All rights reserved.",
+		"follow": "Follow us",
+		"built": "Website by Blackgate",
+		"brandLine": "Come and enjoy the Surinamese-Creole kitchen!",
+		"slogan": "Soso Lobi ❤"
+	},
+	"days": {
+		"ma": "Monday",
+		"di": "Tuesday",
+		"wo": "Wednesday",
+		"do": "Thursday",
+		"vr": "Friday",
+		"za": "Saturday",
+		"zo": "Sunday"
+	},
+	"closed": "Closed"
+}

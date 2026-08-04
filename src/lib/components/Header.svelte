@@ -2,7 +2,7 @@
 	import { onMount } from 'svelte';
 	import { page } from '$app/state';
 	import { afterNavigate } from '$app/navigation';
-	import { t, localizePath, type Lang } from '$lib/i18n';
+	import { t, localizePath, LOCALES, type Lang } from '$lib/i18n';
 	import logo from '$lib/assets/logo-trans.png?enhanced';
 
 	let { lang, path }: { lang: Lang; path: string } = $props();
@@ -32,12 +32,47 @@
 		{ href: localizePath(lang, '/contact'), label: d.nav.contact }
 	]);
 
-	// Taalwissel: naar hetzelfde logische pad in de andere taal.
-	const otherLang: Lang = $derived(lang === 'nl' ? 'en' : 'nl');
-	const switchHref = $derived(localizePath(otherLang, path));
-
+	// Mobiel hoofdmenu + de twee onafhankelijke taal-dropdowns (desktop/mobiel).
 	let open = $state(false);
-	afterNavigate(() => (open = false));
+	let langOpenDesktop = $state(false);
+	let langOpenMobile = $state(false);
+
+	function closeLangMenus() {
+		langOpenDesktop = false;
+		langOpenMobile = false;
+	}
+
+	function toggleLang(kind: 'desktop' | 'mobile') {
+		if (kind === 'desktop') {
+			langOpenDesktop = !langOpenDesktop;
+			langOpenMobile = false;
+		} else {
+			langOpenMobile = !langOpenMobile;
+			langOpenDesktop = false;
+		}
+	}
+
+	afterNavigate(() => {
+		open = false;
+		closeLangMenus();
+	});
+
+	// Sluit de taal-dropdown bij klik buiten en Escape (toetsenbord-bedienbaar).
+	onMount(() => {
+		const onDocClick = (e: MouseEvent) => {
+			const target = e.target as HTMLElement | null;
+			if (!target || !target.closest('[data-lang-switcher]')) closeLangMenus();
+		};
+		const onKey = (e: KeyboardEvent) => {
+			if (e.key === 'Escape') closeLangMenus();
+		};
+		document.addEventListener('click', onDocClick);
+		document.addEventListener('keydown', onKey);
+		return () => {
+			document.removeEventListener('click', onDocClick);
+			document.removeEventListener('keydown', onKey);
+		};
+	});
 
 	function isActive(href: string): boolean {
 		const current = page.url.pathname.replace(/\/+$/, '') || '/';
@@ -45,6 +80,70 @@
 		return current === target;
 	}
 </script>
+
+<!-- Herbruikbare, schaalbare taalkiezer (werkt voor 2 of 10 talen). -->
+{#snippet langSwitcher(isOpen: boolean, kind: 'desktop' | 'mobile')}
+	<div class="relative" data-lang-switcher>
+		<button
+			type="button"
+			class="nav-link inline-flex items-center gap-1.5 rounded-lg px-3 py-2 text-sm font-bold tracking-wide text-[var(--color-lilac-text)] transition-colors hover:text-[var(--color-cta)]"
+			aria-haspopup="menu"
+			aria-expanded={isOpen}
+			aria-controls={`lang-menu-${kind}`}
+			onclick={() => toggleLang(kind)}
+		>
+			<span aria-hidden="true">🌐</span>
+			<span aria-hidden="true">{lang.toUpperCase()}</span>
+			<span class="sr-only">{d.nav.langMenu}</span>
+			<svg
+				width="12"
+				height="12"
+				viewBox="0 0 24 24"
+				fill="none"
+				aria-hidden="true"
+				class="transition-transform duration-200"
+				style={isOpen ? 'transform: rotate(180deg)' : undefined}
+			>
+				<path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+			</svg>
+		</button>
+
+		{#if isOpen}
+			<ul
+				id={`lang-menu-${kind}`}
+				role="menu"
+				aria-label={d.nav.langMenu}
+				class="absolute right-0 z-30 mt-1 min-w-[10rem] overflow-hidden rounded-xl border border-[var(--color-lilac-border)] bg-white py-1"
+				style="box-shadow: var(--shadow-lift);"
+			>
+				{#each LOCALES as loc (loc.code)}
+					<li role="none">
+						<a
+							role="menuitem"
+							href={localizePath(loc.code, path)}
+							hreflang={loc.code}
+							aria-current={loc.code === lang ? 'true' : undefined}
+							class="flex items-center justify-between gap-3 px-4 py-2.5 text-sm font-bold text-[var(--color-ink)] transition-colors hover:bg-[var(--color-lilac-surface)] hover:text-[var(--color-cta)] aria-[current=true]:bg-[var(--color-lilac-surface)] aria-[current=true]:text-[var(--color-cta)]"
+						>
+							<span>{loc.label}</span>
+							{#if loc.code === lang}
+								<svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"
+									><path
+										d="M5 13l4 4L19 7"
+										stroke="currentColor"
+										stroke-width="2.5"
+										stroke-linecap="round"
+										stroke-linejoin="round"
+									/></svg
+								>
+							{/if}
+						</a>
+					</li>
+				{/each}
+			</ul>
+		{/if}
+	</div>
+{/snippet}
 
 <div class="flag-strip" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
 
@@ -74,14 +173,9 @@
 					{item.label}
 				</a>
 			{/each}
-			<a
-				href={switchHref}
-				hreflang={otherLang}
-				class="ml-1 rounded-lg px-2 py-2 text-sm font-bold text-[var(--color-lilac-text)] underline-offset-4 hover:underline"
-				aria-label={d.nav.langSwitch}
-			>
-				{otherLang.toUpperCase()}
-			</a>
+			<div class="ml-1">
+				{@render langSwitcher(langOpenDesktop, 'desktop')}
+			</div>
 			<a class="btn-primary ml-2 text-sm" href="tel:+31707851813">
 				📞 {d.nav.callCta}
 			</a>
@@ -139,14 +233,7 @@
 			</ul>
 			<div class="mt-3 flex items-center gap-3">
 				<a class="btn-primary flex-1 text-sm" href="tel:+31707851813">📞 {d.nav.callCta}</a>
-				<a
-					href={switchHref}
-					hreflang={otherLang}
-					class="rounded-lg border-2 border-[var(--color-ink)] px-4 py-3 text-sm font-bold"
-					aria-label={d.nav.langSwitch}
-				>
-					{otherLang.toUpperCase()}
-				</a>
+				{@render langSwitcher(langOpenMobile, 'mobile')}
 			</div>
 		</nav>
 	{/if}

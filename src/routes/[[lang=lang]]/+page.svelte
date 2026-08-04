@@ -32,6 +32,17 @@
 
 <Seo seo={data.seo} />
 
+<!-- ============ Korte intro (compacte band boven de hero) ============ -->
+<section class="border-b border-[var(--color-lilac-border)] bg-[var(--color-cream)]">
+	<div class="mx-auto max-w-6xl px-4 py-8 sm:px-6 sm:py-10" use:reveal>
+		<p class="text-xs font-bold uppercase tracking-[0.2em] text-[var(--color-lilac-text)]">
+			{d.home.aboutEyebrow}
+		</p>
+		<h2 class="mt-2 text-2xl text-[var(--color-ink)] sm:text-3xl">{d.home.aboutTitle}</h2>
+		<p class="mt-3 max-w-2xl text-[var(--color-muted)]">{d.home.aboutText}</p>
+	</div>
+</section>
+
 <!-- ============ HERO: split — tekst + video van vandaag ============ -->
 <section
 	class="relative overflow-hidden"

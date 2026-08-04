@@ -1,5 +1,8 @@
 import { SITE } from '$lib/config';
-import { LANGS, DEFAULT_LANG, langPrefix, type Lang } from '$lib/i18n';
+import { LANGS, LOCALES, DEFAULT_LANG, langPrefix, type Lang } from '$lib/i18n';
+
+/** og:locale-code voor een taal, uit de locale-registratie (fallback: <code>). */
+const ogOf = (lang: Lang): string => LOCALES.find((l) => l.code === lang)?.og ?? lang;
 
 export type SeoInput = {
 	lang: Lang;
@@ -53,10 +56,8 @@ export function resolveSeo(input: SeoInput): ResolvedSeo {
 	const suffix = ` · ${SITE.name}`;
 	const title = input.isHome ? input.title : `${input.title}${suffix}`;
 	const canonical = absolute(`${langPrefix(input.lang)}${input.path === '/' ? '' : input.path}`);
-	const ogLocale = input.lang === 'nl' ? 'nl_NL' : 'en_GB';
-	const ogLocaleAlt = LANGS.filter((l) => l !== input.lang).map((l) =>
-		l === 'nl' ? 'nl_NL' : 'en_GB'
-	);
+	const ogLocale = ogOf(input.lang);
+	const ogLocaleAlt = LANGS.filter((l) => l !== input.lang).map(ogOf);
 
 	return {
 		title,

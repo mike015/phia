@@ -1,13 +1,41 @@
 /**
- * Lichte i18n: NL is leidend (default, geen prefix), EN onder /en.
- * EN-teksten zijn door de bouwer geschreven en gemarkeerd "te reviewen"
- * (PROJECT-BRIEF CLAUDE.md).
+ * Data-gedreven i18n. De taalregistratie staat in data/locales.json en alle
+ * UI-teksten in data/ui/<code>.json — beide door de eigenaren te beheren via
+ * het CMS. NL is leidend (default, geen prefix); elke andere taal onder /<code>.
+ *
+ * Klaar voor MEER dan 2 talen: voeg een locale toe in locales.json + een
+ * data/ui/<code>.json en de rest schaalt mee (switcher, hreflang, sitemap).
+ * EN-teksten zijn door de bouwer geschreven en gemarkeerd "te reviewen".
  */
-export const LANGS = ['nl', 'en'] as const;
-export type Lang = (typeof LANGS)[number];
-export const DEFAULT_LANG: Lang = 'nl';
+import localesConfig from '$data/locales.json';
+import nl from '$data/ui/nl.json';
+import en from '$data/ui/en.json';
 
-/** Prefix voor URL-opbouw: NL zonder prefix, EN met /en. */
+/** Eén locale-registratie uit data/locales.json. */
+export type Locale = { code: string; label: string; og: string; html: string };
+
+/** Alle geregistreerde talen (bron: data/locales.json). */
+export const LOCALES: Locale[] = localesConfig.locales as Locale[];
+
+/** Open taal-type: elke geregistreerde locale-code (was een union, nu N talen). */
+export type Lang = string;
+
+/** De default-taal wordt op `/` geserveerd (zonder prefix). */
+export const DEFAULT_LANG: Lang = localesConfig.default;
+
+/** Alle taalcodes (handig voor iteraties). */
+export const LANGS: Lang[] = LOCALES.map((l) => l.code);
+
+/** De vorm van het woordenboek (afgeleid van de NL-bron). */
+export type Dict = typeof nl;
+
+/** Woordenboeken per taalcode. */
+const dicts: Record<string, Dict> = {
+	nl: nl as Dict,
+	en: en as Dict
+};
+
+/** Prefix voor URL-opbouw: default-taal zonder prefix, overige met /<code>. */
 export function langPrefix(lang: Lang): string {
 	return lang === DEFAULT_LANG ? '' : `/${lang}`;
 }
@@ -18,209 +46,38 @@ export function localizePath(lang: Lang, path: string): string {
 	return `${langPrefix(lang)}${clean}` || '/';
 }
 
-export type Dict = (typeof dict)['nl'];
+/** Registratie van alle talen (voor de taalswitcher). */
+export function locales(): Locale[] {
+	return LOCALES;
+}
 
-export const dict = {
-	nl: {
-		meta: { htmlLang: 'nl', localeOg: 'nl_NL', label: 'Nederlands' },
-		nav: {
-			home: 'Home',
-			menu: 'Menu',
-			about: 'Over ons',
-			dish: 'Maaltijd of Soep',
-			photos: "Foto's",
-			contact: 'Contact',
-			callCta: 'Bel & bestel',
-			skip: 'Direct naar de inhoud',
-			langSwitch: 'Switch to English',
-			openMenu: 'Menu openen',
-			closeMenu: 'Menu sluiten'
-		},
-		status: {
-			openToday: 'Vandaag geopend',
-			closedToday: 'Vandaag gesloten',
-			from: 'vanaf',
-			summary: 'Di–za 12:00–19:00 · zo & ma gesloten',
-			kitchen: 'Keuken vanaf 13:30',
-			holiday: 'In vakantieperiodes gelden afwijkende openingstijden.'
-		},
-		home: {
-			kicker: 'Maaltijd of soep · vandaag',
-			h1Fallback: 'Vers gekookt, elke dag opnieuw',
-			sub: 'Elke dag kookt Phia een verse maaltijd of soep en zet de video op YouTube. Bekijk wat er vandaag in de pan staat — of bel direct om te bestellen.',
-			ctaMenu: 'Bekijk het menu',
-			playLabel: 'Speel de video van vandaag af',
-			todayBadge: 'Vandaag',
-			watchYoutube: 'Bekijk op YouTube',
-			noticeLabel: 'Aangepaste openingstijden',
-			noticeExample: 'Tijdelijke wijzigingen in de openingstijden verschijnen hier altijd direct.',
-			menuHeading: 'Uit de keuken van Phia',
-			menuSub: 'Een greep uit het menu — met prijzen',
-			menuMore: 'Bekijk het volledige menu',
-			bandQuote: '“You don’t see food with this much passion and heart nowadays.”',
-			bandSource: '4.8 op Google (294) · 4.9 op Facebook (110)',
-			reviewsHeading: 'Wat gasten zeggen',
-			reviewsScorePre: '',
-			onGoogle: 'op Google',
-			onFacebook: 'op Facebook',
-			instaLabel: 'Volg ons op Instagram',
-			instaFollow: 'Volg @phiassmulparadijs'
-		},
-		pages: {
-			menu: {
-				title: 'Menu',
-				lead: 'Het volledige menu van Phia’s Smulparadijs — verse Surinaams-Creoolse gerechten, broodjes, snacks en soepen. Prijzen van de kaart, editie juli 2026.',
-				note: 'Prijzen en beschikbaarheid kunnen wijzigen; drukfouten voorbehouden. Bellen en bestellen via 070-7851813 — wij bezorgen niet, je haalt zelf af.',
-				downloadPdf: 'Download de menukaart (PDF)',
-				downloadHint: 'De volledige kaart als PDF',
-				notesHeading: 'Goed om te weten',
-				allergensHeading: 'Allergenen',
-				examplesHeading: 'Voorbeelden van maaltijden & soepen',
-				badges: { halal: 'Halal', nietHalal: 'Niet halal', vega: 'Vegetarisch' }
-			},
-			about: {
-				title: 'Over ons',
-				lead: 'Phia en Dwight koken al jaren met liefde de Surinaams-Creoolse keuken in Den Haag.',
-				body: 'Bij Phia’s Smulparadijs draait alles om vers, eerlijk en met liefde bereid eten. Elke dag staat er iets anders in de pan — van een rijke saoto tot een volle roti. Kom langs, proef en geniet. Soso Lobi ❤'
-			},
-			dish: {
-				title: 'Maaltijd of Soep van vandaag',
-				lead: 'Elke dag deelt Phia op YouTube welke verse maaltijd of soep er die dag klaarstaat.',
-				body: 'Bekijk de nieuwste video hierboven en blader door het archief van eerdere gerechten. Iets gezien dat je lekker lijkt? Bel 070-7851813 om te bestellen.',
-				archive: 'Recente video’s'
-			},
-			photos: {
-				title: "Foto's",
-				lead: 'Een kijkje in de keuken en het smulparadijs — gerechten, sfeer en gasten.'
-			},
-			contact: {
-				title: 'Contact',
-				lead: 'Bellen en reserveren kan telefonisch. Online bestellen is niet mogelijk.',
-				addressLabel: 'Adres',
-				phoneLabel: 'Telefoon',
-				hoursLabel: 'Openingstijden',
-				mapTitle: 'Kaart — Phia’s Smulparadijs, Bouwlustlaan 111, Den Haag',
-				route: 'Route in Google Maps'
-			}
-		},
-		footer: {
-			rights: 'Alle rechten voorbehouden.',
-			follow: 'Volg ons',
-			built: 'Website door Blackgate'
-		},
-		days: {
-			ma: 'Maandag',
-			di: 'Dinsdag',
-			wo: 'Woensdag',
-			do: 'Donderdag',
-			vr: 'Vrijdag',
-			za: 'Zaterdag',
-			zo: 'Zondag'
-		},
-		closed: 'Gesloten'
-	},
-
-	// --- EN: te reviewen ---
-	en: {
-		meta: { htmlLang: 'en', localeOg: 'en_GB', label: 'English' },
-		nav: {
-			home: 'Home',
-			menu: 'Menu',
-			about: 'About us',
-			dish: 'Meal or Soup',
-			photos: 'Photos',
-			contact: 'Contact',
-			callCta: 'Call & order',
-			skip: 'Skip to content',
-			langSwitch: 'Schakel naar Nederlands',
-			openMenu: 'Open menu',
-			closeMenu: 'Close menu'
-		},
-		status: {
-			openToday: 'Open today',
-			closedToday: 'Closed today',
-			from: 'from',
-			summary: 'Tue–Sat 12:00–19:00 · closed Sun & Mon',
-			kitchen: 'Kitchen from 13:30',
-			holiday: 'During holiday periods opening hours may differ.'
-		},
-		home: {
-			kicker: 'Meal or soup · today',
-			h1Fallback: 'Freshly cooked, every single day',
-			sub: 'Every day Phia cooks a fresh meal or soup and posts the video on YouTube. See what’s in the pan today — or call to order right away.',
-			ctaMenu: 'View the menu',
-			playLabel: 'Play today’s video',
-			todayBadge: 'Today',
-			watchYoutube: 'Watch on YouTube',
-			noticeLabel: 'Adjusted opening hours',
-			noticeExample: 'Temporary changes to our opening hours always appear here right away.',
-			menuHeading: 'From Phia’s kitchen',
-			menuSub: 'A taste of the menu — with prices',
-			menuMore: 'View the full menu',
-			bandQuote: '“You don’t see food with this much passion and heart nowadays.”',
-			bandSource: '4.8 on Google (294) · 4.9 on Facebook (110)',
-			reviewsHeading: 'What guests say',
-			reviewsScorePre: '',
-			onGoogle: 'on Google',
-			onFacebook: 'on Facebook',
-			instaLabel: 'Follow us on Instagram',
-			instaFollow: 'Follow @phiassmulparadijs'
-		},
-		pages: {
-			menu: {
-				title: 'Menu',
-				lead: 'The full menu of Phia’s Smulparadijs — fresh Surinamese-Creole dishes, sandwiches, snacks and soups. Prices from the July 2026 edition.',
-				note: 'Prices and availability may change; errors excepted. Call to order on 070-7851813 — we do not deliver, you collect yourself.',
-				downloadPdf: 'Download the menu (PDF)',
-				downloadHint: 'The full menu as a PDF',
-				notesHeading: 'Good to know',
-				allergensHeading: 'Allergens',
-				examplesHeading: 'Examples of meals & soups',
-				badges: { halal: 'Halal', nietHalal: 'Not halal', vega: 'Vegetarian' }
-			},
-			about: {
-				title: 'About us',
-				lead: 'Phia and Dwight have cooked the Surinamese-Creole kitchen with love in The Hague for years.',
-				body: 'At Phia’s Smulparadijs it’s all about fresh, honest food, prepared with love. Every day there’s something different in the pan — from a rich saoto to a hearty roti. Come by, taste and enjoy. Soso Lobi ❤'
-			},
-			dish: {
-				title: 'Today’s Meal or Soup',
-				lead: 'Every day Phia shares on YouTube which fresh meal or soup is ready that day.',
-				body: 'Watch the latest video above and browse the archive of earlier dishes. Seen something you like? Call 070-7851813 to order.',
-				archive: 'Recent videos'
-			},
-			photos: {
-				title: 'Photos',
-				lead: 'A peek into the kitchen and the smulparadijs — dishes, atmosphere and guests.'
-			},
-			contact: {
-				title: 'Contact',
-				lead: 'Calling and reserving is done by phone. Online ordering is not available.',
-				addressLabel: 'Address',
-				phoneLabel: 'Phone',
-				hoursLabel: 'Opening hours',
-				mapTitle: 'Map — Phia’s Smulparadijs, Bouwlustlaan 111, The Hague',
-				route: 'Directions in Google Maps'
-			}
-		},
-		footer: {
-			rights: 'All rights reserved.',
-			follow: 'Follow us',
-			built: 'Website by Blackgate'
-		},
-		days: {
-			ma: 'Monday',
-			di: 'Tuesday',
-			wo: 'Wednesday',
-			do: 'Thursday',
-			vr: 'Friday',
-			za: 'Saturday',
-			zo: 'Sunday'
-		},
-		closed: 'Closed'
+/** Diepe merge: `override` wint, ontbrekende keys vallen terug op `base`. */
+function deepMerge<T>(base: T, override: unknown): T {
+	if (
+		override === null ||
+		typeof override !== 'object' ||
+		Array.isArray(override) ||
+		typeof base !== 'object' ||
+		base === null ||
+		Array.isArray(base)
+	) {
+		return override === undefined ? base : (override as T);
 	}
-} as const;
+	const out: Record<string, unknown> = { ...(base as Record<string, unknown>) };
+	const ov = override as Record<string, unknown>;
+	for (const key of Object.keys(ov)) {
+		out[key] = deepMerge((base as Record<string, unknown>)[key], ov[key]);
+	}
+	return out as T;
+}
 
+/**
+ * Woordenboek voor `lang`, diep gemerged OVER de default-taal zodat nog niet
+ * vertaalde keys terugvallen op de default (veilig bij een nieuwe locale).
+ */
 export function t(lang: Lang): Dict {
-	return dict[lang] as Dict;
+	const base = dicts[DEFAULT_LANG];
+	const target = dicts[lang];
+	if (!target || lang === DEFAULT_LANG) return base;
+	return deepMerge(base, target);
 }

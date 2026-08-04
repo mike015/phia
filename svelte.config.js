@@ -1,5 +1,15 @@
 import adapter from '@sveltejs/adapter-static';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
+import { readFileSync } from 'node:fs';
+
+// Locale-roots expliciet meegeven aan de prerender-crawler: de taalkiezer zit in
+// een dichtgeklapte dropdown, dus die links worden niet vanzelf gecrawld. Zo
+// prerenderen ook nieuwe talen automatisch (voeg ze toe in data/locales.json).
+const localesConfig = JSON.parse(readFileSync('./data/locales.json', 'utf8'));
+const localeRoots = localesConfig.locales
+	.map((l) => l.code)
+	.filter((code) => code !== localesConfig.default)
+	.map((code) => `/${code}`);
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -15,9 +25,9 @@ const config = {
 		}),
 		prerender: {
 			handleHttpError: 'warn',
-			// Trailing-slash-agnostic; the WordPress URLs used trailing slashes,
-			// keep that shape for the go-live redirects (PROJECT-BRIEF §9).
-			entries: ['*']
+			// '*' crawlt vanaf de root; de locale-roots staan er expliciet bij omdat
+			// hun links in een dichtgeklapte dropdown zitten (zie hierboven).
+			entries: ['*', ...localeRoots]
 		},
 		// CSP wordt door SvelteKit beheerd (hash-mode): de inline hydration-script
 		// krijgt automatisch een hash, zodat we GEEN 'unsafe-inline' voor script
@@ -42,7 +52,8 @@ const config = {
 			}
 		},
 		alias: {
-			$lib: './src/lib'
+			$lib: './src/lib',
+			$data: './data'
 		}
 	}
 };

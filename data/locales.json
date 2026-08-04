@@ -1,0 +1,7 @@
+{
+	"default": "nl",
+	"locales": [
+		{ "code": "nl", "label": "Nederlands", "og": "nl_NL", "html": "nl" },
+		{ "code": "en", "label": "English", "og": "en_GB", "html": "en" }
+	]
+}
