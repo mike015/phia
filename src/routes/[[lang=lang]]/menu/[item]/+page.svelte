@@ -102,7 +102,7 @@
 		{/if}
 	{/snippet}
 
-	{@render relatedList(d.pages.menuItem.moreInCategory, data.related.sameCategory)}
+	{@render relatedList(category, data.related.sameCategory)}
 	{@render relatedList(d.pages.menuItem.similar, data.related.similar)}
 
 	<!-- Terug naar het menu -->
