@@ -17,11 +17,19 @@
 					"note_nl": "",
 					"note_en": "",
 					"image": "",
-					"link": "",
 					"prices": [
-						{ "label_nl": "Normaal", "label_en": "Regular", "value": "€ 12,00" },
-						{ "label_nl": "Speciaal", "label_en": "Special", "value": "€ 14,50" }
-					]
+						{
+							"label_nl": "Normaal",
+							"label_en": "Regular",
+							"value": "€ 12,00"
+						},
+						{
+							"label_nl": "Speciaal",
+							"label_en": "Special",
+							"value": "€ 14,50"
+						}
+					],
+					"links": []
 				},
 				{
 					"nl": "Nasi of Bami kipfilet",
@@ -29,11 +37,19 @@
 					"note_nl": "",
 					"note_en": "",
 					"image": "",
-					"link": "",
 					"prices": [
-						{ "label_nl": "Normaal", "label_en": "Regular", "value": "€ 13,00" },
-						{ "label_nl": "Speciaal", "label_en": "Special", "value": "€ 15,50" }
-					]
+						{
+							"label_nl": "Normaal",
+							"label_en": "Regular",
+							"value": "€ 13,00"
+						},
+						{
+							"label_nl": "Speciaal",
+							"label_en": "Special",
+							"value": "€ 15,50"
+						}
+					],
+					"links": []
 				},
 				{
 					"nl": "Nasi of Bami kip groot",
@@ -41,11 +57,19 @@
 					"note_nl": "",
 					"note_en": "",
 					"image": "",
-					"link": "",
 					"prices": [
-						{ "label_nl": "Normaal", "label_en": "Regular", "value": "€ 15,50" },
-						{ "label_nl": "Speciaal", "label_en": "Special", "value": "€ 17,50" }
-					]
+						{
+							"label_nl": "Normaal",
+							"label_en": "Regular",
+							"value": "€ 15,50"
+						},
+						{
+							"label_nl": "Speciaal",
+							"label_en": "Special",
+							"value": "€ 17,50"
+						}
+					],
+					"links": []
 				},
 				{
 					"nl": "Nasi of Bami kipfilet groot",
@@ -53,11 +77,19 @@
 					"note_nl": "",
 					"note_en": "",
 					"image": "",
-					"link": "",
 					"prices": [
-						{ "label_nl": "Normaal", "label_en": "Regular", "value": "€ 16,00" },
-						{ "label_nl": "Speciaal", "label_en": "Special", "value": "€ 18,00" }
-					]
+						{
+							"label_nl": "Normaal",
+							"label_en": "Regular",
+							"value": "€ 16,00"
+						},
+						{
+							"label_nl": "Speciaal",
+							"label_en": "Special",
+							"value": "€ 18,00"
+						}
+					],
+					"links": []
 				},
 				{
 					"nl": "Roti rol",
@@ -65,11 +97,19 @@
 					"note_nl": "",
 					"note_en": "",
 					"image": "",
-					"link": "",
 					"prices": [
-						{ "label_nl": "Normaal", "label_en": "Regular", "value": "€ 11,00" },
-						{ "label_nl": "Speciaal", "label_en": "Special", "value": "€ 12,00" }
-					]
+						{
+							"label_nl": "Normaal",
+							"label_en": "Regular",
+							"value": "€ 11,00"
+						},
+						{
+							"label_nl": "Speciaal",
+							"label_en": "Special",
+							"value": "€ 12,00"
+						}
+					],
+					"links": []
 				},
 				{
 					"nl": "Roti kip",
@@ -77,11 +117,19 @@
 					"note_nl": "",
 					"note_en": "",
 					"image": "",
-					"link": "",
 					"prices": [
-						{ "label_nl": "Normaal", "label_en": "Regular", "value": "€ 13,00" },
-						{ "label_nl": "Speciaal", "label_en": "Special", "value": "€ 15,00" }
-					]
+						{
+							"label_nl": "Normaal",
+							"label_en": "Regular",
+							"value": "€ 13,00"
+						},
+						{
+							"label_nl": "Speciaal",
+							"label_en": "Special",
+							"value": "€ 15,00"
+						}
+					],
+					"links": []
 				},
 				{
 					"nl": "Roti kipfilet",
@@ -89,11 +137,19 @@
 					"note_nl": "",
 					"note_en": "",
 					"image": "",
-					"link": "",
 					"prices": [
-						{ "label_nl": "Normaal", "label_en": "Regular", "value": "€ 14,00" },
-						{ "label_nl": "Speciaal", "label_en": "Special", "value": "€ 16,00" }
-					]
+						{
+							"label_nl": "Normaal",
+							"label_en": "Regular",
+							"value": "€ 14,00"
+						},
+						{
+							"label_nl": "Speciaal",
+							"label_en": "Special",
+							"value": "€ 16,00"
+						}
+					],
+					"links": []
 				},
 				{
 					"nl": "Roti rol lams",
@@ -101,11 +157,19 @@
 					"note_nl": "",
 					"note_en": "",
 					"image": "",
-					"link": "",
 					"prices": [
-						{ "label_nl": "Normaal", "label_en": "Regular", "value": "€ 12,50" },
-						{ "label_nl": "Speciaal", "label_en": "Special", "value": "€ 13,50" }
-					]
+						{
+							"label_nl": "Normaal",
+							"label_en": "Regular",
+							"value": "€ 12,50"
+						},
+						{
+							"label_nl": "Speciaal",
+							"label_en": "Special",
+							"value": "€ 13,50"
+						}
+					],
+					"links": []
 				},
 				{
 					"nl": "Roti lams",
@@ -113,11 +177,19 @@
 					"note_nl": "",
 					"note_en": "",
 					"image": "",
-					"link": "",
 					"prices": [
-						{ "label_nl": "Normaal", "label_en": "Regular", "value": "€ 15,00" },
-						{ "label_nl": "Speciaal", "label_en": "Special", "value": "€ 17,50" }
-					]
+						{
+							"label_nl": "Normaal",
+							"label_en": "Regular",
+							"value": "€ 15,00"
+						},
+						{
+							"label_nl": "Speciaal",
+							"label_en": "Special",
+							"value": "€ 17,50"
+						}
+					],
+					"links": []
 				},
 				{
 					"nl": "Creoolse roti rol",
@@ -125,11 +197,19 @@
 					"note_nl": "",
 					"note_en": "",
 					"image": "",
-					"link": "",
 					"prices": [
-						{ "label_nl": "Normaal", "label_en": "Regular", "value": "€ 11,50" },
-						{ "label_nl": "Speciaal", "label_en": "Special", "value": "€ 12,50" }
-					]
+						{
+							"label_nl": "Normaal",
+							"label_en": "Regular",
+							"value": "€ 11,50"
+						},
+						{
+							"label_nl": "Speciaal",
+							"label_en": "Special",
+							"value": "€ 12,50"
+						}
+					],
+					"links": []
 				},
 				{
 					"nl": "Creoolse roti kip",
@@ -137,11 +217,19 @@
 					"note_nl": "Kipfilet in ketjap, aardappelen, kousenband en spitskool.",
 					"note_en": "Chicken fillet in ketjap, potatoes, long beans and pointed cabbage.",
 					"image": "",
-					"link": "",
 					"prices": [
-						{ "label_nl": "Normaal", "label_en": "Regular", "value": "€ 14,50" },
-						{ "label_nl": "Speciaal", "label_en": "Special", "value": "€ 16,50" }
-					]
+						{
+							"label_nl": "Normaal",
+							"label_en": "Regular",
+							"value": "€ 14,50"
+						},
+						{
+							"label_nl": "Speciaal",
+							"label_en": "Special",
+							"value": "€ 16,50"
+						}
+					],
+					"links": []
 				},
 				{
 					"nl": "Creoolse roti kipfilet",
@@ -149,11 +237,19 @@
 					"note_nl": "Kipfilet in ketjap, aardappelen, kousenband en spitskool.",
 					"note_en": "Chicken fillet in ketjap, potatoes, long beans and pointed cabbage.",
 					"image": "",
-					"link": "",
 					"prices": [
-						{ "label_nl": "Normaal", "label_en": "Regular", "value": "€ 15,00" },
-						{ "label_nl": "Speciaal", "label_en": "Special", "value": "€ 17,00" }
-					]
+						{
+							"label_nl": "Normaal",
+							"label_en": "Regular",
+							"value": "€ 15,00"
+						},
+						{
+							"label_nl": "Speciaal",
+							"label_en": "Special",
+							"value": "€ 17,00"
+						}
+					],
+					"links": []
 				}
 			]
 		},
@@ -171,8 +267,14 @@
 					"note_nl": "",
 					"note_en": "",
 					"image": "",
-					"link": "",
-					"prices": [{ "label_nl": "vanaf", "label_en": "from", "value": "€ 10,50" }]
+					"prices": [
+						{
+							"label_nl": "vanaf",
+							"label_en": "from",
+							"value": "€ 10,50"
+						}
+					],
+					"links": []
 				},
 				{
 					"nl": "Phia's maaltijden",
@@ -180,8 +282,14 @@
 					"note_nl": "",
 					"note_en": "",
 					"image": "",
-					"link": "",
-					"prices": [{ "label_nl": "vanaf", "label_en": "from", "value": "€ 17,50" }]
+					"prices": [
+						{
+							"label_nl": "vanaf",
+							"label_en": "from",
+							"value": "€ 17,50"
+						}
+					],
+					"links": []
 				}
 			]
 		},
@@ -199,11 +307,19 @@
 					"note_nl": "",
 					"note_en": "",
 					"image": "",
-					"link": "",
 					"prices": [
-						{ "label_nl": "enkel", "label_en": "single", "value": "€ 3,75" },
-						{ "label_nl": "dubbel", "label_en": "double", "value": "€ 4,75" }
-					]
+						{
+							"label_nl": "enkel",
+							"label_en": "single",
+							"value": "€ 3,75"
+						},
+						{
+							"label_nl": "dubbel",
+							"label_en": "double",
+							"value": "€ 4,75"
+						}
+					],
+					"links": []
 				},
 				{
 					"nl": "Kip kerrie",
@@ -211,8 +327,14 @@
 					"note_nl": "",
 					"note_en": "",
 					"image": "",
-					"link": "",
-					"prices": [{ "label_nl": "", "label_en": "", "value": "€ 4,75" }]
+					"prices": [
+						{
+							"label_nl": "",
+							"label_en": "",
+							"value": "€ 4,75"
+						}
+					],
+					"links": []
 				},
 				{
 					"nl": "Maagjes en levertjes",
@@ -220,8 +342,14 @@
 					"note_nl": "",
 					"note_en": "",
 					"image": "",
-					"link": "",
-					"prices": [{ "label_nl": "", "label_en": "", "value": "€ 4,75" }]
+					"prices": [
+						{
+							"label_nl": "",
+							"label_en": "",
+							"value": "€ 4,75"
+						}
+					],
+					"links": []
 				},
 				{
 					"nl": "Kip ketjap",
@@ -229,8 +357,14 @@
 					"note_nl": "",
 					"note_en": "",
 					"image": "",
-					"link": "",
-					"prices": [{ "label_nl": "", "label_en": "", "value": "€ 4,75" }]
+					"prices": [
+						{
+							"label_nl": "",
+							"label_en": "",
+							"value": "€ 4,75"
+						}
+					],
+					"links": []
 				},
 				{
 					"nl": "Hete kip",
@@ -238,8 +372,14 @@
 					"note_nl": "Let op: echt heet!",
 					"note_en": "Warning: really hot!",
 					"image": "",
-					"link": "",
-					"prices": [{ "label_nl": "", "label_en": "", "value": "€ 4,75" }]
+					"prices": [
+						{
+							"label_nl": "",
+							"label_en": "",
+							"value": "€ 4,75"
+						}
+					],
+					"links": []
 				},
 				{
 					"nl": "Surinaams gehakt",
@@ -247,8 +387,14 @@
 					"note_nl": "",
 					"note_en": "",
 					"image": "",
-					"link": "",
-					"prices": [{ "label_nl": "", "label_en": "", "value": "€ 5,00" }]
+					"prices": [
+						{
+							"label_nl": "",
+							"label_en": "",
+							"value": "€ 5,00"
+						}
+					],
+					"links": []
 				},
 				{
 					"nl": "Kousenband garnalen",
@@ -256,8 +402,14 @@
 					"note_nl": "",
 					"note_en": "",
 					"image": "",
-					"link": "",
-					"prices": [{ "label_nl": "", "label_en": "", "value": "€ 5,00" }]
+					"prices": [
+						{
+							"label_nl": "",
+							"label_en": "",
+							"value": "€ 5,00"
+						}
+					],
+					"links": []
 				},
 				{
 					"nl": "Saté",
@@ -265,8 +417,14 @@
 					"note_nl": "",
 					"note_en": "",
 					"image": "",
-					"link": "",
-					"prices": [{ "label_nl": "", "label_en": "", "value": "€ 5,00" }]
+					"prices": [
+						{
+							"label_nl": "",
+							"label_en": "",
+							"value": "€ 5,00"
+						}
+					],
+					"links": []
 				},
 				{
 					"nl": "Bakkeljauw",
@@ -274,8 +432,14 @@
 					"note_nl": "",
 					"note_en": "",
 					"image": "",
-					"link": "",
-					"prices": [{ "label_nl": "", "label_en": "", "value": "€ 5,00" }]
+					"prices": [
+						{
+							"label_nl": "",
+							"label_en": "",
+							"value": "€ 5,00"
+						}
+					],
+					"links": []
 				},
 				{
 					"nl": "Stoofvlees",
@@ -283,8 +447,14 @@
 					"note_nl": "",
 					"note_en": "",
 					"image": "",
-					"link": "",
-					"prices": [{ "label_nl": "", "label_en": "", "value": "€ 5,00" }]
+					"prices": [
+						{
+							"label_nl": "",
+							"label_en": "",
+							"value": "€ 5,00"
+						}
+					],
+					"links": []
 				},
 				{
 					"nl": "Pom met kip",
@@ -292,8 +462,14 @@
 					"note_nl": "",
 					"note_en": "",
 					"image": "",
-					"link": "",
-					"prices": [{ "label_nl": "", "label_en": "", "value": "€ 5,00" }]
+					"prices": [
+						{
+							"label_nl": "",
+							"label_en": "",
+							"value": "€ 5,00"
+						}
+					],
+					"links": []
 				},
 				{
 					"nl": "Kerrie lams",
@@ -301,8 +477,14 @@
 					"note_nl": "",
 					"note_en": "",
 					"image": "",
-					"link": "",
-					"prices": [{ "label_nl": "", "label_en": "", "value": "€ 5,00" }]
+					"prices": [
+						{
+							"label_nl": "",
+							"label_en": "",
+							"value": "€ 5,00"
+						}
+					],
+					"links": []
 				},
 				{
 					"nl": "Mix (2 belegsoorten naar keuze)",
@@ -310,8 +492,14 @@
 					"note_nl": "",
 					"note_en": "",
 					"image": "",
-					"link": "",
-					"prices": [{ "label_nl": "v.a.", "label_en": "from", "value": "€ 5,50" }]
+					"prices": [
+						{
+							"label_nl": "v.a.",
+							"label_en": "from",
+							"value": "€ 5,50"
+						}
+					],
+					"links": []
 				}
 			]
 		},
@@ -329,8 +517,14 @@
 					"note_nl": "",
 					"note_en": "",
 					"image": "",
-					"link": "",
-					"prices": [{ "label_nl": "", "label_en": "", "value": "€ 5,00" }]
+					"prices": [
+						{
+							"label_nl": "",
+							"label_en": "",
+							"value": "€ 5,00"
+						}
+					],
+					"links": []
 				},
 				{
 					"nl": "Varkensspek",
@@ -338,8 +532,14 @@
 					"note_nl": "",
 					"note_en": "",
 					"image": "",
-					"link": "",
-					"prices": [{ "label_nl": "", "label_en": "", "value": "€ 5,00" }]
+					"prices": [
+						{
+							"label_nl": "",
+							"label_en": "",
+							"value": "€ 5,00"
+						}
+					],
+					"links": []
 				},
 				{
 					"nl": "Char siu",
@@ -347,8 +547,14 @@
 					"note_nl": "",
 					"note_en": "",
 					"image": "",
-					"link": "",
-					"prices": [{ "label_nl": "", "label_en": "", "value": "€ 5,00" }]
+					"prices": [
+						{
+							"label_nl": "",
+							"label_en": "",
+							"value": "€ 5,00"
+						}
+					],
+					"links": []
 				},
 				{
 					"nl": "Kipworst",
@@ -356,8 +562,14 @@
 					"note_nl": "",
 					"note_en": "",
 					"image": "",
-					"link": "",
-					"prices": [{ "label_nl": "", "label_en": "", "value": "€ 5,00" }]
+					"prices": [
+						{
+							"label_nl": "",
+							"label_en": "",
+							"value": "€ 5,00"
+						}
+					],
+					"links": []
 				}
 			]
 		},
@@ -375,8 +587,14 @@
 					"note_nl": "",
 					"note_en": "",
 					"image": "",
-					"link": "",
-					"prices": [{ "label_nl": "", "label_en": "", "value": "€ 4,75" }]
+					"prices": [
+						{
+							"label_nl": "",
+							"label_en": "",
+							"value": "€ 4,75"
+						}
+					],
+					"links": []
 				},
 				{
 					"nl": "Mix groente (van de dag)",
@@ -384,8 +602,14 @@
 					"note_nl": "",
 					"note_en": "",
 					"image": "",
-					"link": "",
-					"prices": [{ "label_nl": "", "label_en": "", "value": "€ 4,75" }]
+					"prices": [
+						{
+							"label_nl": "",
+							"label_en": "",
+							"value": "€ 4,75"
+						}
+					],
+					"links": []
 				},
 				{
 					"nl": "Tempeh kousenband",
@@ -393,8 +617,14 @@
 					"note_nl": "",
 					"note_en": "",
 					"image": "",
-					"link": "",
-					"prices": [{ "label_nl": "", "label_en": "", "value": "€ 4,75" }]
+					"prices": [
+						{
+							"label_nl": "",
+							"label_en": "",
+							"value": "€ 4,75"
+						}
+					],
+					"links": []
 				}
 			]
 		},
@@ -412,8 +642,14 @@
 					"note_nl": "Elke vrijdag verkrijgbaar.",
 					"note_en": "Available every Friday.",
 					"image": "",
-					"link": "",
-					"prices": [{ "label_nl": "", "label_en": "", "value": "€ 3,50" }]
+					"prices": [
+						{
+							"label_nl": "",
+							"label_en": "",
+							"value": "€ 3,50"
+						}
+					],
+					"links": []
 				},
 				{
 					"nl": "Bara gevuld",
@@ -421,8 +657,14 @@
 					"note_nl": "Elke vrijdag verkrijgbaar.",
 					"note_en": "Available every Friday.",
 					"image": "",
-					"link": "",
-					"prices": [{ "label_nl": "v.a.", "label_en": "from", "value": "€ 5,50" }]
+					"prices": [
+						{
+							"label_nl": "v.a.",
+							"label_en": "from",
+							"value": "€ 5,50"
+						}
+					],
+					"links": []
 				},
 				{
 					"nl": "Bakabana (3 stuks)",
@@ -430,8 +672,14 @@
 					"note_nl": "",
 					"note_en": "",
 					"image": "",
-					"link": "",
-					"prices": [{ "label_nl": "", "label_en": "", "value": "€ 4,50" }]
+					"prices": [
+						{
+							"label_nl": "",
+							"label_en": "",
+							"value": "€ 4,50"
+						}
+					],
+					"links": []
 				},
 				{
 					"nl": "Bakje geb. cassave",
@@ -439,8 +687,14 @@
 					"note_nl": "",
 					"note_en": "",
 					"image": "",
-					"link": "",
-					"prices": [{ "label_nl": "", "label_en": "", "value": "€ 4,50" }]
+					"prices": [
+						{
+							"label_nl": "",
+							"label_en": "",
+							"value": "€ 4,50"
+						}
+					],
+					"links": []
 				},
 				{
 					"nl": "Pitjel",
@@ -448,8 +702,14 @@
 					"note_nl": "",
 					"note_en": "",
 					"image": "",
-					"link": "",
-					"prices": [{ "label_nl": "", "label_en": "", "value": "€ 7,00" }]
+					"prices": [
+						{
+							"label_nl": "",
+							"label_en": "",
+							"value": "€ 7,00"
+						}
+					],
+					"links": []
 				},
 				{
 					"nl": "Mix groente (van de dag)",
@@ -457,8 +717,14 @@
 					"note_nl": "",
 					"note_en": "",
 					"image": "",
-					"link": "",
-					"prices": [{ "label_nl": "", "label_en": "", "value": "€ 7,50" }]
+					"prices": [
+						{
+							"label_nl": "",
+							"label_en": "",
+							"value": "€ 7,50"
+						}
+					],
+					"links": []
 				}
 			]
 		},
@@ -476,8 +742,14 @@
 					"note_nl": "",
 					"note_en": "",
 					"image": "",
-					"link": "",
-					"prices": [{ "label_nl": "", "label_en": "", "value": "€ 12,00" }]
+					"prices": [
+						{
+							"label_nl": "",
+							"label_en": "",
+							"value": "€ 12,00"
+						}
+					],
+					"links": []
 				},
 				{
 					"nl": "Bami",
@@ -485,8 +757,14 @@
 					"note_nl": "",
 					"note_en": "",
 					"image": "",
-					"link": "",
-					"prices": [{ "label_nl": "", "label_en": "", "value": "€ 12,00" }]
+					"prices": [
+						{
+							"label_nl": "",
+							"label_en": "",
+							"value": "€ 12,00"
+						}
+					],
+					"links": []
 				},
 				{
 					"nl": "Roti",
@@ -494,8 +772,14 @@
 					"note_nl": "",
 					"note_en": "",
 					"image": "",
-					"link": "",
-					"prices": [{ "label_nl": "", "label_en": "", "value": "€ 13,00" }]
+					"prices": [
+						{
+							"label_nl": "",
+							"label_en": "",
+							"value": "€ 13,00"
+						}
+					],
+					"links": []
 				}
 			]
 		},
@@ -513,8 +797,14 @@
 					"note_nl": "",
 					"note_en": "",
 					"image": "",
-					"link": "",
-					"prices": [{ "label_nl": "", "label_en": "", "value": "€ 3,25" }]
+					"prices": [
+						{
+							"label_nl": "",
+							"label_en": "",
+							"value": "€ 3,25"
+						}
+					],
+					"links": []
 				},
 				{
 					"nl": "Bloedworst",
@@ -522,8 +812,14 @@
 					"note_nl": "Varkensvlees.",
 					"note_en": "Pork.",
 					"image": "",
-					"link": "",
-					"prices": [{ "label_nl": "", "label_en": "", "value": "€ 3,75" }]
+					"prices": [
+						{
+							"label_nl": "",
+							"label_en": "",
+							"value": "€ 3,75"
+						}
+					],
+					"links": []
 				},
 				{
 					"nl": "Kipworst",
@@ -531,8 +827,14 @@
 					"note_nl": "Niet halal.",
 					"note_en": "Not halal.",
 					"image": "",
-					"link": "",
-					"prices": [{ "label_nl": "", "label_en": "", "value": "€ 4,00" }]
+					"prices": [
+						{
+							"label_nl": "",
+							"label_en": "",
+							"value": "€ 4,00"
+						}
+					],
+					"links": []
 				},
 				{
 					"nl": "Portie pittige teloballetjes",
@@ -540,8 +842,14 @@
 					"note_nl": "",
 					"note_en": "",
 					"image": "",
-					"link": "",
-					"prices": [{ "label_nl": "", "label_en": "", "value": "€ 4,50" }]
+					"prices": [
+						{
+							"label_nl": "",
+							"label_en": "",
+							"value": "€ 4,50"
+						}
+					],
+					"links": []
 				},
 				{
 					"nl": "Portie bloedworst",
@@ -549,8 +857,14 @@
 					"note_nl": "",
 					"note_en": "",
 					"image": "",
-					"link": "",
-					"prices": [{ "label_nl": "", "label_en": "", "value": "€ 6,75" }]
+					"prices": [
+						{
+							"label_nl": "",
+							"label_en": "",
+							"value": "€ 6,75"
+						}
+					],
+					"links": []
 				},
 				{
 					"nl": "Portie kipworst",
@@ -558,8 +872,14 @@
 					"note_nl": "",
 					"note_en": "",
 					"image": "",
-					"link": "",
-					"prices": [{ "label_nl": "", "label_en": "", "value": "€ 7,00" }]
+					"prices": [
+						{
+							"label_nl": "",
+							"label_en": "",
+							"value": "€ 7,00"
+						}
+					],
+					"links": []
 				},
 				{
 					"nl": "Portie bloed-/kipworst",
@@ -567,11 +887,19 @@
 					"note_nl": "",
 					"note_en": "",
 					"image": "",
-					"link": "",
 					"prices": [
-						{ "label_nl": "Klein", "label_en": "Small", "value": "€ 7,50" },
-						{ "label_nl": "Groot", "label_en": "Large", "value": "€ 11,00" }
-					]
+						{
+							"label_nl": "Klein",
+							"label_en": "Small",
+							"value": "€ 7,50"
+						},
+						{
+							"label_nl": "Groot",
+							"label_en": "Large",
+							"value": "€ 11,00"
+						}
+					],
+					"links": []
 				},
 				{
 					"nl": "Saoto soep",
@@ -579,8 +907,14 @@
 					"note_nl": "Alleen op woensdag, vrijdag en zaterdag.",
 					"note_en": "Only on Wednesday, Friday and Saturday.",
 					"image": "",
-					"link": "",
-					"prices": [{ "label_nl": "", "label_en": "", "value": "€ 9,00" }]
+					"prices": [
+						{
+							"label_nl": "",
+							"label_en": "",
+							"value": "€ 9,00"
+						}
+					],
+					"links": []
 				},
 				{
 					"nl": "Telo bakkeljauw",
@@ -588,12 +922,24 @@
 					"note_nl": "",
 					"note_en": "",
 					"image": "",
-					"link": "",
 					"prices": [
-						{ "label_nl": "Klein", "label_en": "Small", "value": "€ 7,50" },
-						{ "label_nl": "Groot", "label_en": "Large", "value": "€ 11,00" },
-						{ "label_nl": "XL", "label_en": "XL", "value": "€ 15,00" }
-					]
+						{
+							"label_nl": "Klein",
+							"label_en": "Small",
+							"value": "€ 7,50"
+						},
+						{
+							"label_nl": "Groot",
+							"label_en": "Large",
+							"value": "€ 11,00"
+						},
+						{
+							"label_nl": "XL",
+							"label_en": "XL",
+							"value": "€ 15,00"
+						}
+					],
+					"links": []
 				},
 				{
 					"nl": "Telo trie",
@@ -601,12 +947,24 @@
 					"note_nl": "",
 					"note_en": "",
 					"image": "",
-					"link": "",
 					"prices": [
-						{ "label_nl": "Klein", "label_en": "Small", "value": "€ 8,00" },
-						{ "label_nl": "Groot", "label_en": "Large", "value": "€ 12,00" },
-						{ "label_nl": "XL", "label_en": "XL", "value": "€ 16,00" }
-					]
+						{
+							"label_nl": "Klein",
+							"label_en": "Small",
+							"value": "€ 8,00"
+						},
+						{
+							"label_nl": "Groot",
+							"label_en": "Large",
+							"value": "€ 12,00"
+						},
+						{
+							"label_nl": "XL",
+							"label_en": "XL",
+							"value": "€ 16,00"
+						}
+					],
+					"links": []
 				},
 				{
 					"nl": "Telo XL mix (bakkeljauw en trie)",
@@ -614,8 +972,14 @@
 					"note_nl": "",
 					"note_en": "",
 					"image": "",
-					"link": "",
-					"prices": [{ "label_nl": "", "label_en": "", "value": "€ 17,50" }]
+					"prices": [
+						{
+							"label_nl": "",
+							"label_en": "",
+							"value": "€ 17,50"
+						}
+					],
+					"links": []
 				}
 			]
 		},
@@ -633,8 +997,14 @@
 					"note_nl": "",
 					"note_en": "",
 					"image": "",
-					"link": "",
-					"prices": [{ "label_nl": "", "label_en": "", "value": "€ 1,25" }]
+					"prices": [
+						{
+							"label_nl": "",
+							"label_en": "",
+							"value": "€ 1,25"
+						}
+					],
+					"links": []
 				},
 				{
 					"nl": "Extra pindasaus",
@@ -642,8 +1012,14 @@
 					"note_nl": "",
 					"note_en": "",
 					"image": "",
-					"link": "",
-					"prices": [{ "label_nl": "", "label_en": "", "value": "€ 1,50" }]
+					"prices": [
+						{
+							"label_nl": "",
+							"label_en": "",
+							"value": "€ 1,50"
+						}
+					],
+					"links": []
 				},
 				{
 					"nl": "Los kerrie ei",
@@ -651,8 +1027,14 @@
 					"note_nl": "",
 					"note_en": "",
 					"image": "",
-					"link": "",
-					"prices": [{ "label_nl": "", "label_en": "", "value": "€ 2,25" }]
+					"prices": [
+						{
+							"label_nl": "",
+							"label_en": "",
+							"value": "€ 2,25"
+						}
+					],
+					"links": []
 				},
 				{
 					"nl": "Bakje kousenband",
@@ -660,8 +1042,14 @@
 					"note_nl": "",
 					"note_en": "",
 					"image": "",
-					"link": "",
-					"prices": [{ "label_nl": "", "label_en": "", "value": "€ 3,00" }]
+					"prices": [
+						{
+							"label_nl": "",
+							"label_en": "",
+							"value": "€ 3,00"
+						}
+					],
+					"links": []
 				},
 				{
 					"nl": "Bakje beleg",
@@ -669,8 +1057,14 @@
 					"note_nl": "Indien voorradig, bv. pom, kip kerrie of maagjes en levertjes.",
 					"note_en": "If in stock, e.g. pom, chicken curry or gizzards and livers.",
 					"image": "",
-					"link": "",
-					"prices": [{ "label_nl": "v.a.", "label_en": "from", "value": "€ 5,25" }]
+					"prices": [
+						{
+							"label_nl": "v.a.",
+							"label_en": "from",
+							"value": "€ 5,25"
+						}
+					],
+					"links": []
 				}
 			]
 		},
@@ -688,8 +1082,14 @@
 					"note_nl": "",
 					"note_en": "",
 					"image": "",
-					"link": "",
-					"prices": [{ "label_nl": "v.a.", "label_en": "from", "value": "€ 1,50" }]
+					"prices": [
+						{
+							"label_nl": "v.a.",
+							"label_en": "from",
+							"value": "€ 1,50"
+						}
+					],
+					"links": []
 				},
 				{
 					"nl": "Phia's stropen",
@@ -697,8 +1097,14 @@
 					"note_nl": "Indien voorradig.",
 					"note_en": "If in stock.",
 					"image": "",
-					"link": "",
-					"prices": [{ "label_nl": "", "label_en": "", "value": "€ 3,75" }]
+					"prices": [
+						{
+							"label_nl": "",
+							"label_en": "",
+							"value": "€ 3,75"
+						}
+					],
+					"links": []
 				}
 			]
 		},
@@ -716,8 +1122,14 @@
 					"note_nl": "",
 					"note_en": "",
 					"image": "",
-					"link": "",
-					"prices": [{ "label_nl": "v.a.", "label_en": "from", "value": "€ 4,75" }]
+					"prices": [
+						{
+							"label_nl": "v.a.",
+							"label_en": "from",
+							"value": "€ 4,75"
+						}
+					],
+					"links": []
 				}
 			]
 		}

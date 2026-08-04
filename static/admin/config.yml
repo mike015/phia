@@ -1228,6 +1228,137 @@ collections:
                 }
 
   # ============================================================
+  # REVIEWS — handmatig beheren + automatische sync
+  # ============================================================
+  - name: reviews
+    label: Reviews
+    delete: false
+    files:
+      - name: reviews-manual
+        label: Reviews (handmatig)
+        file: data/reviews-manual.json
+        description: >-
+          Eigen, zelfgekozen reviews. Deze worden NOOIT automatisch overschreven.
+          Vink "Uitgelicht" aan om een review vooraan op de startpagina te tonen.
+        fields:
+          - name: reviews
+            label: Reviews
+            widget: list
+            required: false
+            label_singular: Review
+            summary: '{{fields.author}} — {{fields.source}}'
+            fields:
+              - {
+                  name: author,
+                  label: Naam,
+                  widget: string,
+                  hint: 'Naam van de gast, bijvoorbeeld "Nils".'
+                }
+              - {
+                  name: source,
+                  label: Bron,
+                  widget: select,
+                  options: [Google, Facebook, Overig],
+                  default: Overig,
+                  hint: 'Waar komt deze review vandaan?'
+                }
+              - {
+                  name: rating,
+                  label: Sterren,
+                  widget: number,
+                  value_type: int,
+                  min: 1,
+                  max: 5,
+                  default: 5,
+                  hint: Aantal sterren (1 t/m 5).
+                }
+              - { name: text, label: Tekst, widget: text, hint: De review-tekst. }
+              - {
+                  name: featured,
+                  label: Uitgelicht,
+                  widget: boolean,
+                  default: false,
+                  hint: Toon deze review bovenaan op de startpagina.
+                }
+      - name: reviews-google
+        label: Reviews (Google — automatisch)
+        file: data/reviews-google.json
+        description: >-
+          Wordt dagelijks automatisch bijgewerkt vanuit Google. Handmatige
+          wijzigingen hier kunnen bij de volgende sync worden overschreven —
+          gebruik voor eigen reviews de collectie "Reviews (handmatig)".
+        fields:
+          - { name: source, label: Bron, widget: hidden, default: google }
+          - {
+              name: rating,
+              label: Gemiddelde score,
+              widget: number,
+              value_type: float,
+              min: 0,
+              max: 5,
+              hint: 'Bijvoorbeeld 4.8.'
+            }
+          - { name: count, label: Aantal beoordelingen, widget: number, value_type: int, min: 0 }
+          - { name: updated, label: Laatst bijgewerkt, widget: string, required: false }
+          - name: reviews
+            label: Reviews
+            widget: list
+            required: false
+            label_singular: Review
+            summary: '{{fields.author}}'
+            fields:
+              - { name: author, label: Naam, widget: string }
+              - {
+                  name: rating,
+                  label: Sterren,
+                  widget: number,
+                  value_type: int,
+                  min: 1,
+                  max: 5,
+                  default: 5
+                }
+              - { name: text, label: Tekst, widget: text }
+              - { name: time, label: Datum/tijd, widget: string, required: false }
+      - name: reviews-facebook
+        label: Reviews (Facebook — automatisch)
+        file: data/reviews-facebook.json
+        description: >-
+          Wordt dagelijks automatisch bijgewerkt vanuit Facebook. Facebook levert
+          alleen de gemiddelde score en het aantal; losse teksten voeg je
+          handmatig toe via "Reviews (handmatig)".
+        fields:
+          - { name: source, label: Bron, widget: hidden, default: facebook }
+          - {
+              name: rating,
+              label: Gemiddelde score,
+              widget: number,
+              value_type: float,
+              min: 0,
+              max: 5
+            }
+          - { name: count, label: Aantal beoordelingen, widget: number, value_type: int, min: 0 }
+          - { name: updated, label: Laatst bijgewerkt, widget: string, required: false }
+          - name: reviews
+            label: Reviews
+            widget: list
+            required: false
+            label_singular: Review
+            summary: '{{fields.author}}'
+            fields:
+              - { name: author, label: Naam, widget: string }
+              - {
+                  name: rating,
+                  label: Sterren,
+                  widget: number,
+                  value_type: int,
+                  min: 1,
+                  max: 5,
+                  default: 5
+                }
+              - { name: text, label: Tekst, widget: text }
+              - { name: time, label: Datum/tijd, widget: string, required: false }
+
+  # ============================================================
   # MENU — de volledige menukaart
   # ============================================================
   - name: menu
@@ -1346,13 +1477,29 @@ collections:
                     widget: image
                     required: false
                     hint: Optionele foto van het gerecht.
-                  - name: link
-                    label: Social-medialink
-                    widget: string
+                  - name: links
+                    label: Links (social / review / video)
+                    widget: list
                     required: false
+                    label_singular: Link
+                    summary: '{{fields.label}} — {{fields.url}}'
                     hint: >-
-                      Optionele link naar een bericht over dit gerecht op
-                      Instagram, YouTube of Facebook. Laat leeg als er geen is.
+                      Koppel dit gerecht aan Instagram-posts, Google-/Facebook-reviews
+                      of YouTube-video's. Voeg zoveel links toe als je wilt.
+                    fields:
+                      - {
+                          name: label,
+                          label: Omschrijving,
+                          widget: string,
+                          required: false,
+                          hint: 'Bijv. "Instagram-post", "Google-review" of "Video".'
+                        }
+                      - {
+                          name: url,
+                          label: Link (URL),
+                          widget: string,
+                          hint: 'Plak de volledige link, bijvoorbeeld https://instagram.com/p/...'
+                        }
                   - name: prices
                     label: Prijzen
                     widget: list

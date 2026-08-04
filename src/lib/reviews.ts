@@ -13,6 +13,7 @@
  */
 import google from '$data/reviews-google.json';
 import facebook from '$data/reviews-facebook.json';
+import manual from '$data/reviews-manual.json';
 import { SITE } from '$lib/config';
 
 /** Eén ruwe review zoals opgeslagen in de databestanden. */
@@ -32,6 +33,15 @@ type ReviewSource = {
 	reviews: RawReview[];
 };
 
+/** Handmatige (door de beheerder gecureerde) review uit reviews-manual.json. */
+type ManualReview = {
+	author: string;
+	source: string;
+	rating: number;
+	text: string;
+	featured?: boolean;
+};
+
 /** UI-vorm van een review (matcht de bestaande home-markup). */
 export type Review = {
 	quote: string;
@@ -42,6 +52,7 @@ export type Review = {
 };
 
 const sources: ReviewSource[] = [google as ReviewSource, facebook as ReviewSource];
+const manualReviews = (manual as { reviews: ManualReview[] }).reviews ?? [];
 
 /** Mooie weergavenaam per bron voor de "who · src"-regel. */
 function sourceLabel(source: string): string {
@@ -62,24 +73,30 @@ function timeKey(time: string): number {
  * @param limit optioneel maximum aantal (de home toont er 3).
  */
 export function getReviews(limit?: number): Review[] {
-	const merged: Review[] = [];
+	// Automatisch gesynced (Google/Facebook), nieuwste eerst.
+	const auto: Review[] = [];
 	for (const s of sources) {
 		const label = sourceLabel(s.source);
 		for (const r of s.reviews) {
 			if (!r || !r.text) continue;
-			merged.push({
-				quote: r.text,
-				who: r.author,
-				src: label,
-				rating: r.rating,
-				time: r.time
-			});
+			auto.push({ quote: r.text, who: r.author, src: label, rating: r.rating, time: r.time });
 		}
 	}
+	auto.sort((a, b) => timeKey(b.time) - timeKey(a.time));
 
-	// Nieuwste eerst; stabiel voor lege tijden (blijven in bronvolgorde).
-	merged.sort((a, b) => timeKey(b.time) - timeKey(a.time));
+	// Handmatig gecureerde reviews (beheerder) hebben voorrang; uitgelicht bovenaan.
+	const toReview = (m: ManualReview): Review => ({
+		quote: m.text,
+		who: m.author,
+		src: m.source ? sourceLabel(m.source) : 'Gast',
+		rating: m.rating,
+		time: ''
+	});
+	const curated = manualReviews.filter((m) => m && m.text);
+	const featured = curated.filter((m) => m.featured).map(toReview);
+	const other = curated.filter((m) => !m.featured).map(toReview);
 
+	const merged = [...featured, ...other, ...auto];
 	return typeof limit === 'number' ? merged.slice(0, limit) : merged;
 }
 

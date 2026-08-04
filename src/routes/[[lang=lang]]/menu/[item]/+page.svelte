@@ -68,11 +68,11 @@
 	<!-- Acties -->
 	<div class="mt-8 flex flex-wrap gap-3">
 		<a class="btn-primary" href={`tel:${SITE.phoneE164}`}>📞 {d.pages.menuItem.order}</a>
-		{#if item.link}
-			<a class="btn-outline" href={item.link} target="_blank" rel="noopener noreferrer">
-				{d.pages.menuItem.viewPost}
+		{#each item.links as l, i (i)}
+			<a class="btn-outline" href={l.url} target="_blank" rel="noopener noreferrer">
+				↗ {l.label || d.pages.menuItem.viewPost}
 			</a>
-		{/if}
+		{/each}
 	</div>
 
 	<!-- Terug naar het menu -->

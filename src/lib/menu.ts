@@ -14,6 +14,9 @@ import menuData from '$data/menu.json';
 
 export type Price = { label_nl?: string; label_en?: string; value: string };
 
+/** Eén link bij een gerecht: bv. een Instagram-post, een review of een video. */
+export type MenuLink = { label: string; url: string };
+
 export type MenuItem = {
 	nl: string;
 	en: string;
@@ -21,8 +24,8 @@ export type MenuItem = {
 	note_nl?: string;
 	note_en?: string;
 	image?: string;
-	/** Optionele link naar een social-mediabericht over dit gerecht. */
-	link?: string;
+	/** Optionele links (social-posts, reviews, video's) bij dit gerecht. */
+	links: MenuLink[];
 };
 
 export type MenuCategory = {
@@ -51,7 +54,9 @@ export const MENU: MenuCategory[] = menuData.categories.map((cat) => ({
 		note_nl: blank(item.note_nl),
 		note_en: blank(item.note_en),
 		image: blank(item.image),
-		link: blank(item.link),
+		links: ((item.links ?? []) as { label?: string; url: string }[])
+			.filter((l) => !!l && !!l.url)
+			.map((l) => ({ label: l.label ?? '', url: l.url })),
 		prices: item.prices.map((p) => ({
 			label_nl: blank(p.label_nl),
 			label_en: blank(p.label_en),

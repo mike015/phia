@@ -191,7 +191,7 @@
 	</div>
 
 	<ul class="mt-10 grid gap-6 md:grid-cols-3">
-		{#each reviews as r, i (r.who)}
+		{#each reviews as r, i (i)}
 			<li
 				use:reveal={i * 60}
 				class="card-lift rounded-2xl border border-[var(--color-lilac-border)] border-l-4 border-l-[var(--color-accent)] bg-white p-6 text-[var(--color-ink)]/90"
