@@ -7,6 +7,10 @@ backend:
   repo: mike015/phia
   # LET OP: zet dit bij livegang op de productie-branch (bv. "main").
   branch: claude/new-project-seo-responsive-38rc1b
+  # Productie-login via de OAuth-Worker (workers/cms-auth). Deploy die Worker,
+  # vul hieronder de Worker-URL in en haal de "#" weg (zie CMS.md):
+  # base_url: https://phia-cms-auth.JOUW-SUBDOMEIN.workers.dev
+  # auth_endpoint: auth
 
 # Lokaal testen zonder GitHub-OAuth (zie CMS.md → "Lokaal testen").
 local_backend: true

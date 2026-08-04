@@ -41,21 +41,19 @@ Wijzigingen schrijf je dan direct naar de lokale bestanden — handig om de form
 ## Productie-login (GitHub) — vereist actie van Mike
 
 Om via `/admin` op de live site in te loggen is een GitHub-OAuth-flow nodig. Dit is nog **niet**
-ingericht (externe resources + secrets vereisen akkoord — PROJECT-BRIEF §7). Stappen:
+ingericht omdat het een GitHub OAuth App + twee secrets vereist (§7). De **Worker is
+al gebouwd** en staat in de repo: **`workers/cms-auth/`** — inclusief stap-voor-stap
+instructies in **`workers/cms-auth/README.md`**. Kort:
 
-1. **GitHub OAuth App** aanmaken (GitHub → Settings → Developer settings → OAuth Apps):
-   - Homepage URL: de site-URL. Authorization callback URL: die van de OAuth-worker (stap 2).
-   - Noteer **Client ID** en **Client Secret**.
-2. **Cloudflare OAuth-Worker** deployen volgens het Sveltia/Decap-patroon
-   (`sveltia-cms-auth`, een kleine Worker). Zet `GITHUB_CLIENT_ID` / `GITHUB_CLIENT_SECRET`
-   als Worker-secrets (nooit in de repo).
-3. In `static/admin/config.yml` het `backend`-blok een `base_url` (en evt. `auth_endpoint`) naar
-   die Worker geven.
-4. Zet de `backend.branch` in `config.yml` op de **productie-branch** bij go-live (staat nu op de
-   ontwikkel-branch `claude/new-project-seo-responsive-38rc1b`).
+1. **GitHub OAuth App** aanmaken (Client ID + Secret); callback = `<worker-url>/callback`.
+2. **Worker deployen**: `cd workers/cms-auth` → `wrangler secret put GITHUB_CLIENT_ID` +
+   `GITHUB_CLIENT_SECRET` → `wrangler deploy`. De secrets blijven in de Worker.
+3. In `static/admin/config.yml` onder `backend:` de `base_url` (Worker-URL) + `auth_endpoint`
+   invullen en de `#` weghalen.
+4. Bij go-live: `backend.branch` op de **productie-branch** zetten (nu de ontwikkel-branch).
 
-Zeg het als je dit wilt inrichten, dan lever ik de Worker + exacte config aan (met jouw akkoord
-voor het aanmaken van de OAuth-app en secrets).
+Geef me de Worker-URL na het deployen, dan zet ik stap 3/4 voor je klaar. Alleen
+GitHub-accounts met schrijfrechten op `mike015/phia` kunnen daarna opslaan.
 
 ## Technisch
 
