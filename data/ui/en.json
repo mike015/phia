@@ -62,7 +62,9 @@
 			"notesHeading": "Good to know",
 			"allergensHeading": "Allergens",
 			"examplesHeading": "Examples of meals & soups",
-			"badges": { "halal": "Halal", "nietHalal": "Not halal", "vega": "Vegetarian" }
+			"badges": { "halal": "Halal", "nietHalal": "Not halal", "vega": "Vegetarian" },
+			"availToday": "Available today",
+			"availOnly": "Only on"
 		},
 		"about": {
 			"title": "About us",

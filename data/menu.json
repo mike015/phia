@@ -29,7 +29,8 @@
 							"value": "€ 14,50"
 						}
 					],
-					"links": []
+					"links": [],
+					"availableDays": []
 				},
 				{
 					"nl": "Nasi of Bami kipfilet",
@@ -49,7 +50,8 @@
 							"value": "€ 15,50"
 						}
 					],
-					"links": []
+					"links": [],
+					"availableDays": []
 				},
 				{
 					"nl": "Nasi of Bami kip groot",
@@ -69,7 +71,8 @@
 							"value": "€ 17,50"
 						}
 					],
-					"links": []
+					"links": [],
+					"availableDays": []
 				},
 				{
 					"nl": "Nasi of Bami kipfilet groot",
@@ -89,7 +92,8 @@
 							"value": "€ 18,00"
 						}
 					],
-					"links": []
+					"links": [],
+					"availableDays": []
 				},
 				{
 					"nl": "Roti rol",
@@ -109,7 +113,8 @@
 							"value": "€ 12,00"
 						}
 					],
-					"links": []
+					"links": [],
+					"availableDays": []
 				},
 				{
 					"nl": "Roti kip",
@@ -129,7 +134,8 @@
 							"value": "€ 15,00"
 						}
 					],
-					"links": []
+					"links": [],
+					"availableDays": []
 				},
 				{
 					"nl": "Roti kipfilet",
@@ -149,7 +155,8 @@
 							"value": "€ 16,00"
 						}
 					],
-					"links": []
+					"links": [],
+					"availableDays": []
 				},
 				{
 					"nl": "Roti rol lams",
@@ -169,7 +176,8 @@
 							"value": "€ 13,50"
 						}
 					],
-					"links": []
+					"links": [],
+					"availableDays": []
 				},
 				{
 					"nl": "Roti lams",
@@ -189,7 +197,8 @@
 							"value": "€ 17,50"
 						}
 					],
-					"links": []
+					"links": [],
+					"availableDays": []
 				},
 				{
 					"nl": "Creoolse roti rol",
@@ -209,7 +218,8 @@
 							"value": "€ 12,50"
 						}
 					],
-					"links": []
+					"links": [],
+					"availableDays": []
 				},
 				{
 					"nl": "Creoolse roti kip",
@@ -229,7 +239,8 @@
 							"value": "€ 16,50"
 						}
 					],
-					"links": []
+					"links": [],
+					"availableDays": []
 				},
 				{
 					"nl": "Creoolse roti kipfilet",
@@ -249,7 +260,8 @@
 							"value": "€ 17,00"
 						}
 					],
-					"links": []
+					"links": [],
+					"availableDays": []
 				}
 			]
 		},
@@ -274,7 +286,8 @@
 							"value": "€ 10,50"
 						}
 					],
-					"links": []
+					"links": [],
+					"availableDays": []
 				},
 				{
 					"nl": "Phia's maaltijden",
@@ -289,7 +302,8 @@
 							"value": "€ 17,50"
 						}
 					],
-					"links": []
+					"links": [],
+					"availableDays": []
 				}
 			]
 		},
@@ -319,7 +333,8 @@
 							"value": "€ 4,75"
 						}
 					],
-					"links": []
+					"links": [],
+					"availableDays": []
 				},
 				{
 					"nl": "Kip kerrie",
@@ -334,7 +349,8 @@
 							"value": "€ 4,75"
 						}
 					],
-					"links": []
+					"links": [],
+					"availableDays": []
 				},
 				{
 					"nl": "Maagjes en levertjes",
@@ -349,7 +365,8 @@
 							"value": "€ 4,75"
 						}
 					],
-					"links": []
+					"links": [],
+					"availableDays": []
 				},
 				{
 					"nl": "Kip ketjap",
@@ -364,7 +381,8 @@
 							"value": "€ 4,75"
 						}
 					],
-					"links": []
+					"links": [],
+					"availableDays": []
 				},
 				{
 					"nl": "Hete kip",
@@ -379,7 +397,8 @@
 							"value": "€ 4,75"
 						}
 					],
-					"links": []
+					"links": [],
+					"availableDays": []
 				},
 				{
 					"nl": "Surinaams gehakt",
@@ -394,7 +413,8 @@
 							"value": "€ 5,00"
 						}
 					],
-					"links": []
+					"links": [],
+					"availableDays": []
 				},
 				{
 					"nl": "Kousenband garnalen",
@@ -409,7 +429,8 @@
 							"value": "€ 5,00"
 						}
 					],
-					"links": []
+					"links": [],
+					"availableDays": []
 				},
 				{
 					"nl": "Saté",
@@ -424,7 +445,8 @@
 							"value": "€ 5,00"
 						}
 					],
-					"links": []
+					"links": [],
+					"availableDays": []
 				},
 				{
 					"nl": "Bakkeljauw",
@@ -439,7 +461,8 @@
 							"value": "€ 5,00"
 						}
 					],
-					"links": []
+					"links": [],
+					"availableDays": []
 				},
 				{
 					"nl": "Stoofvlees",
@@ -454,7 +477,8 @@
 							"value": "€ 5,00"
 						}
 					],
-					"links": []
+					"links": [],
+					"availableDays": []
 				},
 				{
 					"nl": "Pom met kip",
@@ -469,7 +493,8 @@
 							"value": "€ 5,00"
 						}
 					],
-					"links": []
+					"links": [],
+					"availableDays": []
 				},
 				{
 					"nl": "Kerrie lams",
@@ -484,7 +509,8 @@
 							"value": "€ 5,00"
 						}
 					],
-					"links": []
+					"links": [],
+					"availableDays": []
 				},
 				{
 					"nl": "Mix (2 belegsoorten naar keuze)",
@@ -499,7 +525,8 @@
 							"value": "€ 5,50"
 						}
 					],
-					"links": []
+					"links": [],
+					"availableDays": []
 				}
 			]
 		},
@@ -524,7 +551,8 @@
 							"value": "€ 5,00"
 						}
 					],
-					"links": []
+					"links": [],
+					"availableDays": []
 				},
 				{
 					"nl": "Varkensspek",
@@ -539,7 +567,8 @@
 							"value": "€ 5,00"
 						}
 					],
-					"links": []
+					"links": [],
+					"availableDays": []
 				},
 				{
 					"nl": "Char siu",
@@ -554,7 +583,8 @@
 							"value": "€ 5,00"
 						}
 					],
-					"links": []
+					"links": [],
+					"availableDays": []
 				},
 				{
 					"nl": "Kipworst",
@@ -569,7 +599,8 @@
 							"value": "€ 5,00"
 						}
 					],
-					"links": []
+					"links": [],
+					"availableDays": []
 				}
 			]
 		},
@@ -594,7 +625,8 @@
 							"value": "€ 4,75"
 						}
 					],
-					"links": []
+					"links": [],
+					"availableDays": []
 				},
 				{
 					"nl": "Mix groente (van de dag)",
@@ -609,7 +641,8 @@
 							"value": "€ 4,75"
 						}
 					],
-					"links": []
+					"links": [],
+					"availableDays": []
 				},
 				{
 					"nl": "Tempeh kousenband",
@@ -624,7 +657,8 @@
 							"value": "€ 4,75"
 						}
 					],
-					"links": []
+					"links": [],
+					"availableDays": []
 				}
 			]
 		},
@@ -639,8 +673,8 @@
 				{
 					"nl": "Bara",
 					"en": "Bara",
-					"note_nl": "Elke vrijdag verkrijgbaar.",
-					"note_en": "Available every Friday.",
+					"note_nl": "",
+					"note_en": "",
 					"image": "",
 					"prices": [
 						{
@@ -649,13 +683,14 @@
 							"value": "€ 3,50"
 						}
 					],
-					"links": []
+					"links": [],
+					"availableDays": ["vr"]
 				},
 				{
 					"nl": "Bara gevuld",
 					"en": "Filled bara",
-					"note_nl": "Elke vrijdag verkrijgbaar.",
-					"note_en": "Available every Friday.",
+					"note_nl": "",
+					"note_en": "",
 					"image": "",
 					"prices": [
 						{
@@ -664,7 +699,8 @@
 							"value": "€ 5,50"
 						}
 					],
-					"links": []
+					"links": [],
+					"availableDays": ["vr"]
 				},
 				{
 					"nl": "Bakabana (3 stuks)",
@@ -679,7 +715,8 @@
 							"value": "€ 4,50"
 						}
 					],
-					"links": []
+					"links": [],
+					"availableDays": []
 				},
 				{
 					"nl": "Bakje geb. cassave",
@@ -694,7 +731,8 @@
 							"value": "€ 4,50"
 						}
 					],
-					"links": []
+					"links": [],
+					"availableDays": []
 				},
 				{
 					"nl": "Pitjel",
@@ -709,7 +747,8 @@
 							"value": "€ 7,00"
 						}
 					],
-					"links": []
+					"links": [],
+					"availableDays": []
 				},
 				{
 					"nl": "Mix groente (van de dag)",
@@ -724,7 +763,8 @@
 							"value": "€ 7,50"
 						}
 					],
-					"links": []
+					"links": [],
+					"availableDays": []
 				}
 			]
 		},
@@ -749,7 +789,8 @@
 							"value": "€ 12,00"
 						}
 					],
-					"links": []
+					"links": [],
+					"availableDays": []
 				},
 				{
 					"nl": "Bami",
@@ -764,7 +805,8 @@
 							"value": "€ 12,00"
 						}
 					],
-					"links": []
+					"links": [],
+					"availableDays": []
 				},
 				{
 					"nl": "Roti",
@@ -779,7 +821,8 @@
 							"value": "€ 13,00"
 						}
 					],
-					"links": []
+					"links": [],
+					"availableDays": []
 				}
 			]
 		},
@@ -804,7 +847,8 @@
 							"value": "€ 3,25"
 						}
 					],
-					"links": []
+					"links": [],
+					"availableDays": []
 				},
 				{
 					"nl": "Bloedworst",
@@ -819,7 +863,8 @@
 							"value": "€ 3,75"
 						}
 					],
-					"links": []
+					"links": [],
+					"availableDays": []
 				},
 				{
 					"nl": "Kipworst",
@@ -834,7 +879,8 @@
 							"value": "€ 4,00"
 						}
 					],
-					"links": []
+					"links": [],
+					"availableDays": []
 				},
 				{
 					"nl": "Portie pittige teloballetjes",
@@ -849,7 +895,8 @@
 							"value": "€ 4,50"
 						}
 					],
-					"links": []
+					"links": [],
+					"availableDays": []
 				},
 				{
 					"nl": "Portie bloedworst",
@@ -864,7 +911,8 @@
 							"value": "€ 6,75"
 						}
 					],
-					"links": []
+					"links": [],
+					"availableDays": []
 				},
 				{
 					"nl": "Portie kipworst",
@@ -879,7 +927,8 @@
 							"value": "€ 7,00"
 						}
 					],
-					"links": []
+					"links": [],
+					"availableDays": []
 				},
 				{
 					"nl": "Portie bloed-/kipworst",
@@ -899,13 +948,14 @@
 							"value": "€ 11,00"
 						}
 					],
-					"links": []
+					"links": [],
+					"availableDays": []
 				},
 				{
 					"nl": "Saoto soep",
 					"en": "Saoto soup",
-					"note_nl": "Alleen op woensdag, vrijdag en zaterdag.",
-					"note_en": "Only on Wednesday, Friday and Saturday.",
+					"note_nl": "",
+					"note_en": "",
 					"image": "",
 					"prices": [
 						{
@@ -914,7 +964,8 @@
 							"value": "€ 9,00"
 						}
 					],
-					"links": []
+					"links": [],
+					"availableDays": ["wo", "vr", "za"]
 				},
 				{
 					"nl": "Telo bakkeljauw",
@@ -939,7 +990,8 @@
 							"value": "€ 15,00"
 						}
 					],
-					"links": []
+					"links": [],
+					"availableDays": []
 				},
 				{
 					"nl": "Telo trie",
@@ -964,7 +1016,8 @@
 							"value": "€ 16,00"
 						}
 					],
-					"links": []
+					"links": [],
+					"availableDays": []
 				},
 				{
 					"nl": "Telo XL mix (bakkeljauw en trie)",
@@ -979,7 +1032,8 @@
 							"value": "€ 17,50"
 						}
 					],
-					"links": []
+					"links": [],
+					"availableDays": []
 				}
 			]
 		},
@@ -1004,7 +1058,8 @@
 							"value": "€ 1,25"
 						}
 					],
-					"links": []
+					"links": [],
+					"availableDays": []
 				},
 				{
 					"nl": "Extra pindasaus",
@@ -1019,7 +1074,8 @@
 							"value": "€ 1,50"
 						}
 					],
-					"links": []
+					"links": [],
+					"availableDays": []
 				},
 				{
 					"nl": "Los kerrie ei",
@@ -1034,7 +1090,8 @@
 							"value": "€ 2,25"
 						}
 					],
-					"links": []
+					"links": [],
+					"availableDays": []
 				},
 				{
 					"nl": "Bakje kousenband",
@@ -1049,7 +1106,8 @@
 							"value": "€ 3,00"
 						}
 					],
-					"links": []
+					"links": [],
+					"availableDays": []
 				},
 				{
 					"nl": "Bakje beleg",
@@ -1064,7 +1122,8 @@
 							"value": "€ 5,25"
 						}
 					],
-					"links": []
+					"links": [],
+					"availableDays": []
 				}
 			]
 		},
@@ -1089,7 +1148,8 @@
 							"value": "€ 1,50"
 						}
 					],
-					"links": []
+					"links": [],
+					"availableDays": []
 				},
 				{
 					"nl": "Phia's stropen",
@@ -1104,7 +1164,8 @@
 							"value": "€ 3,75"
 						}
 					],
-					"links": []
+					"links": [],
+					"availableDays": []
 				}
 			]
 		},
@@ -1129,7 +1190,8 @@
 							"value": "€ 4,75"
 						}
 					],
-					"links": []
+					"links": [],
+					"availableDays": []
 				}
 			]
 		}

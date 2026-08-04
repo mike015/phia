@@ -1481,6 +1481,23 @@ collections:
                     widget: image
                     required: false
                     hint: Optionele foto van het gerecht.
+                  - name: availableDays
+                    label: Alleen verkrijgbaar op
+                    widget: select
+                    multiple: true
+                    required: false
+                    options:
+                      - { label: Maandag, value: ma }
+                      - { label: Dinsdag, value: di }
+                      - { label: Woensdag, value: wo }
+                      - { label: Donderdag, value: do }
+                      - { label: Vrijdag, value: vr }
+                      - { label: Zaterdag, value: za }
+                      - { label: Zondag, value: zo }
+                    hint: >-
+                      Laat LEEG als het gerecht elke openingsdag verkrijgbaar is. Kies
+                      dagen (bv. alleen vrijdag) om een gekleurde beschikbaarheidslabel
+                      te tonen; op die dagen kleurt de label groen.
                   - name: links
                     label: Links (social / review / video)
                     widget: list

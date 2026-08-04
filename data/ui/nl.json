@@ -62,7 +62,9 @@
 			"notesHeading": "Goed om te weten",
 			"allergensHeading": "Allergenen",
 			"examplesHeading": "Voorbeelden van maaltijden & soepen",
-			"badges": { "halal": "Halal", "nietHalal": "Niet halal", "vega": "Vegetarisch" }
+			"badges": { "halal": "Halal", "nietHalal": "Niet halal", "vega": "Vegetarisch" },
+			"availToday": "Vandaag verkrijgbaar",
+			"availOnly": "Alleen op"
 		},
 		"about": {
 			"title": "Over ons",

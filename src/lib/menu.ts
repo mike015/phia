@@ -26,6 +26,8 @@ export type MenuItem = {
 	image?: string;
 	/** Optionele links (social-posts, reviews, video's) bij dit gerecht. */
 	links: MenuLink[];
+	/** Dagcodes (ma..zo) waarop dit gerecht verkrijgbaar is; leeg = altijd. */
+	availableDays: string[];
 };
 
 export type MenuCategory = {
@@ -57,6 +59,7 @@ export const MENU: MenuCategory[] = menuData.categories.map((cat) => ({
 		links: ((item.links ?? []) as { label?: string; url: string }[])
 			.filter((l) => !!l && !!l.url)
 			.map((l) => ({ label: l.label ?? '', url: l.url })),
+		availableDays: ((item.availableDays ?? []) as string[]).filter(Boolean),
 		prices: item.prices.map((p) => ({
 			label_nl: blank(p.label_nl),
 			label_en: blank(p.label_en),

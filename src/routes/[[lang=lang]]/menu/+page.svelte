@@ -1,6 +1,7 @@
 <script lang="ts">
 	import Seo from '$lib/seo/Seo.svelte';
 	import PageHeader from '$lib/components/PageHeader.svelte';
+	import AvailabilityBadge from '$lib/components/AvailabilityBadge.svelte';
 	import JsonLd from '$lib/seo/JsonLd.svelte';
 	import { breadcrumbJsonLd, menuJsonLd } from '$lib/seo/jsonld';
 	import { SITE } from '$lib/config';
@@ -123,6 +124,9 @@
 								>
 									{isNl ? item.nl : item.en}
 								</a>
+								{#if item.availableDays.length}
+									<AvailabilityBadge {lang} days={item.availableDays} class="ml-2 align-middle" />
+								{/if}
 								{#if item.note_nl}
 									<span class="block text-sm text-[var(--color-muted)]"
 										>{isNl ? item.note_nl : item.note_en}</span

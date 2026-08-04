@@ -1,6 +1,7 @@
 <script lang="ts">
 	import Seo from '$lib/seo/Seo.svelte';
 	import PageHeader from '$lib/components/PageHeader.svelte';
+	import AvailabilityBadge from '$lib/components/AvailabilityBadge.svelte';
 	import JsonLd from '$lib/seo/JsonLd.svelte';
 	import { breadcrumbJsonLd } from '$lib/seo/jsonld';
 	import { SITE } from '$lib/config';
@@ -31,10 +32,15 @@
 <PageHeader {lang} title={name} crumb={d.pages.menu.title} homeLabel={d.nav.home} />
 
 <div class="mx-auto max-w-3xl px-4 py-10 sm:px-6">
-	<!-- Categorie -->
-	<p class="text-sm font-semibold uppercase tracking-wide text-[var(--color-lilac-text)]">
-		{d.pages.menuItem.inCategory}: {category}
-	</p>
+	<!-- Categorie + beschikbaarheid -->
+	<div class="flex flex-wrap items-center gap-3">
+		<p class="text-sm font-semibold uppercase tracking-wide text-[var(--color-lilac-text)]">
+			{d.pages.menuItem.inCategory}: {category}
+		</p>
+		{#if item.availableDays.length}
+			<AvailabilityBadge {lang} days={item.availableDays} />
+		{/if}
+	</div>
 
 	<!-- Prijzen (zelfde stijl als op de menukaart) -->
 	<div class="mt-4 flex flex-wrap gap-x-4 gap-y-1 text-lg font-bold text-[var(--color-cta)]">

@@ -1,10 +1,12 @@
 <script lang="ts">
 	import Seo from '$lib/seo/Seo.svelte';
 	import OpenStatus from '$lib/components/OpenStatus.svelte';
+	import AvailabilityBadge from '$lib/components/AvailabilityBadge.svelte';
 	import { reveal } from '$lib/actions/reveal';
 	import { t, localizePath } from '$lib/i18n';
 	import { SITE } from '$lib/config';
 	import { getReviews, getRatings } from '$lib/reviews';
+	import { findMenuItem } from '$lib/menu';
 	import { food, menuHighlights, instaPlaceholders } from '$lib/assets/images';
 
 	let { data } = $props();
@@ -144,6 +146,14 @@
 							{lang === 'nl' ? item.nl : item.en}
 						</p>
 						<p class="mt-1 font-bold text-[var(--color-cta)]">{item.price}</p>
+						{#if (findMenuItem(item.slug)?.item.availableDays.length ?? 0) > 0}
+							<div class="mt-2">
+								<AvailabilityBadge
+									{lang}
+									days={findMenuItem(item.slug)?.item.availableDays ?? []}
+								/>
+							</div>
+						{/if}
 					</div>
 				</a>
 			</li>
