@@ -40,15 +40,16 @@ export const SITE = {
 		facebook: { rating: 4.9, count: 110 }
 	},
 
-	// Placeholder-openingstijden — echte tijden nog nodig van klant (PROJECT-BRIEF §10).
-	// Alleen "vanaf 13:30" is bevestigd.
+	// Openingstijden — bron: officiële menukaart PDF (juli 2026).
+	// Di t/m za 12:00–19:00, zo + ma gesloten. De keuken (gerechten & snacks)
+	// opent om 13:30. In vakantieperiodes gelden afwijkende tijden (CMS-melding).
 	openingHours: [
-		{ day: 'ma', open: '13:30', close: '19:00', closed: false },
-		{ day: 'di', open: '13:30', close: '19:00', closed: false },
-		{ day: 'wo', open: '13:30', close: '19:00', closed: false },
-		{ day: 'do', open: '13:30', close: '19:00', closed: false },
-		{ day: 'vr', open: '13:30', close: '19:00', closed: false },
-		{ day: 'za', open: '13:30', close: '19:00', closed: false },
-		{ day: 'zo', open: '13:30', close: '19:00', closed: true }
+		{ day: 'ma', open: '', close: '', closed: true },
+		{ day: 'di', open: '12:00', close: '19:00', closed: false },
+		{ day: 'wo', open: '12:00', close: '19:00', closed: false },
+		{ day: 'do', open: '12:00', close: '19:00', closed: false },
+		{ day: 'vr', open: '12:00', close: '19:00', closed: false },
+		{ day: 'za', open: '12:00', close: '19:00', closed: false },
+		{ day: 'zo', open: '', close: '', closed: true }
 	]
 } as const;

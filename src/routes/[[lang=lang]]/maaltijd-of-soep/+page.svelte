@@ -42,7 +42,7 @@
 			aria-label={d.home.playLabel}
 		>
 			<enhanced:img
-				src={food.warm}
+				src={food.heriHeri}
 				alt=""
 				class="aspect-video w-full object-cover"
 				sizes="(min-width: 1024px) 900px, 100vw"

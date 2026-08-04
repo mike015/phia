@@ -87,11 +87,33 @@ open/dicht-indicator niet kleur-only (ook tekst, `role="status"`), openingstijde
 toegankelijke tabel, alt-teksten. `npm run check` draait a11y-lint (0 warnings).
 **Nog te doen:** axe-core in CI (brief §8) — hoort bij de CI-stap van het stappenplan.
 
+## Menu & openingstijden (bron: officiële menukaart-PDF juli 2026)
+
+- **Volledig menu** in `src/lib/menu.ts` — alle categorieën, prijzen (normaal/speciaal,
+  klein/groot/XL), item-notities, "goed om te weten"-blok en allergenen. NL 1-op-1 van de
+  kaart; EN is een eerste vertaling, **te reviewen**. Gerenderd op `/menu` (+ `Menu`
+  structured data voor rich results).
+- **Downloadbare PDF** op de menu-pagina (`static/menu/phias-menu-juli-2026.pdf`). De owner
+  vervangt deze later via het CMS door een nieuwe editie.
+- **Echte openingstijden**: di–za 12:00–19:00, zo & ma gesloten, keuken vanaf 13:30,
+  afwijkend in vakantieperiodes — verwerkt in `config.ts`, de open/dicht-indicator, de
+  contact-tabel en de `Restaurant` JSON-LD.
+- **Echte foto's**: twee gerechtfoto's uit de PDF geëxtraheerd (`heri-heri` / `jarpesi
+moksi-alesie`) en in gebruik op home-hero, menu-cards, galerij en Instagram-grid.
+
+### Beeld- en menu-scrape van de oude site
+
+`scripts/scrape-site.mjs` haalt resterende beelden (logo hi-res, storefront, extra
+foodfoto's) en pagina-tekst van de oude WordPress-site. **Vereist netwerktoegang tot
+phiassmulparadijs.nl** — in de standaard web-sessie blokkeert de egress-policy alle hosts
+behalve package-registries, dus draai dit lokaal of in een omgeving met een ruimere
+netwerk-policy (`node scripts/scrape-site.mjs`).
+
 ## Bewust nog NIET gebouwd (volgt in stappenplan §9, vaak met kosten/akkoord van Mike)
 
 CMS (Sveltia), Cloudflare Workers (`/api/daily` YouTube-RSS, `/api/instagram`), reviews
-GitHub Action, cookie-consent + YouTube/Facebook-embeds, echte menu-scrape. Placeholders
-en aannames staan in `IMAGES-TODO.md` en de open punten in `PROJECT-BRIEF.md` §10.
+GitHub Action, cookie-consent + YouTube/Facebook-embeds. Placeholders en aannames staan in
+`IMAGES-TODO.md` en de open punten in `PROJECT-BRIEF.md` §10.
 
 ## Deploy (Cloudflare Pages)
 

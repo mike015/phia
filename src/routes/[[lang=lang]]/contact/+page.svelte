@@ -86,7 +86,8 @@
 					{/each}
 				</tbody>
 			</table>
-			<p class="mt-2 text-sm text-[var(--color-muted)]">* {d.status.from} {SITE.servingFrom}</p>
+			<p class="mt-2 text-sm text-[var(--color-muted)]">* {d.status.kitchen}</p>
+			<p class="mt-1 text-sm text-[var(--color-muted)]">{d.status.holiday}</p>
 		</div>
 	</div>
 

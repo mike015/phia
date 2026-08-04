@@ -10,3 +10,7 @@ node_modules/
 /.wrangler
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
+
+# scraper working dir (run scripts/scrape-site.mjs locally)
+/scrape/
+/static/scraped/

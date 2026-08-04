@@ -39,7 +39,9 @@ export function restaurantJsonLd(lang: Lang) {
 		servesCuisine: ['Surinaams', 'Creools', 'Surinamese', 'Caribbean'],
 		priceRange: '€€',
 		image: `${SITE.url}/og-image.jpg`,
+		hasMenu: `${SITE.url}/menu`,
 		hasMap: SITE.maps.url,
+		acceptsReservations: 'True',
 		address: {
 			'@type': 'PostalAddress',
 			streetAddress: SITE.address.street,
@@ -73,6 +75,28 @@ export function websiteJsonLd() {
 		url: SITE.url,
 		inLanguage: ['nl-NL', 'en-GB'],
 		publisher: { '@id': `${SITE.url}/#restaurant` }
+	};
+}
+
+/** schema.org Menu — koppelt het menu aan het restaurant voor rich results. */
+export function menuJsonLd(
+	lang: Lang,
+	sections: { name: string; items: { name: string; price?: string }[] }[]
+) {
+	return {
+		'@context': 'https://schema.org',
+		'@type': 'Menu',
+		name: lang === 'nl' ? "Menu — Phia's Smulparadijs" : "Menu — Phia's Smulparadijs",
+		inLanguage: lang === 'nl' ? 'nl-NL' : 'en-GB',
+		hasMenuSection: sections.map((s) => ({
+			'@type': 'MenuSection',
+			name: s.name,
+			hasMenuItem: s.items.map((i) => ({
+				'@type': 'MenuItem',
+				name: i.name,
+				...(i.price ? { offers: { '@type': 'Offer', price: i.price, priceCurrency: 'EUR' } } : {})
+			}))
+		}))
 	};
 }
 

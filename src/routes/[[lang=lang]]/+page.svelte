@@ -76,7 +76,7 @@
 					aria-label={d.home.playLabel}
 				>
 					<enhanced:img
-						src={food.warm}
+						src={food.heriHeri}
 						alt=""
 						class="aspect-[3/2] w-full object-cover"
 						sizes="(min-width: 1024px) 620px, 100vw"
@@ -159,7 +159,7 @@
 <!-- ============ Sfeer-band met review-quote ============ -->
 <section class="relative">
 	<enhanced:img
-		src={food.purple}
+		src={food.jarpesi}
 		alt=""
 		class="h-[320px] w-full object-cover sm:h-[380px]"
 		sizes="100vw"

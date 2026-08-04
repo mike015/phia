@@ -44,9 +44,8 @@
 		{state.label}
 	</p>
 {:else}
-	<!-- Server/prerender fallback: geen kleur-only, toont reguliere tijd -->
+	<!-- Server/prerender fallback: geen kleur-only, toont reguliere tijden -->
 	<p class={`inline-flex items-center gap-2 font-bold text-[var(--color-muted)] ${cls}`}>
-		{d.status.from}
-		{SITE.servingFrom}
+		{d.status.summary}
 	</p>
 {/if}

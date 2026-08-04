@@ -39,7 +39,10 @@ export const dict = {
 		status: {
 			openToday: 'Vandaag geopend',
 			closedToday: 'Vandaag gesloten',
-			from: 'vanaf'
+			from: 'vanaf',
+			summary: 'Di–za 12:00–19:00 · zo & ma gesloten',
+			kitchen: 'Keuken vanaf 13:30',
+			holiday: 'In vakantieperiodes gelden afwijkende openingstijden.'
 		},
 		home: {
 			kicker: 'Maaltijd of soep · vandaag',
@@ -66,10 +69,14 @@ export const dict = {
 		pages: {
 			menu: {
 				title: 'Menu',
-				lead: 'Het volledige menu van Phia’s Smulparadijs — verse Surinaams-Creoolse gerechten en snacks, elke dag beschikbaar vanaf 13:30.',
-				note: 'Prijzen en beschikbaarheid kunnen wijzigen. Bellen kan altijd via 070-7851813.',
-				categoriesTodo:
-					'De exacte menustructuur en prijzen worden nog bevestigd. Onderstaande categorieën zijn een voorbeeldindeling.'
+				lead: 'Het volledige menu van Phia’s Smulparadijs — verse Surinaams-Creoolse gerechten, broodjes, snacks en soepen. Prijzen van de kaart, editie juli 2026.',
+				note: 'Prijzen en beschikbaarheid kunnen wijzigen; drukfouten voorbehouden. Bellen en bestellen via 070-7851813 — wij bezorgen niet, je haalt zelf af.',
+				downloadPdf: 'Download de menukaart (PDF)',
+				downloadHint: 'De volledige kaart als PDF',
+				notesHeading: 'Goed om te weten',
+				allergensHeading: 'Allergenen',
+				examplesHeading: 'Voorbeelden van maaltijden & soepen',
+				badges: { halal: 'Halal', nietHalal: 'Niet halal', vega: 'Vegetarisch' }
 			},
 			about: {
 				title: 'Over ons',
@@ -132,7 +139,10 @@ export const dict = {
 		status: {
 			openToday: 'Open today',
 			closedToday: 'Closed today',
-			from: 'from'
+			from: 'from',
+			summary: 'Tue–Sat 12:00–19:00 · closed Sun & Mon',
+			kitchen: 'Kitchen from 13:30',
+			holiday: 'During holiday periods opening hours may differ.'
 		},
 		home: {
 			kicker: 'Meal or soup · today',
@@ -159,10 +169,14 @@ export const dict = {
 		pages: {
 			menu: {
 				title: 'Menu',
-				lead: 'The full menu of Phia’s Smulparadijs — fresh Surinamese-Creole dishes and snacks, available daily from 13:30.',
-				note: 'Prices and availability may change. You can always call us on 070-7851813.',
-				categoriesTodo:
-					'The exact menu structure and prices are still being confirmed. The categories below are an example layout.'
+				lead: 'The full menu of Phia’s Smulparadijs — fresh Surinamese-Creole dishes, sandwiches, snacks and soups. Prices from the July 2026 edition.',
+				note: 'Prices and availability may change; errors excepted. Call to order on 070-7851813 — we do not deliver, you collect yourself.',
+				downloadPdf: 'Download the menu (PDF)',
+				downloadHint: 'The full menu as a PDF',
+				notesHeading: 'Good to know',
+				allergensHeading: 'Allergens',
+				examplesHeading: 'Examples of meals & soups',
+				badges: { halal: 'Halal', nietHalal: 'Not halal', vega: 'Vegetarian' }
 			},
 			about: {
 				title: 'About us',

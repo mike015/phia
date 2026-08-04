@@ -19,6 +19,18 @@ Bij elke nieuwe placeholder tijdens de build: hier toevoegen.
 | static/icon-180/192/512.png | apple-touch-icon + PWA-manifest                                                   | PNG-iconen uit origineel logo                                 |
 | src/lib/assets/ph-*.jpg     | hero-video-thumbnail, menukaarten, sfeer-band, galerij, insta-grid, video-archief | echte food-/sfeerfoto's en echte YouTube-thumbnails           |
 
-**Let op:** menu-highlights, voorbeeldreviews en de menustructuur op /menu zijn
-placeholder-content (`src/lib/assets/images.ts`, home + menu-pagina). Vervangen zodra
-de echte menustructuur/prijzen (§9) en de reviews-Action (§5.3) live zijn.
+## ECHTE beelden — geëxtraheerd uit de officiële menukaart-PDF (juli 2026)
+
+| Bestand                                   | Gebruikt op                                                     | Status                                                                                                                  |
+| ----------------------------------------- | --------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
+| src/lib/assets/heri-heri-moksi-alesie.jpg | home-hero-thumbnail, menukaart 1, maaltijd-hero, insta, galerij | ✅ echt (Phia's eigen foto uit de kaart). Wél tekst-overlay + bedrijfskaartje in beeld — evt. later schonere studiofoto |
+| src/lib/assets/jarpesi-moksi-alesie.jpg   | sfeer-band, menukaart 2, insta, galerij                         | ✅ echt (idem)                                                                                                          |
+
+**Nog steeds placeholder:** `src/lib/assets/ph-*.jpg` (menukaart 3–4, galerij, insta-vulling)
+en het logo. Vervangen door echte foto's/logo van de klant.
+
+**Menu:** de menustructuur en prijzen op /menu komen nu 1-op-1 uit de officiële
+PDF (`src/lib/menu.ts`, `static/menu/phias-menu-juli-2026.pdf`) — GEEN placeholder meer.
+De owner kan later via het CMS de PDF vervangen door een nieuwe editie.
+
+**Reviews** op de home zijn nog voorbeeld-content tot de reviews-Action (§5.3) live is.
