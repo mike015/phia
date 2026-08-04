@@ -6,6 +6,7 @@
 		"about": "Over ons",
 		"dish": "Maaltijd of Soep",
 		"photos": "Foto's",
+		"news": "Nieuws",
 		"contact": "Contact",
 		"callCta": "Bel & bestel",
 		"skip": "Direct naar de inhoud",
@@ -86,6 +87,17 @@
 			"hoursLabel": "Openingstijden",
 			"mapTitle": "Kaart — Phia’s Smulparadijs, Bouwlustlaan 111, Den Haag",
 			"route": "Route in Google Maps"
+		},
+		"news": {
+			"title": "Nieuws",
+			"lead": "Het laatste nieuws van Phia's Smulparadijs.",
+			"empty": "Er is nog geen nieuws."
+		},
+		"menuItem": {
+			"back": "Terug naar het menu",
+			"order": "Bel om te bestellen",
+			"viewPost": "Bekijk op social media",
+			"inCategory": "In categorie"
 		}
 	},
 	"footer": {
@@ -104,5 +116,11 @@
 		"za": "Zaterdag",
 		"zo": "Zondag"
 	},
-	"closed": "Gesloten"
+	"closed": "Gesloten",
+	"consent": {
+		"title": "Even over cookies 🍪",
+		"text": "Wij gebruiken alleen functionele cookies om de site te laten werken. We sluiten geen social media in — we linken je door. Kom je smullen?",
+		"accept": "Oké, lekker!",
+		"close": "Sluiten"
+	}
 }

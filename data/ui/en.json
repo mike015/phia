@@ -6,6 +6,7 @@
 		"about": "About us",
 		"dish": "Meal or Soup",
 		"photos": "Photos",
+		"news": "News",
 		"contact": "Contact",
 		"callCta": "Call & order",
 		"skip": "Skip to content",
@@ -86,6 +87,17 @@
 			"hoursLabel": "Opening hours",
 			"mapTitle": "Map — Phia’s Smulparadijs, Bouwlustlaan 111, The Hague",
 			"route": "Directions in Google Maps"
+		},
+		"news": {
+			"title": "News",
+			"lead": "The latest news from Phia's Smulparadijs.",
+			"empty": "There is no news yet."
+		},
+		"menuItem": {
+			"back": "Back to the menu",
+			"order": "Call to order",
+			"viewPost": "View on social media",
+			"inCategory": "In category"
 		}
 	},
 	"footer": {
@@ -104,5 +116,11 @@
 		"za": "Saturday",
 		"zo": "Sunday"
 	},
-	"closed": "Closed"
+	"closed": "Closed",
+	"consent": {
+		"title": "A quick word about cookies 🍪",
+		"text": "We only use functional cookies to make the site work. We don't embed any social media — we link you through instead. Coming to feast?",
+		"accept": "Sounds good!",
+		"close": "Close"
+	}
 }

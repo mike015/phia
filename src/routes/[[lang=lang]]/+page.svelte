@@ -4,30 +4,16 @@
 	import { reveal } from '$lib/actions/reveal';
 	import { t, localizePath } from '$lib/i18n';
 	import { SITE } from '$lib/config';
+	import { getReviews, getRatings } from '$lib/reviews';
 	import { food, menuHighlights, instaPlaceholders } from '$lib/assets/images';
 
 	let { data } = $props();
 	const d = $derived(t(data.lang));
 	const lang = $derived(data.lang);
 
-	// Voorbeeldreviews — echte reviews komen via dagelijkse GitHub Action (§5.3).
-	const reviews = [
-		{
-			quote: 'The food is delicious, rich in flavour, and freshly prepared daily with real care.',
-			who: 'Nils',
-			src: 'Google'
-		},
-		{
-			quote: 'Heerlijk, eerlijk authentiek Surinaams eten. Dit echtpaar kookt met liefde.',
-			who: 'Peter',
-			src: 'Facebook'
-		},
-		{
-			quote: 'Grote porties voor een zeer goede prijs. Wij komen zeker terug!',
-			who: 'Lucy',
-			src: 'Facebook'
-		}
-	];
+	// Echte reviews komen via de dagelijkse GitHub Action (§5.3); toon er max 3.
+	const reviews = getReviews(3);
+	const ratings = getRatings();
 </script>
 
 <Seo seo={data.seo} />
@@ -197,9 +183,9 @@
 	<div class="text-center" use:reveal>
 		<h2 class="text-3xl text-[var(--color-ink)] sm:text-4xl">{d.home.reviewsHeading}</h2>
 		<p class="mt-3 text-[var(--color-muted)]">
-			<b class="text-[var(--color-cta)]">★ {SITE.reviews.google.rating}</b>
+			<b class="text-[var(--color-cta)]">★ {ratings.google.rating}</b>
 			{d.home.onGoogle} ·
-			<b class="text-[var(--color-cta)]">★ {SITE.reviews.facebook.rating}</b>
+			<b class="text-[var(--color-cta)]">★ {ratings.facebook.rating}</b>
 			{d.home.onFacebook}
 		</p>
 	</div>

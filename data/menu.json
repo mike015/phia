@@ -17,6 +17,7 @@
 					"note_nl": "",
 					"note_en": "",
 					"image": "",
+					"link": "",
 					"prices": [
 						{ "label_nl": "Normaal", "label_en": "Regular", "value": "€ 12,00" },
 						{ "label_nl": "Speciaal", "label_en": "Special", "value": "€ 14,50" }
@@ -28,6 +29,7 @@
 					"note_nl": "",
 					"note_en": "",
 					"image": "",
+					"link": "",
 					"prices": [
 						{ "label_nl": "Normaal", "label_en": "Regular", "value": "€ 13,00" },
 						{ "label_nl": "Speciaal", "label_en": "Special", "value": "€ 15,50" }
@@ -39,6 +41,7 @@
 					"note_nl": "",
 					"note_en": "",
 					"image": "",
+					"link": "",
 					"prices": [
 						{ "label_nl": "Normaal", "label_en": "Regular", "value": "€ 15,50" },
 						{ "label_nl": "Speciaal", "label_en": "Special", "value": "€ 17,50" }
@@ -50,6 +53,7 @@
 					"note_nl": "",
 					"note_en": "",
 					"image": "",
+					"link": "",
 					"prices": [
 						{ "label_nl": "Normaal", "label_en": "Regular", "value": "€ 16,00" },
 						{ "label_nl": "Speciaal", "label_en": "Special", "value": "€ 18,00" }
@@ -61,6 +65,7 @@
 					"note_nl": "",
 					"note_en": "",
 					"image": "",
+					"link": "",
 					"prices": [
 						{ "label_nl": "Normaal", "label_en": "Regular", "value": "€ 11,00" },
 						{ "label_nl": "Speciaal", "label_en": "Special", "value": "€ 12,00" }
@@ -72,6 +77,7 @@
 					"note_nl": "",
 					"note_en": "",
 					"image": "",
+					"link": "",
 					"prices": [
 						{ "label_nl": "Normaal", "label_en": "Regular", "value": "€ 13,00" },
 						{ "label_nl": "Speciaal", "label_en": "Special", "value": "€ 15,00" }
@@ -83,6 +89,7 @@
 					"note_nl": "",
 					"note_en": "",
 					"image": "",
+					"link": "",
 					"prices": [
 						{ "label_nl": "Normaal", "label_en": "Regular", "value": "€ 14,00" },
 						{ "label_nl": "Speciaal", "label_en": "Special", "value": "€ 16,00" }
@@ -94,6 +101,7 @@
 					"note_nl": "",
 					"note_en": "",
 					"image": "",
+					"link": "",
 					"prices": [
 						{ "label_nl": "Normaal", "label_en": "Regular", "value": "€ 12,50" },
 						{ "label_nl": "Speciaal", "label_en": "Special", "value": "€ 13,50" }
@@ -105,6 +113,7 @@
 					"note_nl": "",
 					"note_en": "",
 					"image": "",
+					"link": "",
 					"prices": [
 						{ "label_nl": "Normaal", "label_en": "Regular", "value": "€ 15,00" },
 						{ "label_nl": "Speciaal", "label_en": "Special", "value": "€ 17,50" }
@@ -116,6 +125,7 @@
 					"note_nl": "",
 					"note_en": "",
 					"image": "",
+					"link": "",
 					"prices": [
 						{ "label_nl": "Normaal", "label_en": "Regular", "value": "€ 11,50" },
 						{ "label_nl": "Speciaal", "label_en": "Special", "value": "€ 12,50" }
@@ -127,6 +137,7 @@
 					"note_nl": "Kipfilet in ketjap, aardappelen, kousenband en spitskool.",
 					"note_en": "Chicken fillet in ketjap, potatoes, long beans and pointed cabbage.",
 					"image": "",
+					"link": "",
 					"prices": [
 						{ "label_nl": "Normaal", "label_en": "Regular", "value": "€ 14,50" },
 						{ "label_nl": "Speciaal", "label_en": "Special", "value": "€ 16,50" }
@@ -138,6 +149,7 @@
 					"note_nl": "Kipfilet in ketjap, aardappelen, kousenband en spitskool.",
 					"note_en": "Chicken fillet in ketjap, potatoes, long beans and pointed cabbage.",
 					"image": "",
+					"link": "",
 					"prices": [
 						{ "label_nl": "Normaal", "label_en": "Regular", "value": "€ 15,00" },
 						{ "label_nl": "Speciaal", "label_en": "Special", "value": "€ 17,00" }
@@ -159,6 +171,7 @@
 					"note_nl": "",
 					"note_en": "",
 					"image": "",
+					"link": "",
 					"prices": [{ "label_nl": "vanaf", "label_en": "from", "value": "€ 10,50" }]
 				},
 				{
@@ -167,6 +180,7 @@
 					"note_nl": "",
 					"note_en": "",
 					"image": "",
+					"link": "",
 					"prices": [{ "label_nl": "vanaf", "label_en": "from", "value": "€ 17,50" }]
 				}
 			]
@@ -185,6 +199,7 @@
 					"note_nl": "",
 					"note_en": "",
 					"image": "",
+					"link": "",
 					"prices": [
 						{ "label_nl": "enkel", "label_en": "single", "value": "€ 3,75" },
 						{ "label_nl": "dubbel", "label_en": "double", "value": "€ 4,75" }
@@ -196,6 +211,7 @@
 					"note_nl": "",
 					"note_en": "",
 					"image": "",
+					"link": "",
 					"prices": [{ "label_nl": "", "label_en": "", "value": "€ 4,75" }]
 				},
 				{
@@ -204,6 +220,7 @@
 					"note_nl": "",
 					"note_en": "",
 					"image": "",
+					"link": "",
 					"prices": [{ "label_nl": "", "label_en": "", "value": "€ 4,75" }]
 				},
 				{
@@ -212,6 +229,7 @@
 					"note_nl": "",
 					"note_en": "",
 					"image": "",
+					"link": "",
 					"prices": [{ "label_nl": "", "label_en": "", "value": "€ 4,75" }]
 				},
 				{
@@ -220,6 +238,7 @@
 					"note_nl": "Let op: echt heet!",
 					"note_en": "Warning: really hot!",
 					"image": "",
+					"link": "",
 					"prices": [{ "label_nl": "", "label_en": "", "value": "€ 4,75" }]
 				},
 				{
@@ -228,6 +247,7 @@
 					"note_nl": "",
 					"note_en": "",
 					"image": "",
+					"link": "",
 					"prices": [{ "label_nl": "", "label_en": "", "value": "€ 5,00" }]
 				},
 				{
@@ -236,6 +256,7 @@
 					"note_nl": "",
 					"note_en": "",
 					"image": "",
+					"link": "",
 					"prices": [{ "label_nl": "", "label_en": "", "value": "€ 5,00" }]
 				},
 				{
@@ -244,6 +265,7 @@
 					"note_nl": "",
 					"note_en": "",
 					"image": "",
+					"link": "",
 					"prices": [{ "label_nl": "", "label_en": "", "value": "€ 5,00" }]
 				},
 				{
@@ -252,6 +274,7 @@
 					"note_nl": "",
 					"note_en": "",
 					"image": "",
+					"link": "",
 					"prices": [{ "label_nl": "", "label_en": "", "value": "€ 5,00" }]
 				},
 				{
@@ -260,6 +283,7 @@
 					"note_nl": "",
 					"note_en": "",
 					"image": "",
+					"link": "",
 					"prices": [{ "label_nl": "", "label_en": "", "value": "€ 5,00" }]
 				},
 				{
@@ -268,6 +292,7 @@
 					"note_nl": "",
 					"note_en": "",
 					"image": "",
+					"link": "",
 					"prices": [{ "label_nl": "", "label_en": "", "value": "€ 5,00" }]
 				},
 				{
@@ -276,6 +301,7 @@
 					"note_nl": "",
 					"note_en": "",
 					"image": "",
+					"link": "",
 					"prices": [{ "label_nl": "", "label_en": "", "value": "€ 5,00" }]
 				},
 				{
@@ -284,6 +310,7 @@
 					"note_nl": "",
 					"note_en": "",
 					"image": "",
+					"link": "",
 					"prices": [{ "label_nl": "v.a.", "label_en": "from", "value": "€ 5,50" }]
 				}
 			]
@@ -302,6 +329,7 @@
 					"note_nl": "",
 					"note_en": "",
 					"image": "",
+					"link": "",
 					"prices": [{ "label_nl": "", "label_en": "", "value": "€ 5,00" }]
 				},
 				{
@@ -310,6 +338,7 @@
 					"note_nl": "",
 					"note_en": "",
 					"image": "",
+					"link": "",
 					"prices": [{ "label_nl": "", "label_en": "", "value": "€ 5,00" }]
 				},
 				{
@@ -318,6 +347,7 @@
 					"note_nl": "",
 					"note_en": "",
 					"image": "",
+					"link": "",
 					"prices": [{ "label_nl": "", "label_en": "", "value": "€ 5,00" }]
 				},
 				{
@@ -326,6 +356,7 @@
 					"note_nl": "",
 					"note_en": "",
 					"image": "",
+					"link": "",
 					"prices": [{ "label_nl": "", "label_en": "", "value": "€ 5,00" }]
 				}
 			]
@@ -344,6 +375,7 @@
 					"note_nl": "",
 					"note_en": "",
 					"image": "",
+					"link": "",
 					"prices": [{ "label_nl": "", "label_en": "", "value": "€ 4,75" }]
 				},
 				{
@@ -352,6 +384,7 @@
 					"note_nl": "",
 					"note_en": "",
 					"image": "",
+					"link": "",
 					"prices": [{ "label_nl": "", "label_en": "", "value": "€ 4,75" }]
 				},
 				{
@@ -360,6 +393,7 @@
 					"note_nl": "",
 					"note_en": "",
 					"image": "",
+					"link": "",
 					"prices": [{ "label_nl": "", "label_en": "", "value": "€ 4,75" }]
 				}
 			]
@@ -378,6 +412,7 @@
 					"note_nl": "Elke vrijdag verkrijgbaar.",
 					"note_en": "Available every Friday.",
 					"image": "",
+					"link": "",
 					"prices": [{ "label_nl": "", "label_en": "", "value": "€ 3,50" }]
 				},
 				{
@@ -386,6 +421,7 @@
 					"note_nl": "Elke vrijdag verkrijgbaar.",
 					"note_en": "Available every Friday.",
 					"image": "",
+					"link": "",
 					"prices": [{ "label_nl": "v.a.", "label_en": "from", "value": "€ 5,50" }]
 				},
 				{
@@ -394,6 +430,7 @@
 					"note_nl": "",
 					"note_en": "",
 					"image": "",
+					"link": "",
 					"prices": [{ "label_nl": "", "label_en": "", "value": "€ 4,50" }]
 				},
 				{
@@ -402,6 +439,7 @@
 					"note_nl": "",
 					"note_en": "",
 					"image": "",
+					"link": "",
 					"prices": [{ "label_nl": "", "label_en": "", "value": "€ 4,50" }]
 				},
 				{
@@ -410,6 +448,7 @@
 					"note_nl": "",
 					"note_en": "",
 					"image": "",
+					"link": "",
 					"prices": [{ "label_nl": "", "label_en": "", "value": "€ 7,00" }]
 				},
 				{
@@ -418,6 +457,7 @@
 					"note_nl": "",
 					"note_en": "",
 					"image": "",
+					"link": "",
 					"prices": [{ "label_nl": "", "label_en": "", "value": "€ 7,50" }]
 				}
 			]
@@ -436,6 +476,7 @@
 					"note_nl": "",
 					"note_en": "",
 					"image": "",
+					"link": "",
 					"prices": [{ "label_nl": "", "label_en": "", "value": "€ 12,00" }]
 				},
 				{
@@ -444,6 +485,7 @@
 					"note_nl": "",
 					"note_en": "",
 					"image": "",
+					"link": "",
 					"prices": [{ "label_nl": "", "label_en": "", "value": "€ 12,00" }]
 				},
 				{
@@ -452,6 +494,7 @@
 					"note_nl": "",
 					"note_en": "",
 					"image": "",
+					"link": "",
 					"prices": [{ "label_nl": "", "label_en": "", "value": "€ 13,00" }]
 				}
 			]
@@ -470,6 +513,7 @@
 					"note_nl": "",
 					"note_en": "",
 					"image": "",
+					"link": "",
 					"prices": [{ "label_nl": "", "label_en": "", "value": "€ 3,25" }]
 				},
 				{
@@ -478,6 +522,7 @@
 					"note_nl": "Varkensvlees.",
 					"note_en": "Pork.",
 					"image": "",
+					"link": "",
 					"prices": [{ "label_nl": "", "label_en": "", "value": "€ 3,75" }]
 				},
 				{
@@ -486,6 +531,7 @@
 					"note_nl": "Niet halal.",
 					"note_en": "Not halal.",
 					"image": "",
+					"link": "",
 					"prices": [{ "label_nl": "", "label_en": "", "value": "€ 4,00" }]
 				},
 				{
@@ -494,6 +540,7 @@
 					"note_nl": "",
 					"note_en": "",
 					"image": "",
+					"link": "",
 					"prices": [{ "label_nl": "", "label_en": "", "value": "€ 4,50" }]
 				},
 				{
@@ -502,6 +549,7 @@
 					"note_nl": "",
 					"note_en": "",
 					"image": "",
+					"link": "",
 					"prices": [{ "label_nl": "", "label_en": "", "value": "€ 6,75" }]
 				},
 				{
@@ -510,6 +558,7 @@
 					"note_nl": "",
 					"note_en": "",
 					"image": "",
+					"link": "",
 					"prices": [{ "label_nl": "", "label_en": "", "value": "€ 7,00" }]
 				},
 				{
@@ -518,6 +567,7 @@
 					"note_nl": "",
 					"note_en": "",
 					"image": "",
+					"link": "",
 					"prices": [
 						{ "label_nl": "Klein", "label_en": "Small", "value": "€ 7,50" },
 						{ "label_nl": "Groot", "label_en": "Large", "value": "€ 11,00" }
@@ -529,6 +579,7 @@
 					"note_nl": "Alleen op woensdag, vrijdag en zaterdag.",
 					"note_en": "Only on Wednesday, Friday and Saturday.",
 					"image": "",
+					"link": "",
 					"prices": [{ "label_nl": "", "label_en": "", "value": "€ 9,00" }]
 				},
 				{
@@ -537,6 +588,7 @@
 					"note_nl": "",
 					"note_en": "",
 					"image": "",
+					"link": "",
 					"prices": [
 						{ "label_nl": "Klein", "label_en": "Small", "value": "€ 7,50" },
 						{ "label_nl": "Groot", "label_en": "Large", "value": "€ 11,00" },
@@ -549,6 +601,7 @@
 					"note_nl": "",
 					"note_en": "",
 					"image": "",
+					"link": "",
 					"prices": [
 						{ "label_nl": "Klein", "label_en": "Small", "value": "€ 8,00" },
 						{ "label_nl": "Groot", "label_en": "Large", "value": "€ 12,00" },
@@ -561,6 +614,7 @@
 					"note_nl": "",
 					"note_en": "",
 					"image": "",
+					"link": "",
 					"prices": [{ "label_nl": "", "label_en": "", "value": "€ 17,50" }]
 				}
 			]
@@ -579,6 +633,7 @@
 					"note_nl": "",
 					"note_en": "",
 					"image": "",
+					"link": "",
 					"prices": [{ "label_nl": "", "label_en": "", "value": "€ 1,25" }]
 				},
 				{
@@ -587,6 +642,7 @@
 					"note_nl": "",
 					"note_en": "",
 					"image": "",
+					"link": "",
 					"prices": [{ "label_nl": "", "label_en": "", "value": "€ 1,50" }]
 				},
 				{
@@ -595,6 +651,7 @@
 					"note_nl": "",
 					"note_en": "",
 					"image": "",
+					"link": "",
 					"prices": [{ "label_nl": "", "label_en": "", "value": "€ 2,25" }]
 				},
 				{
@@ -603,6 +660,7 @@
 					"note_nl": "",
 					"note_en": "",
 					"image": "",
+					"link": "",
 					"prices": [{ "label_nl": "", "label_en": "", "value": "€ 3,00" }]
 				},
 				{
@@ -611,6 +669,7 @@
 					"note_nl": "Indien voorradig, bv. pom, kip kerrie of maagjes en levertjes.",
 					"note_en": "If in stock, e.g. pom, chicken curry or gizzards and livers.",
 					"image": "",
+					"link": "",
 					"prices": [{ "label_nl": "v.a.", "label_en": "from", "value": "€ 5,25" }]
 				}
 			]
@@ -629,6 +688,7 @@
 					"note_nl": "",
 					"note_en": "",
 					"image": "",
+					"link": "",
 					"prices": [{ "label_nl": "v.a.", "label_en": "from", "value": "€ 1,50" }]
 				},
 				{
@@ -637,6 +697,7 @@
 					"note_nl": "Indien voorradig.",
 					"note_en": "If in stock.",
 					"image": "",
+					"link": "",
 					"prices": [{ "label_nl": "", "label_en": "", "value": "€ 3,75" }]
 				}
 			]
@@ -655,6 +716,7 @@
 					"note_nl": "",
 					"note_en": "",
 					"image": "",
+					"link": "",
 					"prices": [{ "label_nl": "v.a.", "label_en": "from", "value": "€ 4,75" }]
 				}
 			]

@@ -29,6 +29,7 @@
 		{ href: localizePath(lang, '/over-ons'), label: d.nav.about },
 		{ href: localizePath(lang, '/maaltijd-of-soep'), label: d.nav.dish },
 		{ href: localizePath(lang, '/fotos'), label: d.nav.photos },
+		{ href: localizePath(lang, '/nieuws'), label: d.nav.news },
 		{ href: localizePath(lang, '/contact'), label: d.nav.contact }
 	]);
 

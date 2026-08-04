@@ -1,0 +1,26 @@
+{
+	"source": "google",
+	"rating": 4.8,
+	"count": 294,
+	"updated": "",
+	"reviews": [
+		{
+			"author": "Nils",
+			"rating": 5,
+			"text": "The food is delicious, rich in flavour, and freshly prepared daily with real care.",
+			"time": ""
+		},
+		{
+			"author": "Peter",
+			"rating": 5,
+			"text": "Heerlijk, eerlijk authentiek Surinaams eten. Dit echtpaar kookt met liefde.",
+			"time": ""
+		},
+		{
+			"author": "Lucy",
+			"rating": 5,
+			"text": "Grote porties voor een zeer goede prijs. Wij komen zeker terug!",
+			"time": ""
+		}
+	]
+}

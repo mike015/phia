@@ -11,13 +11,19 @@
 		ALLERGENS,
 		MAALTIJD_EXAMPLES,
 		MENU_PDF,
-		type MenuCategory
+		menuItemsFlat,
+		type MenuCategory,
+		type MenuItem
 	} from '$lib/menu';
 
 	let { data } = $props();
 	const d = $derived(t(data.lang));
 	const lang = $derived(data.lang);
 	const isNl = $derived(lang === 'nl');
+
+	// Slug per gerecht — via object-identiteit, dus botsende namen blijven uniek.
+	const slugByItem = new Map<MenuItem, string>(menuItemsFlat().map((e) => [e.item, e.slug]));
+	const itemHref = (item: MenuItem) => localizePath(lang, `/menu/${slugByItem.get(item)}`);
 
 	const badgeLabel = (b: MenuCategory['badge']) =>
 		b === 'halal'
@@ -111,7 +117,12 @@
 							class="-mx-2 flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 rounded-lg px-2 py-3 transition-colors hover:bg-[var(--color-lilac-surface)]"
 						>
 							<span class="min-w-0">
-								<span class="text-[var(--color-ink)]">{isNl ? item.nl : item.en}</span>
+								<a
+									class="text-[var(--color-ink)] underline-offset-2 hover:text-[var(--color-plum)] hover:underline"
+									href={itemHref(item)}
+								>
+									{isNl ? item.nl : item.en}
+								</a>
 								{#if item.note_nl}
 									<span class="block text-sm text-[var(--color-muted)]"
 										>{isNl ? item.note_nl : item.note_en}</span

@@ -1,6 +1,7 @@
 <script lang="ts">
 	import Header from '$lib/components/Header.svelte';
 	import Footer from '$lib/components/Footer.svelte';
+	import ConsentBanner from '$lib/components/ConsentBanner.svelte';
 	import JsonLd from '$lib/seo/JsonLd.svelte';
 	import { restaurantJsonLd, websiteJsonLd } from '$lib/seo/jsonld';
 	import { t } from '$lib/i18n';
@@ -21,3 +22,5 @@
 </main>
 
 <Footer lang={data.lang} />
+
+<ConsentBanner lang={data.lang} />

@@ -1346,6 +1346,13 @@ collections:
                     widget: image
                     required: false
                     hint: Optionele foto van het gerecht.
+                  - name: link
+                    label: Social-medialink
+                    widget: string
+                    required: false
+                    hint: >-
+                      Optionele link naar een bericht over dit gerecht op
+                      Instagram, YouTube of Facebook. Laat leeg als er geen is.
                   - name: prices
                     label: Prijzen
                     widget: list

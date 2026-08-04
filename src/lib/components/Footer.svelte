@@ -64,6 +64,11 @@
 					>
 				</li>
 				<li>
+					<a class="underline-offset-2 hover:underline" href={localizePath(lang, '/nieuws')}
+						>{d.nav.news}</a
+					>
+				</li>
+				<li>
 					<a class="underline-offset-2 hover:underline" href={localizePath(lang, '/contact')}
 						>{d.nav.contact}</a
 					>

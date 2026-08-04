@@ -21,6 +21,8 @@ export type MenuItem = {
 	note_nl?: string;
 	note_en?: string;
 	image?: string;
+	/** Optionele link naar een social-mediabericht over dit gerecht. */
+	link?: string;
 };
 
 export type MenuCategory = {
@@ -49,6 +51,7 @@ export const MENU: MenuCategory[] = menuData.categories.map((cat) => ({
 		note_nl: blank(item.note_nl),
 		note_en: blank(item.note_en),
 		image: blank(item.image),
+		link: blank(item.link),
 		prices: item.prices.map((p) => ({
 			label_nl: blank(p.label_nl),
 			label_en: blank(p.label_en),
@@ -77,3 +80,59 @@ export const MENU_PDF: { href: string; edition_nl: string; edition_en: string } 
 	edition_nl: menuData.edition_nl,
 	edition_en: menuData.edition_en
 };
+
+/**
+ * URL-vriendelijke slug: kleine letters, accenten weg, niet-alfanumeriek → '-',
+ * meerdere streepjes samengevouwen en randstreepjes verwijderd.
+ */
+export function slugify(s: string): string {
+	return s
+		.normalize('NFD')
+		.replace(/[̀-ͯ]/g, '') // diakritische tekens strippen (é → e)
+		.toLowerCase()
+		.replace(/[^a-z0-9]+/g, '-')
+		.replace(/-{2,}/g, '-')
+		.replace(/^-+|-+$/g, '');
+}
+
+/** Eén platgeslagen gerecht met zijn unieke slug en categorie-context. */
+export type MenuItemFlat = {
+	slug: string;
+	categoryId: string;
+	categoryNl: string;
+	categoryEn: string;
+	item: MenuItem;
+};
+
+/**
+ * Alle gerechten uit alle categorieën platgeslagen, elk met een UNIEKE slug.
+ * Botsingen (zelfde slug) krijgen deterministisch '-2', '-3', … in leesvolgorde.
+ * De `item`-referenties zijn identiek aan die in `MENU` (handig voor lookups).
+ */
+export function menuItemsFlat(): MenuItemFlat[] {
+	const out: MenuItemFlat[] = [];
+	const seen = new Map<string, number>();
+	for (const cat of MENU) {
+		for (const item of cat.items) {
+			const base = slugify(item.nl);
+			const n = (seen.get(base) ?? 0) + 1;
+			seen.set(base, n);
+			out.push({
+				slug: n === 1 ? base : `${base}-${n}`,
+				categoryId: cat.id,
+				categoryNl: cat.nl,
+				categoryEn: cat.en,
+				item
+			});
+		}
+	}
+	return out;
+}
+
+/** Vooraf berekende, stabiele lijst (menu is statisch tijdens build/runtime). */
+const MENU_FLAT: MenuItemFlat[] = menuItemsFlat();
+
+/** Zoek een platgeslagen gerecht op zijn slug; `undefined` als het niet bestaat. */
+export function findMenuItem(slug: string): MenuItemFlat | undefined {
+	return MENU_FLAT.find((e) => e.slug === slug);
+}

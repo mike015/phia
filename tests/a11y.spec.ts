@@ -14,15 +14,19 @@ import { test, expect } from '@playwright/test';
 const paths = [
 	'/',
 	'/menu',
+	'/menu/saoto-soep',
 	'/over-ons',
 	'/maaltijd-of-soep',
 	'/fotos',
+	'/nieuws',
 	'/contact',
 	'/en',
 	'/en/menu',
+	'/en/menu/saoto-soep',
 	'/en/over-ons',
 	'/en/maaltijd-of-soep',
 	'/en/fotos',
+	'/en/nieuws',
 	'/en/contact'
 ];
 
