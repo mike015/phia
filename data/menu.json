@@ -1,6 +1,6 @@
 {
-	"edition_nl": "Menukaart — editie juli 2026",
-	"edition_en": "Menu — July 2026 edition",
+	"edition_nl": "Menukaart, editie juli 2026",
+	"edition_en": "Menu, July 2026 edition",
 	"pdf": "/menu/phias-menu-juli-2026.pdf",
 	"categories": [
 		{
@@ -259,7 +259,7 @@
 			"en": "Phia's Soup & Meal",
 			"badge": "",
 			"note_nl": "Soep & maaltijd: elke dinsdag, donderdag en zaterdag. Maaltijden: elke woensdag en vrijdag. Is Phia’s soep of maaltijd bij jou al bekend? Zorg dan dat jij de 1e met reserveren bent!",
-			"note_en": "Soup & meal: every Tuesday, Thursday and Saturday. Meals: every Wednesday and Friday. Reserve early — these sell out!",
+			"note_en": "Soup & meal: every Tuesday, Thursday and Saturday. Meals: every Wednesday and Friday. Reserve early, these sell out!",
 			"items": [
 				{
 					"nl": "Phia's soepen",
@@ -575,8 +575,8 @@
 		},
 		{
 			"id": "vega-broodjes",
-			"nl": "Vegetarisch — Broodjes",
-			"en": "Vegetarian — Sandwiches",
+			"nl": "Vegetarische broodjes",
+			"en": "Vegetarian sandwiches",
 			"badge": "vega",
 			"note_nl": "Voor onze vegetarische gerechten gebruiken wij geen vleesvervangers.",
 			"note_en": "We use no meat substitutes for our vegetarian dishes.",
@@ -630,8 +630,8 @@
 		},
 		{
 			"id": "vega-snacks",
-			"nl": "Vegetarisch — Snacks",
-			"en": "Vegetarian — Snacks",
+			"nl": "Vegetarische snacks",
+			"en": "Vegetarian snacks",
 			"badge": "vega",
 			"note_nl": "",
 			"note_en": "",
@@ -1142,7 +1142,7 @@
 		"Nasi of Bami wordt standaard geserveerd met kousenband, kip met bot of kipfilet, zuurgoed en sambal apart.",
 		"Roti wordt standaard geserveerd met kip met bot of kipfilet, kousenband, aardappelen en een Roti Blanco. Bij speciaal extra vlees en een kerrie ei.",
 		"Let op: er kunnen mogelijk graatjes in de vis zitten en botjes in de kip kerrie.",
-		"Wij bezorgen niet — je kunt bellen, bestellen en afhalen."
+		"Wij bezorgen niet, je kunt bellen, bestellen en afhalen."
 	],
 	"notes_en": [
 		"Prefer no chicken piece or fillet (if available) with your dish? Choose another filling for a surcharge from € 2.50 per dish.",
@@ -1152,7 +1152,7 @@
 		"Nasi or Bami is served with long beans, chicken on the bone or fillet, pickles and sambal on the side.",
 		"Roti is served with chicken on the bone or fillet, long beans, potatoes and a Roti Blanco. Special comes with extra meat and a curry egg.",
 		"Please note: there may be small bones in the fish and in the chicken curry.",
-		"We do not deliver — you can call, order and collect."
+		"We do not deliver, you can call, order and collect."
 	],
 	"allergens_nl": "In onze gerechten kunnen sporen van de volgende allergenen aanwezig zijn: gluten, ei, vis, pinda, noten, soja, melk (incl. lactose), schaaldieren, weekdieren, selderij, mosterd, sesamzaad, sulfiet en lupine.",
 	"allergens_en": "Our dishes may contain traces of: gluten, egg, fish, peanut, nuts, soy, milk (incl. lactose), shellfish, molluscs, celery, mustard, sesame, sulphite and lupin.",

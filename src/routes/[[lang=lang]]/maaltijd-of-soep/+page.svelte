@@ -67,7 +67,7 @@
 					href={SITE.social.youtube}
 					target="_blank"
 					rel="noopener"
-					aria-label={`${d.pages.dish.archive} — YouTube`}
+					aria-label={`${d.pages.dish.archive} op YouTube`}
 					class="group relative block"
 				>
 					<enhanced:img src={img} alt="" class="aspect-video w-full object-cover" sizes="300px" />

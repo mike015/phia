@@ -21,7 +21,7 @@
 	const lang = $derived(data.lang);
 	const isNl = $derived(lang === 'nl');
 
-	// Slug per gerecht — via object-identiteit, dus botsende namen blijven uniek.
+	// Slug per gerecht via object-identiteit, dus botsende namen blijven uniek.
 	const slugByItem = new Map<MenuItem, string>(menuItemsFlat().map((e) => [e.item, e.slug]));
 	const itemHref = (item: MenuItem) => localizePath(lang, `/menu/${slugByItem.get(item)}`);
 

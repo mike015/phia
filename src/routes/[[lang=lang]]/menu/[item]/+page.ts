@@ -1,8 +1,7 @@
 import type { PageLoad } from './$types';
 import { error } from '@sveltejs/kit';
 import { pageSeo } from '$lib/seo/page';
-import { findMenuItem } from '$lib/menu';
-import { t } from '$lib/i18n';
+import { findMenuItem, relatedItems } from '$lib/menu';
 
 export const load: PageLoad = async ({ params, parent }) => {
 	const { lang } = await parent();
@@ -19,11 +18,12 @@ export const load: PageLoad = async ({ params, parent }) => {
 		note && note.trim()
 			? note
 			: isNl
-				? `${name} — te vinden op de menukaart van Phia's Smulparadijs (${category}).`
-				: `${name} — on the menu at Phia's Smulparadijs (${category}).`;
+				? `${name}, te vinden op de menukaart van Phia's Smulparadijs (${category}).`
+				: `${name}, on the menu at Phia's Smulparadijs (${category}).`;
 
 	return {
 		entry,
+		related: relatedItems(entry.slug),
 		...pageSeo(lang, {
 			path: `/menu/${entry.slug}`,
 			title: name,

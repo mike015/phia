@@ -11,7 +11,7 @@
 	const d = $derived(t(data.lang));
 	const lang = $derived(data.lang);
 
-	// Placeholder-galerij (echte foto's + Instagram nog nodig — IMAGES-TODO.md).
+	// Placeholder-galerij (echte foto's + Instagram nog nodig, zie IMAGES-TODO.md).
 	const gallery = [
 		food.warm,
 		food.purple,

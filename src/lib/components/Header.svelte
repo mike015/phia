@@ -153,7 +153,7 @@
 		<a
 			href={localizePath(lang, '/')}
 			class="flex items-center gap-3 transition-transform duration-300 hover:scale-[1.03]"
-			aria-label="Phia's Smulparadijs — home"
+			aria-label="Phia's Smulparadijs, naar de homepage"
 		>
 			<enhanced:img
 				src={logo}

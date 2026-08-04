@@ -30,7 +30,7 @@
 	"home": {
 		"kicker": "Maaltijd of soep · vandaag",
 		"h1Fallback": "Vers gekookt, elke dag opnieuw",
-		"sub": "Elke dag kookt Phia een verse maaltijd of soep en zet de video op YouTube. Bekijk wat er vandaag in de pan staat — of bel direct om te bestellen.",
+		"sub": "Elke dag kookt Phia een verse maaltijd of soep en zet de video op YouTube. Bekijk wat er vandaag in de pan staat, of bel direct om te bestellen.",
 		"ctaMenu": "Bekijk het menu",
 		"playLabel": "Speel de video van vandaag af",
 		"todayBadge": "Vandaag",
@@ -38,7 +38,7 @@
 		"noticeLabel": "Aangepaste openingstijden",
 		"noticeExample": "Tijdelijke wijzigingen in de openingstijden verschijnen hier altijd direct.",
 		"menuHeading": "Uit de keuken van Phia",
-		"menuSub": "Een greep uit het menu — met prijzen",
+		"menuSub": "Een greep uit het menu, met prijzen",
 		"menuMore": "Bekijk het volledige menu",
 		"bandQuote": "“You don’t see food with this much passion and heart nowadays.”",
 		"bandSource": "4.8 op Google (294) · 4.9 op Facebook (110)",
@@ -50,13 +50,13 @@
 		"instaFollow": "Volg @phiassmulparadijs",
 		"aboutEyebrow": "Welkom bij Phia's Smulparadijs",
 		"aboutTitle": "Vers Surinaams-Creools afhaaleten in Den Haag",
-		"aboutText": "Bij Phia's Smulparadijs koken Phia & Dwight elke dag met liefde verse Surinaams-Creoolse gerechten. Bellen, bestellen en afhalen — altijd vers."
+		"aboutText": "Bij Phia's Smulparadijs koken Phia & Dwight elke dag met liefde verse Surinaams-Creoolse gerechten. Bellen, bestellen en afhalen, altijd vers."
 	},
 	"pages": {
 		"menu": {
 			"title": "Menu",
-			"lead": "Het volledige menu van Phia’s Smulparadijs — verse Surinaams-Creoolse gerechten, broodjes, snacks en soepen. Prijzen van de kaart, editie juli 2026.",
-			"note": "Prijzen en beschikbaarheid kunnen wijzigen; drukfouten voorbehouden. Bellen en bestellen via 070-7851813 — wij bezorgen niet, je haalt zelf af.",
+			"lead": "Het volledige menu van Phia’s Smulparadijs, verse Surinaams-Creoolse gerechten, broodjes, snacks en soepen. Prijzen van de kaart, editie juli 2026.",
+			"note": "Prijzen en beschikbaarheid kunnen wijzigen; drukfouten voorbehouden. Bellen en bestellen via 070-7851813, wij bezorgen niet, je haalt zelf af.",
 			"downloadPdf": "Download de menukaart (PDF)",
 			"downloadHint": "De volledige kaart als PDF",
 			"notesHeading": "Goed om te weten",
@@ -67,7 +67,7 @@
 		"about": {
 			"title": "Over ons",
 			"lead": "Phia en Dwight koken al jaren met liefde de Surinaams-Creoolse keuken in Den Haag.",
-			"body": "Bij Phia’s Smulparadijs draait alles om vers, eerlijk en met liefde bereid eten. Elke dag staat er iets anders in de pan — van een rijke saoto tot een volle roti. Kom langs, proef en geniet. Soso Lobi ❤"
+			"body": "Bij Phia’s Smulparadijs draait alles om vers, eerlijk en met liefde bereid eten. Elke dag staat er iets anders in de pan, van een rijke saoto tot een volle roti. Kom langs, proef en geniet. Soso Lobi ❤"
 		},
 		"dish": {
 			"title": "Maaltijd of Soep van vandaag",
@@ -77,7 +77,7 @@
 		},
 		"photos": {
 			"title": "Foto's",
-			"lead": "Een kijkje in de keuken en het smulparadijs — gerechten, sfeer en gasten."
+			"lead": "Een kijkje in de keuken en het smulparadijs, gerechten, sfeer en gasten."
 		},
 		"contact": {
 			"title": "Contact",
@@ -85,7 +85,7 @@
 			"addressLabel": "Adres",
 			"phoneLabel": "Telefoon",
 			"hoursLabel": "Openingstijden",
-			"mapTitle": "Kaart — Phia’s Smulparadijs, Bouwlustlaan 111, Den Haag",
+			"mapTitle": "Kaart, Phia’s Smulparadijs, Bouwlustlaan 111, Den Haag",
 			"route": "Route in Google Maps"
 		},
 		"news": {
@@ -97,7 +97,9 @@
 			"back": "Terug naar het menu",
 			"order": "Bel om te bestellen",
 			"viewPost": "Bekijk op social media",
-			"inCategory": "In categorie"
+			"inCategory": "In categorie",
+			"moreInCategory": "Meer uit deze categorie",
+			"similar": "Misschien ook lekker"
 		}
 	},
 	"footer": {
@@ -119,7 +121,7 @@
 	"closed": "Gesloten",
 	"consent": {
 		"title": "Even over cookies 🍪",
-		"text": "Wij gebruiken alleen functionele cookies om de site te laten werken. We sluiten geen social media in — we linken je door. Kom je smullen?",
+		"text": "Wij gebruiken alleen functionele cookies om de site te laten werken. We sluiten geen social media in, we linken je door. Kom je smullen?",
 		"accept": "Oké, lekker!",
 		"close": "Sluiten"
 	}

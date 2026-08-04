@@ -75,8 +75,38 @@
 		{/each}
 	</div>
 
+	<!-- Verwante gerechten -->
+	{#snippet relatedList(title: string, entries: typeof data.related.sameCategory)}
+		{#if entries.length}
+			<section class="mt-12">
+				<h2 class="text-xl text-[var(--color-ink)]">{title}</h2>
+				<ul class="mt-4 grid gap-3 sm:grid-cols-2">
+					{#each entries as e (e.slug)}
+						<li>
+							<a
+								href={localizePath(lang, `/menu/${e.slug}`)}
+								class="card-lift flex items-center justify-between gap-3 rounded-xl border border-[var(--color-lilac-border)] bg-white px-4 py-3"
+								style="box-shadow: var(--shadow-soft);"
+							>
+								<span class="text-[var(--color-ink)]">{isNl ? e.item.nl : e.item.en}</span>
+								{#if e.item.prices[0]}
+									<span class="shrink-0 text-sm font-bold text-[var(--color-cta)]"
+										>{e.item.prices[0].value}</span
+									>
+								{/if}
+							</a>
+						</li>
+					{/each}
+				</ul>
+			</section>
+		{/if}
+	{/snippet}
+
+	{@render relatedList(d.pages.menuItem.moreInCategory, data.related.sameCategory)}
+	{@render relatedList(d.pages.menuItem.similar, data.related.similar)}
+
 	<!-- Terug naar het menu -->
-	<div class="mt-8">
+	<div class="mt-12">
 		<a
 			class="text-[var(--color-plum)] underline-offset-2 hover:underline"
 			href={localizePath(lang, '/menu')}

@@ -132,18 +132,20 @@
 				class="card-lift media-zoom overflow-hidden rounded-[var(--radius-card)] border border-[var(--color-lilac-border)] bg-white"
 				style="box-shadow: var(--shadow-soft);"
 			>
-				<enhanced:img
-					src={item.img}
-					alt={lang === 'nl' ? item.nl : item.en}
-					class="aspect-[4/3] w-full object-cover"
-					sizes="(min-width: 1024px) 250px, (min-width: 640px) 45vw, 90vw"
-				/>
-				<div class="p-4">
-					<p class="font-display text-lg text-[var(--color-ink)]">
-						{lang === 'nl' ? item.nl : item.en}
-					</p>
-					<p class="mt-1 font-bold text-[var(--color-cta)]">{item.price}</p>
-				</div>
+				<a href={localizePath(lang, `/menu/${item.slug}`)} class="block">
+					<enhanced:img
+						src={item.img}
+						alt={lang === 'nl' ? item.nl : item.en}
+						class="aspect-[4/3] w-full object-cover"
+						sizes="(min-width: 1024px) 250px, (min-width: 640px) 45vw, 90vw"
+					/>
+					<div class="p-4">
+						<p class="font-display text-lg text-[var(--color-ink)]">
+							{lang === 'nl' ? item.nl : item.en}
+						</p>
+						<p class="mt-1 font-bold text-[var(--color-cta)]">{item.price}</p>
+					</div>
+				</a>
 			</li>
 		{/each}
 	</ul>
@@ -221,7 +223,7 @@
 						href={SITE.social.instagram}
 						target="_blank"
 						rel="noopener"
-						aria-label={`${d.home.instaLabel} — ${SITE.social.instagramHandle}`}
+						aria-label={`${d.home.instaLabel} ${SITE.social.instagramHandle}`}
 						class="card-lift media-zoom hover-veil block rounded-2xl border-4 border-white shadow-lg"
 					>
 						<enhanced:img

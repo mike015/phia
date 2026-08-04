@@ -10,14 +10,20 @@ import jarpesi from './jarpesi-moksi-alesie.jpg?enhanced';
 
 export const food = { warm, purple, table, dark, heriHeri, jarpesi };
 
-// Menu-uitlichting op home — echte gerechten & prijzen (menukaart juli 2026).
-// Twee echte maaltijd-foto's + twee design-placeholders.
+// Menu-uitlichting op home: echte gerechten & prijzen (menukaart juli 2026).
+// `slug` verwijst naar de detailpagina /menu/<slug>, zodat elke kaart doorlinkt.
 export const menuHighlights = [
-	{ img: heriHeri, nl: "Her'Heri Moksi Alesi", en: "Her'Heri Moksi Alesi", price: 'v.a. € 17,50' },
-	{ img: jarpesi, nl: 'Jarpesi Moksi Alesi', en: 'Jarpesi Moksi Alesi', price: 'v.a. € 17,50' },
-	{ img: table, nl: 'Roti kip', en: 'Roti chicken', price: 'v.a. € 13,00' },
-	{ img: dark, nl: 'Saoto soep', en: 'Saoto soup', price: '€ 9,00' }
+	{ img: warm, slug: 'roti-kip', nl: 'Roti kip', en: 'Roti chicken', price: 'v.a. € 13,00' },
+	{
+		img: purple,
+		slug: 'nasi-of-bami-kip',
+		nl: 'Nasi of Bami kip',
+		en: 'Nasi or Bami chicken',
+		price: 'v.a. € 12,00'
+	},
+	{ img: table, slug: 'saoto-soep', nl: 'Saoto soep', en: 'Saoto soup', price: '€ 9,00' },
+	{ img: dark, slug: 'bara', nl: 'Bara', en: 'Bara', price: 'v.a. € 3,50' }
 ] as const;
 
-// Instagram-grid placeholder (echte feed volgt via /api/instagram — PROJECT-BRIEF §5.2).
+// Instagram-grid placeholder (echte feed volgt via /api/instagram, PROJECT-BRIEF §5.2).
 export const instaPlaceholders = [heriHeri, jarpesi, warm, purple, table] as const;

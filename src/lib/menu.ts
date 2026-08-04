@@ -141,3 +141,74 @@ const MENU_FLAT: MenuItemFlat[] = menuItemsFlat();
 export function findMenuItem(slug: string): MenuItemFlat | undefined {
 	return MENU_FLAT.find((e) => e.slug === slug);
 }
+
+// Woorden die niets zeggen over "waar lijkt dit op" (voor de similar-logica).
+const STOPWORDS = new Set([
+	'of',
+	'en',
+	'met',
+	'or',
+	'and',
+	'the',
+	'van',
+	'de',
+	'het',
+	'a',
+	'speciaal',
+	'special',
+	'groot',
+	'grote',
+	'klein',
+	'kleine',
+	'xl',
+	'normaal',
+	'regular',
+	'portie',
+	'bakje',
+	'los',
+	'losse',
+	'div',
+	'diverse',
+	'soorten',
+	'naar',
+	'keuze',
+	'mix',
+	'dag',
+	'stuks'
+]);
+
+/** Betekenisvolle trefwoorden uit een gerechtnaam (voor overeenkomst-matching). */
+function keywords(name: string): string[] {
+	return slugify(name)
+		.split('-')
+		.filter((w) => w.length >= 3 && !STOPWORDS.has(w));
+}
+
+/**
+ * Verwante gerechten bij een detailpagina:
+ * - `sameCategory`: andere gerechten uit dezelfde categorie ("andere broodjes").
+ * - `similar`: gerechten uit ANDERE categorieën die een trefwoord delen
+ *   (bv. broodje "Kip kerrie" → "Nasi of Bami kip"; "Saté" → "Stokje saté").
+ */
+export function relatedItems(
+	slug: string,
+	opts: { sameMax?: number; similarMax?: number } = {}
+): { sameCategory: MenuItemFlat[]; similar: MenuItemFlat[] } {
+	const sameMax = opts.sameMax ?? 6;
+	const similarMax = opts.similarMax ?? 6;
+	const current = findMenuItem(slug);
+	if (!current) return { sameCategory: [], similar: [] };
+
+	const sameCategory = MENU_FLAT.filter(
+		(e) => e.categoryId === current.categoryId && e.slug !== current.slug
+	).slice(0, sameMax);
+
+	const keys = new Set(keywords(current.item.nl));
+	const taken = new Set([current.slug, ...sameCategory.map((e) => e.slug)]);
+	const similar = MENU_FLAT.filter((e) => {
+		if (taken.has(e.slug) || e.categoryId === current.categoryId) return false;
+		return keywords(e.item.nl).some((w) => keys.has(w));
+	}).slice(0, similarMax);
+
+	return { sameCategory, similar };
+}
