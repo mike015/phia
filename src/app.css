@@ -1,0 +1,169 @@
+@import 'tailwindcss';
+
+/* Self-hosted fonts (geen Google-CDN i.v.m. AVG — PROJECT-BRIEF §6) */
+@import '@fontsource-variable/fraunces/wght.css';
+@import '@fontsource-variable/source-sans-3/wght.css';
+
+/*
+  Design-tokens — concept v4, WCAG AA doorgerekend (PROJECT-BRIEF §6).
+  Niet wijzigen zonder hermeting.
+*/
+@theme {
+	--color-cream: #fdfaf4; /* achtergrond */
+	--color-ink: #2a1330; /* tekst — 16.3:1 op cream */
+	--color-muted: #6e5a73; /* subtekst — 5.98:1 */
+	--color-lilac-surface: #f4e9f5; /* vlak-licht */
+	--color-lilac-border: #e9ddea; /* zachte borders */
+	--color-plum: #241028; /* donker: footer, videoframe, badges */
+	--color-cta: #c41320; /* knoppen — wit 6.07:1 */
+	--color-accent: #b381b6; /* ALLEEN decoratief */
+	--color-lilac-text: #7a4e82; /* 6.22:1 */
+	--color-green: #0e7a33; /* groen-tekst — 5.24:1 */
+	--color-green-bright: #159641; /* alleen dot/vlagstrip */
+	--color-yellow: #f3de24; /* badges op donker — 12.4:1 */
+	--color-flag-red: #df0e19; /* vlagstrip */
+
+	--font-display: 'Fraunces Variable', 'Playfair Display', Georgia, 'Times New Roman', serif;
+	--font-body:
+		'Source Sans 3 Variable', 'Source Sans 3', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+	--radius-card: 20px;
+	--radius-btn: 14px;
+	--radius-video: 26px;
+
+	--shadow-soft: 0 14px 34px rgba(42, 19, 48, 0.1);
+	--shadow-lift: 0 24px 60px rgba(42, 19, 48, 0.28);
+}
+
+@layer base {
+	html {
+		scroll-behavior: smooth;
+		-webkit-text-size-adjust: 100%;
+		font-family: var(--font-body);
+		color: var(--color-ink);
+		background: var(--color-cream);
+	}
+
+	body {
+		min-height: 100dvh;
+		font-size: 1.0625rem;
+		line-height: 1.6;
+		text-rendering: optimizeLegibility;
+		-webkit-font-smoothing: antialiased;
+	}
+
+	h1,
+	h2,
+	h3 {
+		font-family: var(--font-display);
+		font-weight: 500;
+		letter-spacing: -0.01em;
+		line-height: 1.1;
+		text-wrap: balance;
+	}
+
+	p {
+		text-wrap: pretty;
+	}
+
+	:where(a, button, input, select, textarea):focus-visible {
+		outline: 3px solid var(--color-cta);
+		outline-offset: 2px;
+		border-radius: 4px;
+	}
+
+	/* Motion volledig respecteren (PROJECT-BRIEF §6/§8) */
+	@media (prefers-reduced-motion: reduce) {
+		*,
+		*::before,
+		*::after {
+			animation-duration: 0.001ms !important;
+			animation-iteration-count: 1 !important;
+			transition-duration: 0.001ms !important;
+			scroll-behavior: auto !important;
+		}
+	}
+}
+
+@layer components {
+	/* Surinaamse vlagstrip: 4-4-6-4-4px #159641/#fff/#DF0E19/#fff/#159641 */
+	.flag-strip {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+	}
+	.flag-strip > i {
+		display: block;
+	}
+	.flag-strip > i:nth-child(1),
+	.flag-strip > i:nth-child(5) {
+		height: 4px;
+		background: var(--color-green-bright);
+	}
+	.flag-strip > i:nth-child(2),
+	.flag-strip > i:nth-child(4) {
+		height: 4px;
+		background: #fff;
+	}
+	.flag-strip > i:nth-child(3) {
+		height: 6px;
+		background: var(--color-flag-red);
+	}
+
+	.btn-primary {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		gap: 0.5rem;
+		background: var(--color-cta);
+		color: #fff;
+		font-weight: 700;
+		letter-spacing: 0.02em;
+		padding: 0.9rem 1.75rem;
+		border-radius: var(--radius-btn);
+		box-shadow: 0 12px 30px rgba(196, 19, 32, 0.28);
+		transition:
+			transform 0.18s ease,
+			box-shadow 0.18s ease;
+	}
+	.btn-primary:hover {
+		transform: translateY(-2px);
+		box-shadow: 0 16px 36px rgba(196, 19, 32, 0.36);
+	}
+
+	.btn-outline {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		gap: 0.5rem;
+		background: #fff;
+		color: var(--color-ink);
+		border: 2px solid var(--color-ink);
+		font-weight: 700;
+		padding: calc(0.9rem - 2px) calc(1.5rem - 2px);
+		border-radius: var(--radius-btn);
+		transition:
+			transform 0.18s ease,
+			background 0.18s ease;
+	}
+	.btn-outline:hover {
+		transform: translateY(-2px);
+		background: var(--color-lilac-surface);
+	}
+}
+
+/* Skip-link (PROJECT-BRIEF §8) */
+.skip-link {
+	position: absolute;
+	left: 0.5rem;
+	top: -3rem;
+	z-index: 100;
+	background: var(--color-plum);
+	color: #fff;
+	padding: 0.75rem 1.25rem;
+	border-radius: 0 0 12px 12px;
+	transition: top 0.15s ease;
+}
+.skip-link:focus {
+	top: 0;
+}

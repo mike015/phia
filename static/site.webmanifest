@@ -1,0 +1,16 @@
+{
+	"name": "Phia's Smulparadijs",
+	"short_name": "Phia's",
+	"description": "Surinaams-Creools afhaal-eethuis in Den Haag. Elke dag verse maaltijden en soepen.",
+	"lang": "nl",
+	"start_url": "/",
+	"scope": "/",
+	"display": "standalone",
+	"background_color": "#FDFAF4",
+	"theme_color": "#241028",
+	"icons": [
+		{ "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
+		{ "src": "/icon-192.png", "sizes": "192x192", "type": "image/png" },
+		{ "src": "/icon-512.png", "sizes": "512x512", "type": "image/png" }
+	]
+}
