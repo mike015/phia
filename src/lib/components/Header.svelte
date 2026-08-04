@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
 	import { page } from '$app/state';
 	import { afterNavigate } from '$app/navigation';
 	import { t, localizePath, type Lang } from '$lib/i18n';
@@ -6,6 +7,22 @@
 
 	let { lang, path }: { lang: Lang; path: string } = $props();
 	const d = $derived(t(lang));
+
+	// Zachte elevatie van de sticky header zodra je scrollt (rAF-throttled).
+	let scrolled = $state(false);
+	onMount(() => {
+		let raf = 0;
+		const onScroll = () => {
+			if (raf) return;
+			raf = requestAnimationFrame(() => {
+				scrolled = window.scrollY > 8;
+				raf = 0;
+			});
+		};
+		onScroll();
+		window.addEventListener('scroll', onScroll, { passive: true });
+		return () => window.removeEventListener('scroll', onScroll);
+	});
 
 	const nav = $derived([
 		{ href: localizePath(lang, '/menu'), label: d.nav.menu },
@@ -31,11 +48,11 @@
 
 <div class="flag-strip" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
 
-<header class="border-b border-[var(--color-lilac-border)] bg-[var(--color-cream)]">
+<header class="site-header border-b border-[var(--color-lilac-border)]" data-scrolled={scrolled}>
 	<div class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
 		<a
 			href={localizePath(lang, '/')}
-			class="flex items-center gap-3"
+			class="flex items-center gap-3 transition-transform duration-300 hover:scale-[1.03]"
 			aria-label="Phia's Smulparadijs — home"
 		>
 			<enhanced:img
@@ -52,7 +69,7 @@
 				<a
 					href={item.href}
 					aria-current={isActive(item.href) ? 'page' : undefined}
-					class="rounded-lg px-3 py-2 text-sm font-bold tracking-wide text-[var(--color-ink)] transition hover:bg-[var(--color-lilac-surface)] aria-[current=page]:text-[var(--color-cta)]"
+					class="nav-link rounded-lg px-3 py-2 text-sm font-bold tracking-wide text-[var(--color-ink)] transition-colors hover:text-[var(--color-cta)] aria-[current=page]:text-[var(--color-cta)]"
 				>
 					{item.label}
 				</a>

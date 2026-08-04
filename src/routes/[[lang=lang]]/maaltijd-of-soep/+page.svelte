@@ -60,15 +60,21 @@
 	<h2 class="mt-12 text-2xl text-[var(--color-ink)]">{d.pages.dish.archive}</h2>
 	<ul class="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-3">
 		{#each instaPlaceholders.slice(0, 6) as img, i (i)}
-			<li class="overflow-hidden rounded-xl border border-[var(--color-lilac-border)]">
+			<li
+				class="card-lift media-zoom hover-veil overflow-hidden rounded-xl border border-[var(--color-lilac-border)]"
+			>
 				<a
 					href={SITE.social.youtube}
 					target="_blank"
 					rel="noopener"
 					aria-label={`${d.pages.dish.archive} — YouTube`}
-					class="block"
+					class="group relative block"
 				>
 					<enhanced:img src={img} alt="" class="aspect-video w-full object-cover" sizes="300px" />
+					<span
+						class="pointer-events-none absolute left-1/2 top-1/2 grid h-12 w-12 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full bg-[var(--color-cta)] text-lg text-white opacity-90 shadow-lg transition duration-300 group-hover:scale-110"
+						aria-hidden="true">▶</span
+					>
 				</a>
 			</li>
 		{/each}

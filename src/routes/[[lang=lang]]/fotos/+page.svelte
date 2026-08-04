@@ -44,13 +44,13 @@
 	<ul class="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
 		{#each gallery as img, i (i)}
 			<li
-				class="overflow-hidden rounded-xl border border-[var(--color-lilac-border)]"
+				class="card-lift media-zoom hover-veil overflow-hidden rounded-xl border border-[var(--color-lilac-border)]"
 				style="box-shadow: var(--shadow-soft);"
 			>
 				<enhanced:img
 					src={img}
 					alt=""
-					class="aspect-square w-full object-cover transition hover:scale-[1.04]"
+					class="aspect-square w-full object-cover"
 					sizes="(min-width: 1024px) 280px, (min-width: 640px) 30vw, 45vw"
 					loading="lazy"
 				/>

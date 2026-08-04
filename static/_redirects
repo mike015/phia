@@ -1,0 +1,20 @@
+# Cloudflare Pages redirects — go-live SEO (PROJECT-BRIEF §9)
+# Oude WordPress-URL's (met trailing slash) -> nieuwe SvelteKit-slugs.
+# Syntax: <from>  <to>  <status>. 301 = permanent (behoudt linkwaarde).
+# LET OP: geen catch-all/splat (/*) hier — dat zou bestaande routes breken.
+
+# Oude "Over ons"
+/about/         /over-ons   301
+/about          /over-ons   301
+
+# Oude "Informatie" -> contact
+/informatie/    /contact    301
+/informatie     /contact    301
+
+# Oude fotogalerij
+/phias-fotos/   /fotos      301
+/phias-fotos    /fotos      301
+
+# Slug ongewijzigd, maar normaliseer trailing slash -> zonder
+/menu/          /menu       301
+/contact/       /contact    301

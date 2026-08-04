@@ -14,3 +14,9 @@ vite.config.ts.timestamp-*
 # scraper working dir (run scripts/scrape-site.mjs locally)
 /scrape/
 /static/scraped/
+
+# Playwright
+/test-results/
+/playwright-report/
+/blob-report/
+/.playwright/

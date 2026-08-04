@@ -29,7 +29,10 @@
 />
 
 <div class="mx-auto grid max-w-5xl items-center gap-10 px-4 py-14 sm:px-6 lg:grid-cols-2">
-	<div class="overflow-hidden rounded-[var(--radius-card)]" style="box-shadow: var(--shadow-soft);">
+	<div
+		class="media-zoom overflow-hidden rounded-[var(--radius-card)]"
+		style="box-shadow: var(--shadow-soft);"
+	>
 		<enhanced:img
 			src={food.purple}
 			alt="Sfeerbeeld van Phia's Smulparadijs"

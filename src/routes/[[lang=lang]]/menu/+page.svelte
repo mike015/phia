@@ -58,7 +58,7 @@
 <div class="mx-auto max-w-4xl px-4 py-10 sm:px-6">
 	<!-- Downloadbare PDF-menukaart -->
 	<div
-		class="flex flex-col items-start justify-between gap-4 rounded-[var(--radius-card)] border border-[var(--color-lilac-border)] bg-[var(--color-lilac-surface)] p-5 sm:flex-row sm:items-center"
+		class="card-lift flex flex-col items-start justify-between gap-4 rounded-[var(--radius-card)] border border-[var(--color-lilac-border)] bg-[var(--color-lilac-surface)] p-5 sm:flex-row sm:items-center"
 	>
 		<div>
 			<p class="font-display text-lg text-[var(--color-ink)]">
@@ -107,7 +107,9 @@
 
 				<ul class="mt-3 divide-y divide-[var(--color-lilac-border)]">
 					{#each cat.items as item (item.nl)}
-						<li class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 py-3">
+						<li
+							class="-mx-2 flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 rounded-lg px-2 py-3 transition-colors hover:bg-[var(--color-lilac-surface)]"
+						>
 							<span class="min-w-0">
 								<span class="text-[var(--color-ink)]">{isNl ? item.nl : item.en}</span>
 								{#if item.note_nl}

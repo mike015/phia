@@ -19,6 +19,28 @@ const config = {
 			// keep that shape for the go-live redirects (PROJECT-BRIEF §9).
 			entries: ['*']
 		},
+		// CSP wordt door SvelteKit beheerd (hash-mode): de inline hydration-script
+		// krijgt automatisch een hash, zodat we GEEN 'unsafe-inline' voor script
+		// nodig hebben. Injecteert een <meta http-equiv> in elke geprerenderde
+		// pagina. Overige security-headers staan in static/_headers.
+		// LATER (embeds achter consent): voeg youtube-nocookie.com / facebook.com
+		// toe aan frame-src en de bijbehorende script-src.
+		csp: {
+			mode: 'hash',
+			directives: {
+				'default-src': ['self'],
+				'script-src': ['self'],
+				'style-src': ['self', 'unsafe-inline'],
+				'img-src': ['self', 'data:'],
+				'font-src': ['self'],
+				'connect-src': ['self'],
+				'frame-ancestors': ['self'],
+				'base-uri': ['self'],
+				'form-action': ['self'],
+				'object-src': ['none'],
+				'manifest-src': ['self']
+			}
+		},
 		alias: {
 			$lib: './src/lib'
 		}

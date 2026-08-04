@@ -167,3 +167,138 @@
 .skip-link:focus {
 	top: 0;
 }
+
+/* ============================================================
+   Micro-interacties — subtiel, GPU-vriendelijk (transform/opacity).
+   Alle beweging valt automatisch weg onder prefers-reduced-motion
+   (zie de globale reduce-override in @layer base).
+   ============================================================ */
+@layer components {
+	/* Nav-links: onderstreping die vanuit links inschuift, ook voor de actieve pagina */
+	.nav-link {
+		position: relative;
+	}
+	.nav-link::after {
+		content: '';
+		position: absolute;
+		left: 0.75rem;
+		right: 0.75rem;
+		bottom: 0.35rem;
+		height: 2px;
+		border-radius: 2px;
+		background: var(--color-cta);
+		transform: scaleX(0);
+		transform-origin: left;
+		transition: transform 0.28s cubic-bezier(0.2, 0.7, 0.2, 1);
+	}
+	.nav-link:hover::after,
+	.nav-link:focus-visible::after,
+	.nav-link[aria-current='page']::after {
+		transform: scaleX(1);
+	}
+
+	/* Kaart die zacht optilt; combineer met .media-zoom voor beeld-inzoom */
+	.card-lift {
+		transition:
+			transform 0.32s cubic-bezier(0.2, 0.7, 0.2, 1),
+			box-shadow 0.32s ease;
+		will-change: transform;
+	}
+	.card-lift:hover {
+		transform: translateY(-6px);
+		box-shadow: 0 24px 50px rgba(42, 19, 48, 0.18);
+	}
+
+	/* Beeld dat licht inzoomt binnen zijn (afgeronde) kader */
+	.media-zoom {
+		overflow: hidden;
+	}
+	.media-zoom :is(img, picture) {
+		transition: transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1);
+		will-change: transform;
+	}
+	.card-lift:hover .media-zoom :is(img),
+	.media-zoom:hover :is(img) {
+		transform: scale(1.06);
+	}
+
+	/* Zacht zwevend videoframe (hero) */
+	.floaty {
+		animation: floaty 7s ease-in-out infinite;
+	}
+	@keyframes floaty {
+		0%,
+		100% {
+			transform: translateY(0);
+		}
+		50% {
+			transform: translateY(-8px);
+		}
+	}
+
+	/* Pulserende ring om de play-knop */
+	.play-pulse::before {
+		content: '';
+		position: absolute;
+		inset: 0;
+		border-radius: inherit;
+		box-shadow: 0 0 0 0 rgba(196, 19, 32, 0.45);
+		animation: playPulse 2.4s ease-out infinite;
+	}
+	@keyframes playPulse {
+		0% {
+			box-shadow: 0 0 0 0 rgba(196, 19, 32, 0.45);
+		}
+		70% {
+			box-shadow: 0 0 0 22px rgba(196, 19, 32, 0);
+		}
+		100% {
+			box-shadow: 0 0 0 0 rgba(196, 19, 32, 0);
+		}
+	}
+
+	/* Sticky header met zachte elevatie zodra je scrollt */
+	.site-header {
+		position: sticky;
+		top: 0;
+		z-index: 40;
+		background: color-mix(in srgb, var(--color-cream) 88%, transparent);
+		-webkit-backdrop-filter: saturate(1.4) blur(8px);
+		backdrop-filter: saturate(1.4) blur(8px);
+		transition:
+			box-shadow 0.3s ease,
+			background 0.3s ease;
+	}
+	.site-header[data-scrolled='true'] {
+		background: color-mix(in srgb, var(--color-cream) 96%, transparent);
+		box-shadow: 0 8px 24px rgba(42, 19, 48, 0.1);
+	}
+
+	/* Subtiel oplichtende link-onderstreping voor footer/tekstlinks */
+	.link-underline {
+		background-image: linear-gradient(var(--color-accent), var(--color-accent));
+		background-size: 0% 1.5px;
+		background-position: 0 100%;
+		background-repeat: no-repeat;
+		transition: background-size 0.3s ease;
+	}
+	.link-underline:hover,
+	.link-underline:focus-visible {
+		background-size: 100% 1.5px;
+	}
+
+	/* Klein icoon-overlay dat opkomt bij hover (insta-tegels) */
+	.hover-veil {
+		position: relative;
+	}
+	.hover-veil::after {
+		content: '';
+		position: absolute;
+		inset: 0;
+		background: rgba(36, 16, 40, 0);
+		transition: background 0.3s ease;
+	}
+	.hover-veil:hover::after {
+		background: rgba(36, 16, 40, 0.18);
+	}
+}

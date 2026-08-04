@@ -65,14 +65,14 @@
 		<!-- Video-frame (donker plum kader) -->
 		<div use:reveal={80} class="lg:justify-self-end">
 			<div
-				class="relative mx-auto w-full max-w-[640px] bg-[var(--color-plum)] p-3"
+				class="floaty relative mx-auto w-full max-w-[640px] bg-[var(--color-plum)] p-3"
 				style="border-radius: var(--radius-video); box-shadow: var(--shadow-lift);"
 			>
 				<a
 					href={SITE.social.youtube}
 					target="_blank"
 					rel="noopener"
-					class="group relative block overflow-hidden rounded-2xl"
+					class="group media-zoom relative block rounded-2xl"
 					aria-label={d.home.playLabel}
 				>
 					<enhanced:img
@@ -91,7 +91,7 @@
 					</span>
 
 					<span
-						class="absolute left-1/2 top-1/2 grid h-20 w-20 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full bg-[var(--color-cta)] text-3xl text-white shadow-[0_0_0_12px_rgba(223,14,25,0.22)] transition group-hover:scale-105"
+						class="play-pulse absolute left-1/2 top-1/2 grid h-20 w-20 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full bg-[var(--color-cta)] text-3xl text-white shadow-[0_0_0_12px_rgba(223,14,25,0.22)] transition duration-300 group-hover:scale-110"
 						aria-hidden="true"
 					>
 						▶
@@ -132,7 +132,7 @@
 		{#each menuHighlights as item, i (item.nl)}
 			<li
 				use:reveal={i * 60}
-				class="overflow-hidden rounded-[var(--radius-card)] border border-[var(--color-lilac-border)] bg-white"
+				class="card-lift media-zoom overflow-hidden rounded-[var(--radius-card)] border border-[var(--color-lilac-border)] bg-white"
 				style="box-shadow: var(--shadow-soft);"
 			>
 				<enhanced:img
@@ -197,7 +197,7 @@
 		{#each reviews as r, i (r.who)}
 			<li
 				use:reveal={i * 60}
-				class="rounded-2xl border border-[var(--color-lilac-border)] border-l-4 border-l-[var(--color-accent)] bg-white p-6 text-[var(--color-ink)]/90"
+				class="card-lift rounded-2xl border border-[var(--color-lilac-border)] border-l-4 border-l-[var(--color-accent)] bg-white p-6 text-[var(--color-ink)]/90"
 				style="box-shadow: var(--shadow-soft);"
 			>
 				<p class="leading-relaxed">“{r.quote}”</p>
@@ -225,7 +225,7 @@
 						target="_blank"
 						rel="noopener"
 						aria-label={`${d.home.instaLabel} — ${SITE.social.instagramHandle}`}
-						class="block overflow-hidden rounded-2xl border-4 border-white shadow-lg transition hover:scale-[1.03]"
+						class="card-lift media-zoom hover-veil block rounded-2xl border-4 border-white shadow-lg"
 					>
 						<enhanced:img
 							src={img}

@@ -1,0 +1,4 @@
+# Minimale Cloudflare Pages-config; maakt `wrangler pages deploy` mogelijk.
+name = "phias-smulparadijs"
+pages_build_output_dir = "build"
+compatibility_date = "2025-01-01"

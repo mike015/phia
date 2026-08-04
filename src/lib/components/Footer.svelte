@@ -13,7 +13,8 @@
 		<div>
 			<p class="font-display text-xl text-[var(--color-accent)]">{SITE.name}</p>
 			<p class="mt-2 text-sm">{SITE.brandLine}</p>
-			<p class="mt-4 font-display text-lg text-[var(--color-flag-red)]">{SITE.slogan}</p>
+			<!-- Wit i.p.v. flag-rood: rood op plum haalt WCAG AA niet; ❤ blijft rood via emoji. -->
+			<p class="mt-4 font-display text-lg text-white">{SITE.slogan}</p>
 		</div>
 
 		<div class="text-sm">
