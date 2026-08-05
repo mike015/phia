@@ -1,6 +1,7 @@
 <script lang="ts">
 	import Seo from '$lib/seo/Seo.svelte';
 	import OpenStatus from '$lib/components/OpenStatus.svelte';
+	import OpeningNotice from '$lib/components/OpeningNotice.svelte';
 	import AvailabilityBadge from '$lib/components/AvailabilityBadge.svelte';
 	import YouTubeEmbed from '$lib/components/YouTubeEmbed.svelte';
 	import { reveal } from '$lib/actions/reveal';
@@ -118,16 +119,8 @@
 	</div>
 </section>
 
-<!-- ============ Aangepaste-openingstijden-melding (role=status) ============ -->
-<div class="mx-auto max-w-6xl px-4 sm:px-6">
-	<p
-		role="status"
-		class="rounded-2xl border border-[#C9A9CD] bg-[#EFDFF1] px-6 py-4 text-[0.95rem] text-[#5A3A60]"
-	>
-		★ <b class="text-[var(--color-cta)]">{d.home.noticeLabel}:</b>
-		{d.home.noticeExample}
-	</p>
-</div>
+<!-- ============ Aangepaste-openingstijden-melding: alleen bij actieve uitzondering ============ -->
+<OpeningNotice {lang} />
 
 <!-- ============ Menu-uitlichting ============ -->
 <section class="mx-auto max-w-6xl px-4 py-16 sm:px-6">

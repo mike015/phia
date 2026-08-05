@@ -25,21 +25,33 @@ function html(body) {
 	});
 }
 
-/** Bouwt de HTML die het token via postMessage aan het CMS-opener-venster geeft. */
-function postMessagePage(status, payloadObj) {
+/**
+ * Bouwt de HTML die het token via postMessage aan het CMS-opener-venster geeft.
+ *
+ * `allowedOrigin` (env.ALLOWED_ORIGIN) is de enige origin die het token mag
+ * ontvangen. Is die gezet, dan antwoorden we UITSLUITEND aan die origin en
+ * negeren we handshakes van andere vensters — zo kan een kwaadwillende pagina
+ * het repo-scoped GitHub-token niet buitmaken. Zonder de var vallen we terug op
+ * de opener-origin (minder veilig; zet ALLOWED_ORIGIN in productie).
+ */
+function postMessagePage(status, payloadObj, allowedOrigin) {
 	const message = `authorization:${PROVIDER}:${status}:${JSON.stringify(payloadObj)}`;
-	// JSON.stringify(message) escapet veilig voor injectie in de <script>.
+	// JSON.stringify escapet message én allowed veilig voor injectie in de <script>.
 	return html(`<script>
 	(function () {
 		var message = ${JSON.stringify(message)};
+		var allowed = ${JSON.stringify(allowedOrigin || '')};
 		function receive(e) {
 			if (!e.data || e.data !== 'authorizing:${PROVIDER}') return;
-			window.opener && window.opener.postMessage(message, e.origin);
+			// Alleen antwoorden aan de toegestane origin (voorkomt token-exfiltratie).
+			if (allowed && e.origin !== allowed) return;
+			var target = allowed || e.origin;
+			window.opener && window.opener.postMessage(message, target);
 			window.removeEventListener('message', receive, false);
 		}
 		window.addEventListener('message', receive, false);
 		// Handshake starten: opener luistert en antwoordt met 'authorizing:github'.
-		window.opener && window.opener.postMessage('authorizing:${PROVIDER}', '*');
+		window.opener && window.opener.postMessage('authorizing:${PROVIDER}', allowed || '*');
 	})();
 </script>`);
 }
@@ -92,7 +104,7 @@ export default {
 			const csrf = (cookie.match(/(?:^|;\s*)csrf=([^;]+)/) || [])[1];
 
 			if (!code || !state || !csrf || state !== csrf) {
-				return postMessagePage('error', { error: 'invalid_state' });
+				return postMessagePage('error', { error: 'invalid_state' }, env.ALLOWED_ORIGIN);
 			}
 
 			let payload;
@@ -113,14 +125,14 @@ export default {
 				});
 				payload = await res.json();
 			} catch (err) {
-				return postMessagePage('error', { error: 'token_exchange_failed' });
+				return postMessagePage('error', { error: 'token_exchange_failed' }, env.ALLOWED_ORIGIN);
 			}
 
 			if (!payload || !payload.access_token) {
-				return postMessagePage('error', { error: payload?.error || 'no_token' });
+				return postMessagePage('error', { error: payload?.error || 'no_token' }, env.ALLOWED_ORIGIN);
 			}
 
-			return postMessagePage('success', { token: payload.access_token, provider: PROVIDER });
+			return postMessagePage('success', { token: payload.access_token, provider: PROVIDER }, env.ALLOWED_ORIGIN);
 		}
 
 		return new Response('Not found', { status: 404 });

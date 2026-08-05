@@ -17,8 +17,9 @@ const config = {
 
 	kit: {
 		// Static-first: prerender everything (PROJECT-BRIEF §2).
-		// Deploys as-is to Cloudflare Pages. Swap to @sveltejs/adapter-cloudflare
-		// once the /api/* Workers are added.
+		// De build (./build) wordt als statische assets naar Cloudflare Workers
+		// gedeployd (zie wrangler.toml [assets]). Stap over op
+		// @sveltejs/adapter-cloudflare zodra er /api/* Workers bijkomen.
 		adapter: adapter({
 			fallback: '404.html',
 			precompress: true
