@@ -209,9 +209,24 @@
 				class="card-lift rounded-2xl border border-[var(--color-lilac-border)] border-l-4 border-l-[var(--color-accent)] bg-white p-6 text-[var(--color-ink)]/90"
 				style="box-shadow: var(--shadow-soft);"
 			>
-				<p class="leading-relaxed">“{r.quote}”</p>
+				<p class="text-lg text-[var(--color-cta)]">
+					<span role="img" aria-label={`${r.rating} van 5 sterren`}>{'★'.repeat(r.rating)}</span>
+				</p>
+				<p class="mt-2 leading-relaxed">“{r.quote}”</p>
 				<p class="mt-3 text-xs font-bold uppercase tracking-wide text-[var(--color-ink)]">
-					{r.who} · {r.src}
+					{r.who} ·
+					{#if r.url}
+						<a
+							class="text-[var(--color-lilac-text)] underline underline-offset-2"
+							href={r.url}
+							target="_blank"
+							rel="noopener"
+						>
+							{r.src}
+						</a>
+					{:else}
+						{r.src}
+					{/if}
 				</p>
 			</li>
 		{/each}

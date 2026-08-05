@@ -40,16 +40,28 @@ type ManualReview = {
 	rating: number;
 	text: string;
 	featured?: boolean;
+	/** Optionele directe link naar deze review/post; anders de bronpagina. */
+	url?: string;
 };
 
-/** UI-vorm van een review (matcht de bestaande home-markup). */
+/** UI-vorm van een review (matcht de home-markup). */
 export type Review = {
 	quote: string;
 	who: string;
 	src: string;
 	rating: number;
 	time: string;
+	/** Link naar de bron (specifieke review of het platform); '' = geen link. */
+	url: string;
 };
+
+/** Link naar de bron op basis van het bron-label (Google/Facebook). */
+function sourceUrl(src: string): string {
+	const s = src.toLowerCase();
+	if (s.includes('google')) return SITE.maps.url;
+	if (s.includes('facebook')) return SITE.social.facebook;
+	return '';
+}
 
 const sources: ReviewSource[] = [google as ReviewSource, facebook as ReviewSource];
 const manualReviews = (manual as { reviews: ManualReview[] }).reviews ?? [];
@@ -79,19 +91,30 @@ export function getReviews(limit?: number): Review[] {
 		const label = sourceLabel(s.source);
 		for (const r of s.reviews) {
 			if (!r || !r.text) continue;
-			auto.push({ quote: r.text, who: r.author, src: label, rating: r.rating, time: r.time });
+			auto.push({
+				quote: r.text,
+				who: r.author,
+				src: label,
+				rating: r.rating,
+				time: r.time,
+				url: sourceUrl(label)
+			});
 		}
 	}
 	auto.sort((a, b) => timeKey(b.time) - timeKey(a.time));
 
 	// Handmatig gecureerde reviews (beheerder) hebben voorrang; uitgelicht bovenaan.
-	const toReview = (m: ManualReview): Review => ({
-		quote: m.text,
-		who: m.author,
-		src: m.source ? sourceLabel(m.source) : 'Gast',
-		rating: m.rating,
-		time: ''
-	});
+	const toReview = (m: ManualReview): Review => {
+		const src = m.source ? sourceLabel(m.source) : 'Gast';
+		return {
+			quote: m.text,
+			who: m.author,
+			src,
+			rating: m.rating,
+			time: '',
+			url: m.url && m.url.trim() ? m.url.trim() : sourceUrl(src)
+		};
+	};
 	const curated = manualReviews.filter((m) => m && m.text);
 	const featured = curated.filter((m) => m.featured).map(toReview);
 	const other = curated.filter((m) => !m.featured).map(toReview);

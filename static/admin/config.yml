@@ -1314,6 +1314,13 @@ collections:
                 }
               - { name: text, label: Tekst, widget: text, hint: De review-tekst. }
               - {
+                  name: url,
+                  label: Link naar de bron,
+                  widget: string,
+                  required: false,
+                  hint: 'Optionele link naar de review of de bronpagina (Google/Facebook). Leeg = automatische link op basis van de bron.'
+                }
+              - {
                   name: featured,
                   label: Uitgelicht,
                   widget: boolean,
