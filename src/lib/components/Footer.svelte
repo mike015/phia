@@ -81,7 +81,10 @@
 	<div
 		class="flex flex-col items-center gap-2 border-t border-white/10 px-4 py-5 text-center text-xs tracking-wide sm:flex-row sm:justify-center sm:gap-3"
 	>
-		<span>© {SITE.name} · {SITE.address.city} · {d.footer.rights} · {d.footer.built}</span>
+		<span
+			>© {SITE.name} · {SITE.address.city} · {d.footer.rights}{#if d.footer.built} ·
+				{d.footer.built}{/if}</span
+		>
 		<button
 			type="button"
 			class="underline underline-offset-2 hover:text-white"

@@ -336,6 +336,6 @@
 			{d.footer.follow}
 		</p>
 		<h2 class="mt-3 text-2xl text-[var(--color-ink)] sm:text-3xl">Facebook</h2>
-		<FacebookEmbed {lang} class="mt-8" />
+		<FacebookEmbed class="mt-8" />
 	</div>
 </section>

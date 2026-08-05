@@ -557,9 +557,10 @@ collections:
                 }
               - {
                   name: built,
-                  label: Gemaakt door,
+                  label: Gemaakt door (optioneel),
                   widget: string,
-                  hint: 'Bijvoorbeeld "Website door Blackgate".'
+                  required: false,
+                  hint: 'Optionele creditregel in de footer. Leeg laten = niets tonen.'
                 }
               - {
                   name: brandLine,
@@ -1306,15 +1307,21 @@ collections:
               - {
                   name: date_start,
                   label: Startdatum,
-                  widget: date,
+                  widget: datetime,
                   format: 'YYYY-MM-DD',
+                  date_format: 'YYYY-MM-DD',
+                  time_format: false,
+                  picker_utc: true,
                   hint: Eerste dag van de uitzondering.
                 }
               - {
                   name: date_end,
                   label: Einddatum,
-                  widget: date,
+                  widget: datetime,
                   format: 'YYYY-MM-DD',
+                  date_format: 'YYYY-MM-DD',
+                  time_format: false,
+                  picker_utc: true,
                   hint: Laatste dag van de uitzondering.
                 }
               - {
@@ -1733,8 +1740,11 @@ collections:
       - {
           name: date,
           label: Datum,
-          widget: date,
+          widget: datetime,
           format: 'YYYY-MM-DD',
+          date_format: 'YYYY-MM-DD',
+          time_format: false,
+          picker_utc: true,
           hint: Publicatiedatum van het bericht.
         }
       - name: image

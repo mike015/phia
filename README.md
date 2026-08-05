@@ -122,4 +122,4 @@ Workers later: wissel `@sveltejs/adapter-static` om naar `@sveltejs/adapter-clou
 
 ---
 
-Website door **Blackgate** · _Soso Lobi ❤_
+_Soso Lobi ❤_

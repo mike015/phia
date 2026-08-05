@@ -39,44 +39,33 @@ const config = {
 		// krijgt automatisch een hash, zodat we GEEN 'unsafe-inline' voor script
 		// nodig hebben. Injecteert een <meta http-equiv> in elke geprerenderde
 		// pagina. Overige security-headers staan in static/_headers.
-		// LATER (embeds achter consent): voeg youtube-nocookie.com / facebook.com
-		// toe aan frame-src en de bijbehorende script-src.
 		csp: {
 			mode: 'hash',
 			directives: {
 				'default-src': ['self'],
-				// gtag.js (Google Analytics) van googletagmanager.com; Facebook Page Plugin
-				// laadt de SDK van connect.facebook.net (beide pas na consent).
-				'script-src': ['self', 'https://www.googletagmanager.com', 'https://connect.facebook.net'],
+				// gtag.js (Google Analytics) laadt van googletagmanager.com; pas na consent.
+				'script-src': ['self', 'https://www.googletagmanager.com'],
 				'style-src': ['self', 'unsafe-inline'],
-				// GA-pixels; Instagram-foto's van *.cdninstagram.com/*.fbcdn.net; FB-plugin-beeld.
+				// GA-pixels; Instagram-foto's (§5.2) van *.cdninstagram.com/*.fbcdn.net.
 				'img-src': [
 					'self',
 					'data:',
 					'https://www.googletagmanager.com',
 					'https://www.google-analytics.com',
 					'https://*.cdninstagram.com',
-					'https://*.fbcdn.net',
-					'https://www.facebook.com'
+					'https://*.fbcdn.net'
 				],
 				'font-src': ['self'],
-				// GA-metingen; de feeds-worker (indien ingesteld); Facebook-plugin.
+				// GA-metingen; de feeds-worker (indien ingesteld).
 				'connect-src': [
 					'self',
 					'https://www.googletagmanager.com',
 					'https://www.google-analytics.com',
 					'https://region1.google-analytics.com',
-					'https://www.facebook.com',
 					...feedsConnect
 				],
-				// YouTube-embeds + Facebook Page Plugin (beide achter media-consent).
-				'frame-src': [
-					'self',
-					'https://www.youtube-nocookie.com',
-					'https://www.youtube.com',
-					'https://www.facebook.com',
-					'https://web.facebook.com'
-				],
+				// YouTube-embeds (na media-consent) in een iframe van youtube-nocookie.
+				'frame-src': ['self', 'https://www.youtube-nocookie.com', 'https://www.youtube.com'],
 				'frame-ancestors': ['self'],
 				'base-uri': ['self'],
 				'form-action': ['self'],

@@ -1,7 +1,7 @@
 # PROJECT-BRIEF — Phia's Smulparadijs website rebuild
 
 Klant: Phia's Smulparadijs (Surinaams-Creools afhaal-eethuis, Den Haag)
-Opdrachtnemer: Blackgate (Mike)
+Opdrachtnemer: Mike
 Status: design goedgekeurd door klant (concept v4). Dit document is de volledige, bindende spec.
 
 ---

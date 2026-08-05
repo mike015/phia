@@ -1,65 +1,43 @@
-# Dependency updates / Afhankelijkheden bijwerken
+# Automatische package-updates (GitHub Dependabot)
 
-**EN —** Automatic pull/merge requests that update outdated npm packages for this
-project. Every week a bot checks `package.json`, and opens PRs/MRs when newer
-versions are available. You review and merge them; you never edit versions by hand.
+De npm-packages van dit project worden automatisch bijgehouden door
+**GitHub Dependabot**. Dependabot is een ingebouwde GitHub-dienst: er is geen
+externe service (zoals GitLab of Renovate) nodig en er hoeft niets extra
+geïnstalleerd te worden.
 
-**NL —** Automatische pull-/merge-requests die verouderde npm-pakketten van dit
-project bijwerken. Elke week controleert een bot `package.json` en opent PR's/MR's
-zodra er nieuwere versies zijn. Jij reviewt en merget ze; je past nooit handmatig
-versienummers aan.
+## Wat het doet
 
-> **Belangrijk / Important:** deze jobs bouwen of deployen **niets**. Cloudflare
-> blijft de site bouwen en uitrollen. Dit gaat alleen over het *voorstellen* van
-> versie-updates.
+- Dependabot bekijkt wekelijks (maandagochtend) de `package.json` /
+  `package-lock.json`.
+- Voor verouderde packages opent het **pull requests** met de update.
+- Minor- en patch-updates worden gebundeld in één PR (`groups`), zodat je niet
+  bedolven wordt onder losse PR's. Grote (major) updates komen apart, zodat je ze
+  per stuk kunt beoordelen.
+- Elke PR krijgt het label `dependencies`.
 
-De grouping- en scheduleregels staan in [`renovate.json`](../renovate.json)
-(Renovate) en [`.github/dependabot.yml`](../.github/dependabot.yml) (Dependabot):
-minor + patch worden gebundeld, major-updates krijgen een aparte PR/MR, label
-`dependencies`, wekelijks op maandagochtend.
+Configuratie: [`.github/dependabot.yml`](../.github/dependabot.yml).
 
----
+## Belangrijk: dit bouwt of deployt niets
 
-## GitLab (Renovate via CI-schedule)
+Dependabot opent alleen PR's die de package-versies wijzigen. Het bouwt en
+deployt de site **niet** — dat blijft Cloudflare doen bij elke commit op de
+branch. Een Dependabot-PR gaat dus pas live nadat jij hem merget (en Cloudflare
+daarna bouwt).
 
-De repo bevat [`.gitlab-ci.yml`](../.gitlab-ci.yml) met één job (`renovate`) die
-alleen op *scheduled* pipelines draait.
+## Instellen
 
-1. **Access token aanmaken.** Maak een **project access token** (of group access
-   token) aan met scope **`api`** en rol **Developer** of **Maintainer**.
-   *Settings → Access tokens.*
-2. **CI/CD-variabele toevoegen.** Ga naar *Settings → CI/CD → Variables* en voeg
-   toe:
-   - Key: `RENOVATE_TOKEN`
-   - Value: het zojuist gemaakte token
-   - Zet **Masked** aan (en desgewenst **Protected** uit, zodat schedules op elke
-     branch werken).
-3. **Pipeline schedule aanmaken.** Ga naar *Build → Pipeline schedules → New
-   schedule* en zet een **wekelijkse** cron (bijv. maandag 05:00). Target branch:
-   `main`.
+Niets. Dependabot staat "uit de doos" aan zodra `.github/dependabot.yml` op de
+standaardbranch (bijv. `main`) staat. Je kunt het controleren onder
+**GitHub → repo → Insights → Dependency graph → Dependabot**.
 
-Vanaf dan opent Renovate wekelijks Merge Requests. De job bouwt/deployt niets.
+## Een update doorvoeren
 
-## GitHub
+1. Open de Dependabot-PR.
+2. Wacht op de Cloudflare-previewbuild (of test lokaal met `npm ci && npm run build`).
+3. Is alles goed → merge de PR. Cloudflare bouwt en deployt daarna automatisch.
 
-Kies **één** van de twee opties (niet allebei, anders krijg je dubbele PR's):
+## Wekelijkse cadans aanpassen
 
-- **Optie A — Dependabot (aanbevolen, zero-setup).** Het meegecommite bestand
-  [`.github/dependabot.yml`](../.github/dependabot.yml) is genoeg. GitHub start
-  Dependabot automatisch; er is geen token of workflow nodig. Controleer eventueel
-  *Settings → Code security → Dependabot* dat het aanstaat.
-- **Optie B — Renovate GitHub App.** Installeer de
-  [Renovate-app](https://github.com/apps/renovate) op de repo `mike015/phia`. Die
-  gebruikt dezelfde [`renovate.json`](../renovate.json). Zet in dat geval
-  `.github/dependabot.yml` uit (of verwijder het) om dubbele PR's te voorkomen.
-
----
-
-## Samenvatting / Summary
-
-| Platform | Mechanisme | Setup nodig |
-|----------|-----------|-------------|
-| GitLab   | Renovate via `.gitlab-ci.yml` + pipeline schedule | `RENOVATE_TOKEN` variabele + schedule |
-| GitHub   | Dependabot (`.github/dependabot.yml`) **of** Renovate App | Geen (Dependabot) / app installeren (Renovate) |
-
-Geen van deze jobs bouwt of deployt de site — dat blijft Cloudflare.
+Wijzig in `.github/dependabot.yml` het `schedule`-blok (`interval`, `day`,
+`time`). Zie de
+[Dependabot-documentatie](https://docs.github.com/en/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file).
