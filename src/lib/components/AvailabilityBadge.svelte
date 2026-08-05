@@ -1,40 +1,37 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
 	import { t, type Lang } from '$lib/i18n';
 
 	let { lang, days, class: cls = '' }: { lang: Lang; days: string[]; class?: string } = $props();
 	const d = $derived(t(lang));
 
-	// JS getDay(): 0=zo..6=za → onze dagcodes.
-	const KEYS = ['zo', 'ma', 'di', 'wo', 'do', 'vr', 'za'] as const;
+	// Vaste weekvolgorde zodat de dagen altijd netjes op volgorde staan.
+	const ORDER = ['ma', 'di', 'wo', 'do', 'vr', 'za', 'zo'];
 
-	// Korte weekdag-labels uit het dagen-woordenboek (bv. "Vrijdag" → "Vr").
-	const short = (k: string) => ((d.days as Record<string, string>)[k] ?? k).slice(0, 2);
-	const list = $derived(days.map(short).join(', '));
+	// Volledige dagnamen in kleine letters, bv. "woensdag".
+	const names = $derived(
+		ORDER.filter((k) => days.includes(k)).map((k) =>
+			((d.days as Record<string, string>)[k] ?? k).toLowerCase()
+		)
+	);
 
-	// Pas op de client vaststellen of het vandaag verkrijgbaar is (zoals OpenStatus).
-	let availableToday = $state<boolean | null>(null);
-	onMount(() => {
-		availableToday = days.includes(KEYS[new Date().getDay()]);
-	});
+	// "woensdag" · "woensdag en vrijdag" · "dinsdag, donderdag en zaterdag"
+	const list = $derived(
+		names.length <= 1
+			? names.join('')
+			: `${names.slice(0, -1).join(', ')} ${d.pages.menu.availAnd} ${names[names.length - 1]}`
+	);
 </script>
 
 {#if days.length}
 	<span
-		class={`inline-flex items-center gap-1.5 rounded-full px-2.5 py-0.5 text-xs font-bold ${cls}`}
-		style={availableToday ? 'background:#DCEFE0;color:#0E7A33' : 'background:#EFDFF1;color:#7A4E82'}
-		role="status"
+		class={`inline-flex items-center gap-2 rounded-full border border-[#159641] bg-[#DCEFE0] px-3 py-1 text-sm font-bold text-[#0E7A33] ${cls}`}
 	>
 		<span
-			class="inline-block h-2 w-2 rounded-full"
-			style={`background:${availableToday ? 'var(--color-green-bright)' : 'var(--color-accent)'}`}
+			class="inline-block h-2.5 w-2.5 rounded-full"
+			style="background:var(--color-green-bright)"
 			aria-hidden="true"
 		></span>
-		{#if availableToday}
-			{d.pages.menu.availToday}
-		{:else}
-			{d.pages.menu.availOnly}
-			{list}
-		{/if}
+		{d.pages.menu.availOnly}
+		{list}
 	</span>
 {/if}

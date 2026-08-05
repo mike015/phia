@@ -64,7 +64,8 @@
 			"examplesHeading": "Examples of meals & soups",
 			"badges": { "halal": "Halal", "nietHalal": "Not halal", "vega": "Vegetarian" },
 			"availToday": "Available today",
-			"availOnly": "Only on"
+			"availOnly": "Only on",
+			"availAnd": "and"
 		},
 		"about": {
 			"title": "About us",

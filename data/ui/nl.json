@@ -64,7 +64,8 @@
 			"examplesHeading": "Voorbeelden van maaltijden & soepen",
 			"badges": { "halal": "Halal", "nietHalal": "Niet halal", "vega": "Vegetarisch" },
 			"availToday": "Vandaag verkrijgbaar",
-			"availOnly": "Alleen op"
+			"availOnly": "Alleen op",
+			"availAnd": "en"
 		},
 		"about": {
 			"title": "Over ons",

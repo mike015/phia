@@ -270,8 +270,8 @@
 			"nl": "Phia's Soep & Maaltijd",
 			"en": "Phia's Soup & Meal",
 			"badge": "",
-			"note_nl": "Soep & maaltijd: elke dinsdag, donderdag en zaterdag. Maaltijden: elke woensdag en vrijdag. Is Phia’s soep of maaltijd bij jou al bekend? Zorg dan dat jij de 1e met reserveren bent!",
-			"note_en": "Soup & meal: every Tuesday, Thursday and Saturday. Meals: every Wednesday and Friday. Reserve early, these sell out!",
+			"note_nl": "Is Phia’s soep of maaltijd bij jou al bekend? Zorg dan dat jij de 1e met reserveren bent!",
+			"note_en": "Already know Phia’s soup or meal? Make sure you are the first to reserve!",
 			"items": [
 				{
 					"nl": "Phia's soepen",
@@ -287,7 +287,7 @@
 						}
 					],
 					"links": [],
-					"availableDays": []
+					"availableDays": ["di", "do", "za"]
 				},
 				{
 					"nl": "Phia's maaltijden",
@@ -303,7 +303,7 @@
 						}
 					],
 					"links": [],
-					"availableDays": []
+					"availableDays": ["wo", "vr"]
 				}
 			]
 		},
