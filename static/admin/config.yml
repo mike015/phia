@@ -612,6 +612,7 @@ collections:
               - { name: manage, label: Cookievoorkeuren (footer-link), widget: string }
               - { name: close, label: Sluiten (label), widget: string }
               - { name: playHere, label: Video hier afspelen (knop), widget: string }
+              - { name: showHere, label: Social hier tonen (knop), widget: string }
 
   # ============================================================
   # TEKSTEN ENGELS — volledige woordenlijst (EN, te reviewen)
@@ -1138,6 +1139,7 @@ collections:
               - { name: manage, label: Cookievoorkeuren (footer-link), widget: string }
               - { name: close, label: Sluiten (label), widget: string }
               - { name: playHere, label: Video hier afspelen (knop), widget: string }
+              - { name: showHere, label: Social hier tonen (knop), widget: string }
 
   # ============================================================
   # SITE-INSTELLINGEN — telefoon en social media
@@ -1210,6 +1212,18 @@ collections:
                   widget: string,
                   required: false,
                   hint: 'Bijvoorbeeld "G-XXXXXXXXXX". Leeg laten = Google Analytics volledig uit.'
+                }
+          - name: feeds
+            label: Live feeds (YouTube en Instagram)
+            widget: object
+            hint: Adres van de feeds-worker die de video-van-vandaag en Instagram-posts levert.
+            fields:
+              - {
+                  name: base,
+                  label: Feeds-worker-URL,
+                  widget: string,
+                  required: false,
+                  hint: 'Bijvoorbeeld "https://feeds.phiassmulparadijs.nl". Leeg = statische fallback (geen live feeds).'
                 }
 
   # ============================================================

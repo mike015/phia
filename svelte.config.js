@@ -6,6 +6,11 @@ import { readFileSync } from 'node:fs';
 // een dichtgeklapte dropdown, dus die links worden niet vanzelf gecrawld. Zo
 // prerenderen ook nieuwe talen automatisch (voeg ze toe in data/locales.json).
 const localesConfig = JSON.parse(readFileSync('./data/locales.json', 'utf8'));
+// Feeds-worker-host uit data/site.json meenemen in connect-src (indien ingesteld),
+// zodat de client-side fetch naar de feeds-worker niet door CSP wordt geblokkeerd.
+const siteConfig = JSON.parse(readFileSync('./data/site.json', 'utf8'));
+const feedsBase = (siteConfig.feeds && siteConfig.feeds.base) || '';
+const feedsConnect = feedsBase ? [feedsBase] : [];
 const localeRoots = localesConfig.locales
 	.map((l) => l.code)
 	.filter((code) => code !== localesConfig.default)
@@ -40,26 +45,38 @@ const config = {
 			mode: 'hash',
 			directives: {
 				'default-src': ['self'],
-				// gtag.js (Google Analytics) laadt van googletagmanager.com; pas na consent.
-				'script-src': ['self', 'https://www.googletagmanager.com'],
+				// gtag.js (Google Analytics) van googletagmanager.com; Facebook Page Plugin
+				// laadt de SDK van connect.facebook.net (beide pas na consent).
+				'script-src': ['self', 'https://www.googletagmanager.com', 'https://connect.facebook.net'],
 				'style-src': ['self', 'unsafe-inline'],
-				// GA-pixels/beacons komen als afbeelding van (region1.)google-analytics.com.
+				// GA-pixels; Instagram-foto's van *.cdninstagram.com/*.fbcdn.net; FB-plugin-beeld.
 				'img-src': [
 					'self',
 					'data:',
 					'https://www.googletagmanager.com',
-					'https://www.google-analytics.com'
+					'https://www.google-analytics.com',
+					'https://*.cdninstagram.com',
+					'https://*.fbcdn.net',
+					'https://www.facebook.com'
 				],
 				'font-src': ['self'],
-				// GA verzendt metingen via fetch/XHR/beacon naar deze hosts.
+				// GA-metingen; de feeds-worker (indien ingesteld); Facebook-plugin.
 				'connect-src': [
 					'self',
 					'https://www.googletagmanager.com',
 					'https://www.google-analytics.com',
-					'https://region1.google-analytics.com'
+					'https://region1.google-analytics.com',
+					'https://www.facebook.com',
+					...feedsConnect
 				],
-				// YouTube-embeds (na cookie-consent) laden in een iframe van youtube-nocookie.
-				'frame-src': ['self', 'https://www.youtube-nocookie.com', 'https://www.youtube.com'],
+				// YouTube-embeds + Facebook Page Plugin (beide achter media-consent).
+				'frame-src': [
+					'self',
+					'https://www.youtube-nocookie.com',
+					'https://www.youtube.com',
+					'https://www.facebook.com',
+					'https://web.facebook.com'
+				],
 				'frame-ancestors': ['self'],
 				'base-uri': ['self'],
 				'form-action': ['self'],

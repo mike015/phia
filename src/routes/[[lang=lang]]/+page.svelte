@@ -4,12 +4,15 @@
 	import OpeningNotice from '$lib/components/OpeningNotice.svelte';
 	import AvailabilityBadge from '$lib/components/AvailabilityBadge.svelte';
 	import YouTubeEmbed from '$lib/components/YouTubeEmbed.svelte';
+	import FacebookEmbed from '$lib/components/FacebookEmbed.svelte';
 	import { reveal } from '$lib/actions/reveal';
+	import { onMount } from 'svelte';
 	import { t, localizePath } from '$lib/i18n';
 	import { SITE } from '$lib/config';
 	import { getReviews, getRatings } from '$lib/reviews';
 	import { findMenuItem } from '$lib/menu';
 	import { food, menuHighlights, instaPlaceholders } from '$lib/assets/images';
+	import { fetchDaily, fetchInstagram, type InstaPost } from '$lib/feeds';
 
 	let { data } = $props();
 	const d = $derived(t(data.lang));
@@ -18,6 +21,21 @@
 	// Echte reviews komen via de dagelijkse GitHub Action (§5.3); toon er max 3.
 	const reviews = getReviews(3);
 	const ratings = getRatings();
+
+	// Live "video van vandaag" (§5.1) + Instagram-feed (§5.2) via de feeds-worker.
+	// Client-side ophalen; zonder worker/JS blijft de statische fallback staan.
+	let dailyUrl = $state(SITE.social.youtubeVideo);
+	let dailyTitle = $state('');
+	let livePosts = $state<InstaPost[]>([]);
+
+	onMount(async () => {
+		const daily = await fetchDaily();
+		if (daily) {
+			dailyUrl = daily.url;
+			dailyTitle = daily.title;
+		}
+		livePosts = await fetchInstagram();
+	});
 </script>
 
 <Seo seo={data.seo} />
@@ -55,6 +73,13 @@
 
 			<p class="mt-4 max-w-xl text-lg text-[var(--color-muted)]">{d.home.sub}</p>
 
+			{#if dailyTitle}
+				<p class="mt-4 inline-flex items-center gap-2 rounded-xl bg-white/70 px-4 py-2 text-sm font-bold text-[var(--color-plum)]">
+					<span aria-hidden="true">🍲</span>
+					<span>{d.home.todayBadge}: {dailyTitle}</span>
+				</p>
+			{/if}
+
 			<div class="mt-7 flex flex-wrap gap-3">
 				<a class="btn-primary" href={localizePath(lang, '/menu')}>{d.home.ctaMenu}</a>
 				<a class="btn-outline" href={`tel:${SITE.phoneE164}`}>📞 {SITE.phone}</a>
@@ -70,15 +95,15 @@
 				style="border-radius: var(--radius-video); box-shadow: var(--shadow-lift);"
 			>
 				<YouTubeEmbed
-					url={SITE.social.youtubeVideo}
-					title={d.home.h1Fallback}
+					url={dailyUrl}
+					title={dailyTitle || d.home.h1Fallback}
 					{lang}
 					activate={false}
 					class="rounded-2xl"
 				>
 					{#snippet poster()}
 						<a
-							href={SITE.social.youtubeVideo}
+							href={dailyUrl}
 							target="_blank"
 							rel="noopener"
 							class="group media-zoom relative block rounded-2xl"
@@ -245,26 +270,53 @@
 		</p>
 		<h2 class="mt-3 text-2xl text-[var(--color-ink)] sm:text-3xl">{SITE.social.instagramHandle}</h2>
 
-		<ul class="mt-8 flex flex-wrap justify-center gap-3 sm:gap-4">
-			{#each instaPlaceholders as img, i (i)}
-				<li>
-					<a
-						href={SITE.social.instagram}
-						target="_blank"
-						rel="noopener"
-						aria-label={`${d.home.instaLabel} ${SITE.social.instagramHandle}`}
-						class="card-lift media-zoom hover-veil block rounded-2xl border-4 border-white shadow-lg"
-					>
-						<enhanced:img
-							src={img}
-							alt=""
-							class="h-28 w-28 object-cover sm:h-40 sm:w-40"
-							sizes="160px"
-						/>
-					</a>
-				</li>
-			{/each}
-		</ul>
+		{#if livePosts.length}
+			<!-- Live Instagram-posts uit de feeds-worker (§5.2). -->
+			<ul class="mt-8 flex flex-wrap justify-center gap-3 sm:gap-4">
+				{#each livePosts as post (post.id)}
+					<li>
+						<a
+							href={post.permalink}
+							target="_blank"
+							rel="noopener"
+							aria-label={post.caption
+								? post.caption.slice(0, 80)
+								: `${d.home.instaLabel} ${SITE.social.instagramHandle}`}
+							class="card-lift media-zoom hover-veil block rounded-2xl border-4 border-white shadow-lg"
+						>
+							<img
+								src={post.thumbnailUrl || post.mediaUrl}
+								alt=""
+								loading="lazy"
+								class="h-28 w-28 rounded-xl object-cover sm:h-40 sm:w-40"
+							/>
+						</a>
+					</li>
+				{/each}
+			</ul>
+		{:else}
+			<!-- Fallback: statische sfeerbeelden met link naar het profiel. -->
+			<ul class="mt-8 flex flex-wrap justify-center gap-3 sm:gap-4">
+				{#each instaPlaceholders as img, i (i)}
+					<li>
+						<a
+							href={SITE.social.instagram}
+							target="_blank"
+							rel="noopener"
+							aria-label={`${d.home.instaLabel} ${SITE.social.instagramHandle}`}
+							class="card-lift media-zoom hover-veil block rounded-2xl border-4 border-white shadow-lg"
+						>
+							<enhanced:img
+								src={img}
+								alt=""
+								class="h-28 w-28 object-cover sm:h-40 sm:w-40"
+								sizes="160px"
+							/>
+						</a>
+					</li>
+				{/each}
+			</ul>
+		{/if}
 
 		<a
 			class="btn-primary mt-8 inline-flex"
@@ -274,5 +326,16 @@
 		>
 			{d.home.instaFollow}
 		</a>
+	</div>
+</section>
+
+<!-- ============ Facebook Page Plugin (consent-gated, §5.4) ============ -->
+<section class="mx-auto max-w-6xl px-4 py-16 sm:px-6">
+	<div class="flex flex-col items-center" use:reveal>
+		<p class="text-xs font-bold uppercase tracking-[0.3em] text-[var(--color-lilac-text)]">
+			{d.footer.follow}
+		</p>
+		<h2 class="mt-3 text-2xl text-[var(--color-ink)] sm:text-3xl">Facebook</h2>
+		<FacebookEmbed {lang} class="mt-8" />
 	</div>
 </section>

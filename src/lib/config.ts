@@ -82,6 +82,13 @@ export const SITE = {
 		ga: site.analytics?.ga ?? ''
 	},
 
+	// Basis-URL van de feeds-worker (YouTube-video-van-vandaag + Instagram), bijv.
+	// "https://feeds.phiassmulparadijs.nl" — bron: data/site.json (CMS). Leeg = de
+	// front-end valt terug op statische content (§5.1/§5.2).
+	feeds: {
+		base: site.feeds?.base ?? ''
+	},
+
 	reviews: {
 		google: { rating: 4.8, count: 294 },
 		facebook: { rating: 4.9, count: 110 }

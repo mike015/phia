@@ -143,6 +143,7 @@
 		"decline": "Only necessary",
 		"manage": "Cookie settings",
 		"close": "Close",
-		"playHere": "Play video here (accept cookies)"
+		"playHere": "Play video here (accept cookies)",
+		"showHere": "Show here (accept media cookies)"
 	}
 }

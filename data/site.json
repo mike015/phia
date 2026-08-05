@@ -10,5 +10,8 @@
 	},
 	"analytics": {
 		"ga": ""
+	},
+	"feeds": {
+		"base": ""
 	}
 }

@@ -1,0 +1,33 @@
+# Aparte Cloudflare Worker voor de live datafeeds (YouTube + Instagram).
+# STAAT LOS van de site-deploy: de hoofd-site gebruikt /wrangler.toml (static assets).
+# Deze Worker deploy je handmatig vanuit deze map:
+#   cd workers/feeds
+#   npx wrangler kv namespace create FEEDS   # → plak de id hieronder
+#   npx wrangler secret put IG_ACCESS_TOKEN  # OPTIONEEL (Instagram blijft anders dormant)
+#   npx wrangler deploy
+name = "phia-feeds"
+main = "src/index.js"
+compatibility_date = "2024-11-01"
+
+# Cron: elke 5 minuten de feeds verversen (288 calls/dag — ruim binnen free tier).
+[triggers]
+crons = ["*/5 * * * *"]
+
+# KV-namespace waarin de feeds + het Instagram-token bewaard worden.
+# Maak 'm aan met:  npx wrangler kv namespace create FEEDS
+# en plak de teruggegeven id hieronder in plaats van de placeholder.
+[[kv_namespaces]]
+binding = "FEEDS"
+id = "REPLACE_WITH_KV_NAMESPACE_ID"
+
+[vars]
+# Enige toegestane CORS-origin. Zet dit in productie op de site-origin;
+# zonder deze var valt de Worker terug op '*' (elke site mag de feeds lezen).
+ALLOWED_ORIGIN = "https://www.phiassmulparadijs.nl"
+
+# YouTube channel-id voor de "video van vandaag"-RSS. Laat weg om de default
+# (Phia's kanaal) uit src/index.js te gebruiken. GEEN API-key nodig.
+YT_CHANNEL_ID = "UCPdruOGFXG2zC440MWNFr4g"
+
+# Secrets NOOIT hier zetten. Instagram-token gaat via:
+#   npx wrangler secret put IG_ACCESS_TOKEN
