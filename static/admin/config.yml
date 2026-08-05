@@ -452,8 +452,37 @@ collections:
                 widget: object
                 fields:
                   - { name: title, label: Titel, widget: string, hint: Paginatitel. }
-                  - { name: lead, label: Introtekst, widget: text, hint: Inleidende alinea. }
-                  - { name: body, label: Tekst, widget: text, hint: Hoofdtekst van de pagina. }
+                  - {
+                      name: lead,
+                      label: Introtekst,
+                      widget: text,
+                      hint: Inleidende alinea (staat groot bovenaan).
+                    }
+                  - {
+                      name: body,
+                      label: Tekst,
+                      widget: text,
+                      hint: Hoofdtekst van de pagina. Een lege regel maakt een nieuwe alinea.
+                    }
+                  - { name: section1Heading, label: Tussenkop 1, widget: string, required: false }
+                  - {
+                      name: section1Text,
+                      label: Tekst onder tussenkop 1,
+                      widget: text,
+                      required: false
+                    }
+                  - {
+                      name: section2Heading,
+                      label: Tussenkop 2 (bv. Kennis en ervaring),
+                      widget: string,
+                      required: false
+                    }
+                  - {
+                      name: section2Text,
+                      label: Tekst onder tussenkop 2,
+                      widget: text,
+                      required: false
+                    }
               - name: dish
                 label: Pagina Maaltijd of Soep
                 widget: object
@@ -1116,6 +1145,13 @@ collections:
                   widget: string,
                   required: false,
                   hint: Volledige link naar het YouTube-kanaal.
+                }
+              - {
+                  name: youtubeVideo,
+                  label: Uitgelichte video (URL),
+                  widget: string,
+                  required: false,
+                  hint: 'Video die op de startpagina en de Maaltijd-of-Soep-pagina opent. Leeg = het kanaal wordt gebruikt.'
                 }
 
   # ============================================================

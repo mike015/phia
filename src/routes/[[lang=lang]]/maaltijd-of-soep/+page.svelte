@@ -35,7 +35,7 @@
 		style="border-radius: var(--radius-video); box-shadow: var(--shadow-lift);"
 	>
 		<a
-			href={SITE.social.youtube}
+			href={SITE.social.youtubeVideo}
 			target="_blank"
 			rel="noopener"
 			class="group relative block overflow-hidden rounded-2xl"

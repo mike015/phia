@@ -71,7 +71,9 @@ export const SITE = {
 		facebook: site.social.facebook,
 		instagram: site.social.instagram,
 		instagramHandle: site.social.instagramHandle,
-		youtube: site.social.youtube
+		youtube: site.social.youtube,
+		// Uitgelichte video (link, geen embed) voor hero + maaltijd-pagina.
+		youtubeVideo: site.social.youtubeVideo || site.social.youtube
 	},
 
 	reviews: {

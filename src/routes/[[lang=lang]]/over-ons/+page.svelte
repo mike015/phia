@@ -5,14 +5,17 @@
 	import { breadcrumbJsonLd } from '$lib/seo/jsonld';
 	import { SITE } from '$lib/config';
 	import { t, localizePath } from '$lib/i18n';
-	import { food } from '$lib/assets/images';
+	import haccpImg from '$lib/assets/haccp-allergenen-kennis.jpg?enhanced';
 
 	let { data } = $props();
 	const d = $derived(t(data.lang));
 	const lang = $derived(data.lang);
 
+	// De body bevat meerdere alinea's, gescheiden door lege regels.
+	const paragraphs = $derived(d.pages.about.body.split(/\n{2,}/).filter((p) => p.trim()));
+
 	const crumbs = $derived([
-		{ name: 'Home', url: SITE.url + localizePath(lang, '/') },
+		{ name: d.nav.home, url: SITE.url + localizePath(lang, '/') },
 		{ name: d.pages.about.title, url: SITE.url + localizePath(lang, '/over-ons') }
 	]);
 </script>
@@ -28,22 +31,46 @@
 	homeLabel={d.nav.home}
 />
 
-<div class="mx-auto grid max-w-5xl items-center gap-10 px-4 py-14 sm:px-6 lg:grid-cols-2">
-	<div
-		class="media-zoom overflow-hidden rounded-[var(--radius-card)]"
-		style="box-shadow: var(--shadow-soft);"
+<div class="mx-auto max-w-3xl px-4 py-14 sm:px-6">
+	<!-- Verhaal -->
+	<div class="space-y-5 text-lg leading-relaxed text-[var(--color-ink)]/90">
+		{#each paragraphs as p (p)}
+			<p>{p}</p>
+		{/each}
+	</div>
+
+	<p class="mt-8 font-display text-2xl text-[var(--color-cta)]">{SITE.slogan}</p>
+
+	<!-- Sectie 1 -->
+	<section class="mt-12 border-t border-[var(--color-lilac-border)] pt-10">
+		<h2 class="text-2xl text-[var(--color-ink)]">{d.pages.about.section1Heading}</h2>
+		<p class="mt-3 text-lg leading-relaxed text-[var(--color-ink)]/90">
+			{d.pages.about.section1Text}
+		</p>
+	</section>
+
+	<!-- Sectie 2: Kennis en ervaring, met HACCP/allergenen-certificering -->
+	<section
+		class="mt-10 grid items-center gap-8 border-t border-[var(--color-lilac-border)] pt-10 sm:grid-cols-2"
 	>
-		<enhanced:img
-			src={food.purple}
-			alt="Sfeerbeeld van Phia's Smulparadijs"
-			class="aspect-[4/3] w-full object-cover"
-			sizes="(min-width: 1024px) 480px, 90vw"
-		/>
-	</div>
-	<div>
-		<p class="text-lg leading-relaxed text-[var(--color-ink)]/90">{d.pages.about.body}</p>
-		<p class="mt-6 font-display text-2xl text-[var(--color-cta)]">{SITE.slogan}</p>
-		<a class="btn-primary mt-6 inline-flex" href={localizePath(lang, '/contact')}>{d.nav.contact}</a
+		<div>
+			<h2 class="text-2xl text-[var(--color-ink)]">{d.pages.about.section2Heading}</h2>
+			<p class="mt-3 text-lg leading-relaxed text-[var(--color-ink)]/90">
+				{d.pages.about.section2Text}
+			</p>
+		</div>
+		<div
+			class="overflow-hidden rounded-[var(--radius-card)] border border-[var(--color-lilac-border)]"
+			style="box-shadow: var(--shadow-soft);"
 		>
-	</div>
+			<enhanced:img
+				src={haccpImg}
+				alt="HACCP- en allergenenkennis-gecertificeerd bij Phia's Smulparadijs"
+				class="w-full object-cover"
+				sizes="(min-width: 640px) 360px, 90vw"
+			/>
+		</div>
+	</section>
+
+	<a class="btn-primary mt-12 inline-flex" href={localizePath(lang, '/contact')}>{d.nav.contact}</a>
 </div>
