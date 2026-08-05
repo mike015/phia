@@ -1,0 +1,149 @@
+{
+	"meta": { "htmlLang": "en", "localeOg": "en_GB", "label": "English" },
+	"nav": {
+		"home": "Home",
+		"menu": "Menu",
+		"about": "About us",
+		"dish": "Meal or Soup",
+		"photos": "Photos",
+		"news": "News",
+		"contact": "Contact",
+		"callCta": "Call & order",
+		"skip": "Skip to content",
+		"langSwitch": "Schakel naar Nederlands",
+		"langMenu": "Language",
+		"openMenu": "Open menu",
+		"closeMenu": "Close menu"
+	},
+	"status": {
+		"openToday": "Open today",
+		"closedToday": "Closed today",
+		"from": "from",
+		"summary": "Tue–Sat 12:00–19:00 · closed Sun & Mon",
+		"kitchen": "Kitchen from 13:30",
+		"holiday": "During holiday periods opening hours may differ.",
+		"closedNow": "Closed now",
+		"reopen": "Open again",
+		"today": "today",
+		"at": "at"
+	},
+	"home": {
+		"kicker": "Meal or soup · today",
+		"h1Fallback": "Freshly cooked, every single day",
+		"sub": "Every day Phia cooks a fresh meal or soup and posts the video on YouTube. See what’s in the pan today, or call to order right away.",
+		"ctaMenu": "View the menu",
+		"playLabel": "Play today’s video",
+		"todayBadge": "Today",
+		"watchYoutube": "Watch on YouTube",
+		"noticeLabel": "Adjusted opening hours",
+		"noticeExample": "Temporary changes to our opening hours always appear here right away.",
+		"menuHeading": "From Phia’s kitchen",
+		"menuSub": "A taste of the menu, with prices",
+		"menuMore": "View the full menu",
+		"bandQuote": "“You don’t see food with this much passion and heart nowadays.”",
+		"bandSource": "4.8 on Google (294) · 4.9 on Facebook (110)",
+		"reviewsHeading": "What guests say",
+		"reviewsScorePre": "",
+		"onGoogle": "on Google",
+		"onFacebook": "on Facebook",
+		"instaLabel": "Follow us on Instagram",
+		"instaFollow": "Follow @phiassmulparadijs",
+		"aboutEyebrow": "Welcome to Phia's Smulparadijs",
+		"aboutTitle": "Fresh Surinamese-Creole takeaway in The Hague",
+		"aboutText": "At Phia's Smulparadijs, Phia & Dwight cook fresh Surinamese-Creole dishes with love every day. Call, order and collect, always fresh."
+	},
+	"pages": {
+		"menu": {
+			"title": "Menu",
+			"lead": "The full menu of Phia’s Smulparadijs, fresh Surinamese-Creole dishes, sandwiches, snacks and soups. Prices from the July 2026 edition.",
+			"note": "Prices and availability may change; errors excepted. Call to order on 070-7851813, we do not deliver, you collect yourself.",
+			"downloadPdf": "Download the menu (PDF)",
+			"downloadHint": "The full menu as a PDF",
+			"notesHeading": "Good to know",
+			"allergensHeading": "Allergens",
+			"examplesHeading": "Examples of meals & soups",
+			"badges": { "halal": "Halal", "nietHalal": "Not halal", "vega": "Vegetarian" },
+			"availToday": "Available today",
+			"availOnly": "Only on",
+			"availAnd": "and"
+		},
+		"about": {
+			"title": "Who we are",
+			"lead": "My name is Saphira (Phia) Pinas (42) and together with my partner Dwight Krenten (44) we are the founders and owners of Phia’s Smulparadijs.",
+			"body": "Phia’s Smulparadijs grew out of my great passion for cooking and my love for Surinamese and Caribbean cuisine. Entrepreneurship is a passion Dwight and I both share, and by joining forces Phia’s Smulparadijs was born.\n\nSince 2016 we have been a proud family business, specialised in the Surinamese-Creole kitchen. We do this wholeheartedly, under our motto: ‘Come and enjoy the Surinamese-Creole kitchen!’\n\nWith us, everything is cooked fresh every day, with love and passion. Quality and flavour come first; that is what we guarantee you. In our dishes we combine authentic flavours, creativity and craftsmanship, and above all a lot of joy in what we do.\n\nOur takeaway meals are available in our Smulparadijs at Bouwlustlaan 111 in The Hague. We are proud to say that Phia’s Smulparadijs is the first Surinamese-Creole eatery in The Hague and its surroundings.",
+			"section1Heading": "Nothing is finer than turning your hobby into your profession",
+			"section1Text": "With that goal, and our dream of starting our own business, we began Phia’s Smulparadijs.",
+			"section2Heading": "Knowledge and experience",
+			"section2Text": "With our knowledge, experience and motivation, we are convinced that Phia’s Smulparadijs will be a success. In this business we work with HACCP- and allergen-knowledge-certified staff."
+		},
+		"dish": {
+			"title": "Today’s Meal or Soup",
+			"lead": "Every day Phia shares on YouTube which fresh meal or soup is ready that day.",
+			"body": "Watch the latest video above and browse the archive of earlier dishes. Seen something you like? Call 070-7851813 to order.",
+			"archive": "Recent videos"
+		},
+		"photos": {
+			"title": "Photos",
+			"lead": "A peek into the kitchen and the smulparadijs, dishes, atmosphere and guests."
+		},
+		"contact": {
+			"title": "Contact",
+			"lead": "Calling and reserving is done by phone. Online ordering is not available.",
+			"addressLabel": "Address",
+			"phoneLabel": "Phone",
+			"hoursLabel": "Opening hours",
+			"mapTitle": "Map, Phia’s Smulparadijs, Bouwlustlaan 111, The Hague",
+			"route": "Directions in Google Maps"
+		},
+		"news": {
+			"title": "News",
+			"lead": "The latest news from Phia's Smulparadijs.",
+			"empty": "There is no news yet."
+		},
+		"menuItem": {
+			"back": "Back to the menu",
+			"order": "Call to order",
+			"viewPost": "View on social media",
+			"inCategory": "In category",
+			"moreInCategory": "More in this category",
+			"similar": "You might also like"
+		}
+	},
+	"footer": {
+		"rights": "All rights reserved.",
+		"follow": "Follow us",
+		"built": "",
+		"brandLine": "Come and enjoy the Surinamese-Creole kitchen!",
+		"slogan": "Soso Lobi ❤"
+	},
+	"days": {
+		"ma": "Monday",
+		"di": "Tuesday",
+		"wo": "Wednesday",
+		"do": "Thursday",
+		"vr": "Friday",
+		"za": "Saturday",
+		"zo": "Sunday"
+	},
+	"closed": "Closed",
+	"consent": {
+		"title": "A quick word about cookies 🍪",
+		"text": "We use functional cookies to make the site work. Accept media cookies too and you can watch YouTube videos right here. Otherwise we link you through.",
+		"intro": "Choose which cookies you allow. Necessary cookies are always on; switch the rest on or off below.",
+		"necessaryLabel": "Necessary",
+		"necessaryDesc": "Needed to make the site work and to remember your choice.",
+		"mediaLabel": "Media (YouTube)",
+		"mediaDesc": "Embeds YouTube videos right on the site. Otherwise we link you through.",
+		"analyticsLabel": "Statistics (Google Analytics)",
+		"analyticsDesc": "Anonymous visitor numbers, so we can improve the site.",
+		"alwaysOn": "Always on",
+		"acceptAll": "Accept cookies",
+		"save": "Save my choice",
+		"accept": "Accept",
+		"decline": "Only necessary",
+		"manage": "Cookie settings",
+		"close": "Close",
+		"playHere": "Play video here (accept cookies)",
+		"showHere": "Show here (accept media cookies)"
+	}
+}

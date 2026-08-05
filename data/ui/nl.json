@@ -1,0 +1,149 @@
+{
+	"meta": { "htmlLang": "nl", "localeOg": "nl_NL", "label": "Nederlands" },
+	"nav": {
+		"home": "Home",
+		"menu": "Menu",
+		"about": "Over ons",
+		"dish": "Maaltijd of Soep",
+		"photos": "Foto's",
+		"news": "Nieuws",
+		"contact": "Contact",
+		"callCta": "Bel & bestel",
+		"skip": "Direct naar de inhoud",
+		"langSwitch": "Switch to English",
+		"langMenu": "Taal",
+		"openMenu": "Menu openen",
+		"closeMenu": "Menu sluiten"
+	},
+	"status": {
+		"openToday": "Vandaag geopend",
+		"closedToday": "Vandaag gesloten",
+		"from": "vanaf",
+		"summary": "Di–za 12:00–19:00 · zo & ma gesloten",
+		"kitchen": "Keuken vanaf 13:30",
+		"holiday": "In vakantieperiodes gelden afwijkende openingstijden.",
+		"closedNow": "Nu gesloten",
+		"reopen": "Weer open",
+		"today": "vandaag",
+		"at": "om"
+	},
+	"home": {
+		"kicker": "Maaltijd of soep · vandaag",
+		"h1Fallback": "Vers gekookt, elke dag opnieuw",
+		"sub": "Elke dag kookt Phia een verse maaltijd of soep en zet de video op YouTube. Bekijk wat er vandaag in de pan staat, of bel direct om te bestellen.",
+		"ctaMenu": "Bekijk het menu",
+		"playLabel": "Speel de video van vandaag af",
+		"todayBadge": "Vandaag",
+		"watchYoutube": "Bekijk op YouTube",
+		"noticeLabel": "Aangepaste openingstijden",
+		"noticeExample": "Tijdelijke wijzigingen in de openingstijden verschijnen hier altijd direct.",
+		"menuHeading": "Uit de keuken van Phia",
+		"menuSub": "Een greep uit het menu, met prijzen",
+		"menuMore": "Bekijk het volledige menu",
+		"bandQuote": "“You don’t see food with this much passion and heart nowadays.”",
+		"bandSource": "4.8 op Google (294) · 4.9 op Facebook (110)",
+		"reviewsHeading": "Wat gasten zeggen",
+		"reviewsScorePre": "",
+		"onGoogle": "op Google",
+		"onFacebook": "op Facebook",
+		"instaLabel": "Volg ons op Instagram",
+		"instaFollow": "Volg @phiassmulparadijs",
+		"aboutEyebrow": "Welkom bij Phia's Smulparadijs",
+		"aboutTitle": "Vers Surinaams-Creools afhaaleten in Den Haag",
+		"aboutText": "Bij Phia's Smulparadijs koken Phia & Dwight elke dag met liefde verse Surinaams-Creoolse gerechten. Bellen, bestellen en afhalen, altijd vers."
+	},
+	"pages": {
+		"menu": {
+			"title": "Menu",
+			"lead": "Het volledige menu van Phia’s Smulparadijs, verse Surinaams-Creoolse gerechten, broodjes, snacks en soepen. Prijzen van de kaart, editie juli 2026.",
+			"note": "Prijzen en beschikbaarheid kunnen wijzigen; drukfouten voorbehouden. Bellen en bestellen via 070-7851813, wij bezorgen niet, je haalt zelf af.",
+			"downloadPdf": "Download de menukaart (PDF)",
+			"downloadHint": "De volledige kaart als PDF",
+			"notesHeading": "Goed om te weten",
+			"allergensHeading": "Allergenen",
+			"examplesHeading": "Voorbeelden van maaltijden & soepen",
+			"badges": { "halal": "Halal", "nietHalal": "Niet halal", "vega": "Vegetarisch" },
+			"availToday": "Vandaag verkrijgbaar",
+			"availOnly": "Alleen op",
+			"availAnd": "en"
+		},
+		"about": {
+			"title": "Wie zijn wij?",
+			"lead": "Mijn naam is Saphira (Phia) Pinas (42) en samen met mijn partner Dwight Krenten (44) zijn wij de bedenkers en eigenaar van Phia’s Smulparadijs.",
+			"body": "Phia’s Smulparadijs is ontstaan vanuit mijn grote passie voor koken en mijn liefde voor de Surinaamse en Caraïbische keuken. Ondernemen is een passie die Dwight en ik beiden delen, en door deze krachten te bundelen is Phia’s Smulparadijs geboren.\n\nSinds 2016 zijn wij een trots familiebedrijf, gespecialiseerd in de Surinaams-Creoolse keuken. Wij doen dit met volle overgave en onder ons motto: ‘Kom en geniet van de Surinaams-Creoolse keuken!’\n\nBij ons wordt er dagelijks vers, met liefde en passie gekookt. Kwaliteit en smaak staan voorop; dat is wat wij jou garanderen. In onze gerechten combineren wij authentieke smaken, creativiteit en vakmanschap, met vooral veel plezier in wat we doen.\n\nOnze afhaalmaaltijden zijn verkrijgbaar in ons Smulparadijs aan de Bouwlustlaan 111 in Den Haag. Met trots kunnen wij zeggen dat Phia’s Smulparadijs het eerste Surinaams-Creoolse eethuis is in Den Haag en omstreken.",
+			"section1Heading": "Niets is mooier om van je hobby, je beroep te kunnen maken",
+			"section1Text": "Met dat doel en onze droom om een eigen onderneming te starten zijn wij Phia’s Smulparadijs begonnen.",
+			"section2Heading": "Kennis en ervaring",
+			"section2Text": "Met onze kennis, ervaring en motivatie zijn wij ervan overtuigd dat Phia’s Smulparadijs een succes zal worden. In dit bedrijf werken wij met HACCP- en allergenenkennis-gecertificeerde medewerkers."
+		},
+		"dish": {
+			"title": "Maaltijd of Soep van vandaag",
+			"lead": "Elke dag deelt Phia op YouTube welke verse maaltijd of soep er die dag klaarstaat.",
+			"body": "Bekijk de nieuwste video hierboven en blader door het archief van eerdere gerechten. Iets gezien dat je lekker lijkt? Bel 070-7851813 om te bestellen.",
+			"archive": "Recente video’s"
+		},
+		"photos": {
+			"title": "Foto's",
+			"lead": "Een kijkje in de keuken en het smulparadijs, gerechten, sfeer en gasten."
+		},
+		"contact": {
+			"title": "Contact",
+			"lead": "Bellen en reserveren kan telefonisch. Online bestellen is niet mogelijk.",
+			"addressLabel": "Adres",
+			"phoneLabel": "Telefoon",
+			"hoursLabel": "Openingstijden",
+			"mapTitle": "Kaart, Phia’s Smulparadijs, Bouwlustlaan 111, Den Haag",
+			"route": "Route in Google Maps"
+		},
+		"news": {
+			"title": "Nieuws",
+			"lead": "Het laatste nieuws van Phia's Smulparadijs.",
+			"empty": "Er is nog geen nieuws."
+		},
+		"menuItem": {
+			"back": "Terug naar het menu",
+			"order": "Bel om te bestellen",
+			"viewPost": "Bekijk op social media",
+			"inCategory": "In categorie",
+			"moreInCategory": "Meer uit deze categorie",
+			"similar": "Misschien ook lekker"
+		}
+	},
+	"footer": {
+		"rights": "Alle rechten voorbehouden.",
+		"follow": "Volg ons",
+		"built": "",
+		"brandLine": "Kom en geniet van de Surinaams-Creoolse keuken!",
+		"slogan": "Soso Lobi ❤"
+	},
+	"days": {
+		"ma": "Maandag",
+		"di": "Dinsdag",
+		"wo": "Woensdag",
+		"do": "Donderdag",
+		"vr": "Vrijdag",
+		"za": "Zaterdag",
+		"zo": "Zondag"
+	},
+	"closed": "Gesloten",
+	"consent": {
+		"title": "Even over cookies 🍪",
+		"text": "Wij gebruiken functionele cookies om de site te laten werken. Accepteer je ook media-cookies, dan bekijk je YouTube-video’s direct op de site. Anders linken we je door.",
+		"intro": "Kies zelf welke cookies je toestaat. Noodzakelijke cookies zijn altijd aan; de rest zet je hieronder aan of uit.",
+		"necessaryLabel": "Noodzakelijk",
+		"necessaryDesc": "Nodig om de site te laten werken en je keuze te onthouden.",
+		"mediaLabel": "Media (YouTube)",
+		"mediaDesc": "Sluit YouTube-video’s direct op de site in. Anders linken we je door.",
+		"analyticsLabel": "Statistieken (Google Analytics)",
+		"analyticsDesc": "Anonieme bezoekcijfers, zodat we de site kunnen verbeteren.",
+		"alwaysOn": "Altijd aan",
+		"acceptAll": "Accepteer cookies",
+		"save": "Mijn keuze opslaan",
+		"accept": "Accepteren",
+		"decline": "Alleen noodzakelijk",
+		"manage": "Cookievoorkeuren",
+		"close": "Sluiten",
+		"playHere": "Video hier afspelen (accepteer cookies)",
+		"showHere": "Hier tonen (accepteer media-cookies)"
+	}
+}

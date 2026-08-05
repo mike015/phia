@@ -1,0 +1,1766 @@
+# Sveltia CMS-configuratie voor Phia's Smulparadijs.
+# Alle labels en hints zijn in het Nederlands; de eigenaren bewerken alles via formulieren.
+# Elke opslag = een commit naar GitHub → Cloudflare bouwt de site opnieuw.
+
+backend:
+  name: github
+  repo: mike015/phia
+  # LET OP: zet dit bij livegang op de productie-branch (bv. "main").
+  branch: claude/new-project-seo-responsive-38rc1b
+  # Productie-login via de OAuth-Worker (workers/cms-auth). Deploy die Worker,
+  # vul hieronder de Worker-URL in en haal de "#" weg (zie CMS.md):
+  # base_url: https://phia-cms-auth.JOUW-SUBDOMEIN.workers.dev
+  # auth_endpoint: auth
+
+# Lokaal testen zonder GitHub-OAuth (zie CMS.md → "Lokaal testen").
+local_backend: true
+
+# Media: geüploade bestanden komen in static/uploads en zijn op de site bereikbaar via /uploads.
+media_folder: static/uploads
+public_folder: /uploads
+
+collections:
+  # ============================================================
+  # TALEN — het talenregister (klaar voor meer dan 2 talen)
+  # ============================================================
+  - name: talen
+    label: Talen
+    delete: false
+    files:
+      - name: locales
+        label: Talenregister
+        file: data/locales.json
+        description: >-
+          De talen waarin de website beschikbaar is. De standaardtaal wordt op
+          "/" getoond, elke andere taal onder "/<code>". Een taal toevoegen =
+          hier een regel toevoegen én de bijbehorende teksten invullen.
+        fields:
+          - name: default
+            label: Standaardtaal (code)
+            widget: string
+            hint: >-
+              De taalcode die op de hoofd-URL "/" wordt getoond, bijvoorbeeld "nl".
+              Moet overeenkomen met een code hieronder.
+          - name: locales
+            label: Beschikbare talen
+            widget: list
+            label_singular: Taal
+            summary: '{{fields.label}} ({{fields.code}})'
+            hint: De lijst met talen. Sleep om de volgorde in de taalkiezer te wijzigen.
+            fields:
+              - name: code
+                label: Taalcode
+                widget: string
+                hint: Korte code, bijvoorbeeld "nl" of "en". Wordt in de URL gebruikt.
+              - name: label
+                label: Weergavenaam
+                widget: string
+                hint: Naam van de taal zoals getoond in de taalkiezer, bijvoorbeeld "Nederlands".
+              - name: og
+                label: OpenGraph-locale
+                widget: string
+                hint: Voor social media, bijvoorbeeld "nl_NL" of "en_GB".
+              - name: html
+                label: HTML lang-code
+                widget: string
+                hint: Waarde voor het lang-attribuut van de pagina, bijvoorbeeld "nl".
+
+  # ============================================================
+  # TEKSTEN NEDERLANDS — volledige woordenlijst (NL)
+  # ============================================================
+  - name: teksten-nl
+    label: Teksten (Nederlands)
+    delete: false
+    files:
+      - name: ui-nl
+        label: Nederlandse teksten
+        file: data/ui/nl.json
+        description: Alle vaste teksten op de site in het Nederlands.
+        fields:
+          - name: meta
+            label: Meta
+            widget: object
+            hint: Technische taalgegevens; meestal niet aanpassen.
+            collapsed: true
+            fields:
+              - { name: htmlLang, label: HTML-taalcode, widget: string, hint: 'Bijvoorbeeld "nl".' }
+              - {
+                  name: localeOg,
+                  label: OpenGraph-locale,
+                  widget: string,
+                  hint: 'Bijvoorbeeld "nl_NL".'
+                }
+              - { name: label, label: Taalnaam, widget: string, hint: 'Bijvoorbeeld "Nederlands".' }
+          - name: nav
+            label: Navigatie
+            widget: object
+            hint: Teksten in het menu en de knoppen bovenaan.
+            fields:
+              - {
+                  name: home,
+                  label: 'Menu — Home',
+                  widget: string,
+                  hint: Naam van de startpagina in het menu.
+                }
+              - {
+                  name: menu,
+                  label: 'Menu — Menu',
+                  widget: string,
+                  hint: Naam van de menukaartpagina.
+                }
+              - {
+                  name: about,
+                  label: 'Menu — Over ons',
+                  widget: string,
+                  hint: Naam van de over-ons-pagina.
+                }
+              - {
+                  name: dish,
+                  label: 'Menu — Maaltijd of Soep',
+                  widget: string,
+                  hint: Naam van de dagmaaltijd-pagina.
+                }
+              - {
+                  name: photos,
+                  label: "Menu — Foto's",
+                  widget: string,
+                  hint: Naam van de fotopagina.
+                }
+              - {
+                  name: contact,
+                  label: 'Menu — Contact',
+                  widget: string,
+                  hint: Naam van de contactpagina.
+                }
+              - {
+                  name: callCta,
+                  label: Bel-knop,
+                  widget: string,
+                  hint: Tekst op de bel-en-bestel-knop.
+                }
+              - {
+                  name: skip,
+                  label: Direct-naar-inhoud,
+                  widget: string,
+                  hint: Verborgen link voor toetsenbord-/schermlezergebruikers.
+                }
+              - {
+                  name: langSwitch,
+                  label: Taalwissel (label),
+                  widget: string,
+                  hint: Verborgen omschrijving van de taalwissel.
+                }
+              - {
+                  name: openMenu,
+                  label: Menu openen (label),
+                  widget: string,
+                  hint: Toegankelijkheidslabel voor de menuknop op mobiel.
+                }
+              - {
+                  name: closeMenu,
+                  label: Menu sluiten (label),
+                  widget: string,
+                  hint: Toegankelijkheidslabel voor het sluiten van het menu.
+                }
+              - {
+                  name: langMenu,
+                  label: Taalkiezer (label),
+                  widget: string,
+                  hint: 'Label van de taalkiezer, bijvoorbeeld "Taal".'
+                }
+          - name: status
+            label: Openingsstatus
+            widget: object
+            hint: Teksten rond de open/gesloten-indicator.
+            fields:
+              - {
+                  name: openToday,
+                  label: Vandaag geopend,
+                  widget: string,
+                  hint: Tekst wanneer de zaak vandaag open is.
+                }
+              - {
+                  name: closedToday,
+                  label: Vandaag gesloten,
+                  widget: string,
+                  hint: Tekst wanneer de zaak vandaag gesloten is.
+                }
+              - { name: from, label: Vanaf, widget: string, hint: 'Woord "vanaf" vóór een tijd.' }
+              - {
+                  name: summary,
+                  label: Samenvatting openingstijden,
+                  widget: string,
+                  hint: Korte samenvatting van de openingstijden.
+                }
+              - {
+                  name: kitchen,
+                  label: Keuken vanaf,
+                  widget: string,
+                  hint: Tekst over wanneer de keuken opengaat.
+                }
+              - {
+                  name: holiday,
+                  label: Vakantiemelding,
+                  widget: string,
+                  hint: Melding over afwijkende openingstijden in vakanties.
+                }
+              - {
+                  name: closedNow,
+                  label: Nu gesloten,
+                  widget: string,
+                  hint: 'Tekst wanneer nu gesloten, bijvoorbeeld "Nu gesloten".'
+                }
+              - {
+                  name: reopen,
+                  label: Weer open,
+                  widget: string,
+                  hint: 'Woord vóór het volgende openingsmoment, bijvoorbeeld "Weer open".'
+                }
+              - {
+                  name: today,
+                  label: Vandaag (woord),
+                  widget: string,
+                  hint: 'Woord "vandaag" bij heropening op dezelfde dag.'
+                }
+              - {
+                  name: at,
+                  label: Om (woord),
+                  widget: string,
+                  hint: 'Woord "om" vóór een tijdstip.'
+                }
+          - name: home
+            label: Startpagina
+            widget: object
+            hint: Teksten op de homepage.
+            fields:
+              - {
+                  name: kicker,
+                  label: Bovenkopje hero,
+                  widget: string,
+                  hint: Klein kopje boven de dagmaaltijd.
+                }
+              - {
+                  name: h1Fallback,
+                  label: Titel (terugval),
+                  widget: string,
+                  hint: Titel als er geen dagmaaltijd-titel is.
+                }
+              - {
+                  name: sub,
+                  label: Introtekst hero,
+                  widget: text,
+                  hint: Korte tekst onder de titel in de hero.
+                }
+              - {
+                  name: ctaMenu,
+                  label: Knop naar menu,
+                  widget: string,
+                  hint: Tekst op de knop naar de menukaart.
+                }
+              - {
+                  name: playLabel,
+                  label: Video afspelen (label),
+                  widget: string,
+                  hint: Toegankelijkheidslabel op de afspeelknop.
+                }
+              - {
+                  name: todayBadge,
+                  label: 'Badge "Vandaag"',
+                  widget: string,
+                  hint: Klein label op de video van vandaag.
+                }
+              - {
+                  name: watchYoutube,
+                  label: Bekijk op YouTube,
+                  widget: string,
+                  hint: Tekst van de YouTube-link.
+                }
+              - {
+                  name: noticeLabel,
+                  label: Melding (label),
+                  widget: string,
+                  hint: Kopje boven een tijdelijke openingsmelding.
+                }
+              - {
+                  name: noticeExample,
+                  label: Melding (voorbeeldtekst),
+                  widget: text,
+                  hint: Voorbeeldtekst voor een tijdelijke melding.
+                }
+              - {
+                  name: menuHeading,
+                  label: Menu-blok kop,
+                  widget: string,
+                  hint: Kop boven de greep uit het menu.
+                }
+              - {
+                  name: menuSub,
+                  label: Menu-blok subkop,
+                  widget: string,
+                  hint: Subtekst boven de greep uit het menu.
+                }
+              - {
+                  name: menuMore,
+                  label: Menu-blok knop,
+                  widget: string,
+                  hint: Knop naar het volledige menu.
+                }
+              - {
+                  name: bandQuote,
+                  label: Citaat (band),
+                  widget: text,
+                  hint: Uitgelicht citaat over het eten.
+                }
+              - {
+                  name: bandSource,
+                  label: Citaat-bron,
+                  widget: string,
+                  hint: Bron/score onder het citaat.
+                }
+              - {
+                  name: reviewsHeading,
+                  label: Reviews kop,
+                  widget: string,
+                  hint: Kop boven de reviews.
+                }
+              - {
+                  name: reviewsScorePre,
+                  label: Reviews (tekst vooraf),
+                  widget: string,
+                  required: false,
+                  hint: Optionele tekst vóór de score. Mag leeg zijn.
+                }
+              - {
+                  name: onGoogle,
+                  label: Op Google,
+                  widget: string,
+                  hint: 'Tekst "op Google" bij de score.'
+                }
+              - {
+                  name: onFacebook,
+                  label: Op Facebook,
+                  widget: string,
+                  hint: 'Tekst "op Facebook" bij de score.'
+                }
+              - {
+                  name: instaLabel,
+                  label: Instagram (kop),
+                  widget: string,
+                  hint: Kop boven het Instagram-blok.
+                }
+              - {
+                  name: instaFollow,
+                  label: Instagram (knop),
+                  widget: string,
+                  hint: Tekst op de volg-knop.
+                }
+              - {
+                  name: aboutEyebrow,
+                  label: Intro bovenkopje,
+                  widget: string,
+                  hint: Klein kopje in de introband boven de hero.
+                }
+              - {
+                  name: aboutTitle,
+                  label: Intro titel,
+                  widget: string,
+                  hint: Titel in de introband boven de hero.
+                }
+              - {
+                  name: aboutText,
+                  label: Intro tekst,
+                  widget: text,
+                  hint: Korte introtekst boven de hero over wat de site is.
+                }
+          - name: pages
+            label: Pagina's
+            widget: object
+            hint: Teksten per losse pagina.
+            fields:
+              - name: menu
+                label: Pagina Menu
+                widget: object
+                fields:
+                  - { name: title, label: Titel, widget: string, hint: Paginatitel. }
+                  - {
+                      name: lead,
+                      label: Introtekst,
+                      widget: text,
+                      hint: Inleidende alinea bovenaan de pagina.
+                    }
+                  - {
+                      name: note,
+                      label: Opmerking,
+                      widget: text,
+                      hint: Opmerking onder de menukaart (prijzen/afhalen).
+                    }
+                  - {
+                      name: downloadPdf,
+                      label: Download-knop,
+                      widget: string,
+                      hint: Tekst op de download-de-menukaart-knop.
+                    }
+                  - {
+                      name: downloadHint,
+                      label: Download-hint,
+                      widget: string,
+                      hint: Korte uitleg bij de download.
+                    }
+                  - {
+                      name: notesHeading,
+                      label: Kop "Goed om te weten",
+                      widget: string,
+                      hint: Kop boven de opmerkingen.
+                    }
+                  - {
+                      name: allergensHeading,
+                      label: Kop Allergenen,
+                      widget: string,
+                      hint: Kop boven de allergeneninformatie.
+                    }
+                  - {
+                      name: examplesHeading,
+                      label: Kop Voorbeelden,
+                      widget: string,
+                      hint: Kop boven de voorbeeldgerechten.
+                    }
+                  - name: badges
+                    label: Badges
+                    widget: object
+                    hint: Labels bij gerechten.
+                    fields:
+                      - {
+                          name: halal,
+                          label: Halal,
+                          widget: string,
+                          hint: 'Tekst van de halal-badge.'
+                        }
+                      - {
+                          name: nietHalal,
+                          label: Niet halal,
+                          widget: string,
+                          hint: 'Tekst van de niet-halal-badge.'
+                        }
+                      - {
+                          name: vega,
+                          label: Vegetarisch,
+                          widget: string,
+                          hint: 'Tekst van de vega-badge.'
+                        }
+              - name: about
+                label: Pagina Over ons
+                widget: object
+                fields:
+                  - { name: title, label: Titel, widget: string, hint: Paginatitel. }
+                  - {
+                      name: lead,
+                      label: Introtekst,
+                      widget: text,
+                      hint: Inleidende alinea (staat groot bovenaan).
+                    }
+                  - {
+                      name: body,
+                      label: Tekst,
+                      widget: text,
+                      hint: Hoofdtekst van de pagina. Een lege regel maakt een nieuwe alinea.
+                    }
+                  - { name: section1Heading, label: Tussenkop 1, widget: string, required: false }
+                  - {
+                      name: section1Text,
+                      label: Tekst onder tussenkop 1,
+                      widget: text,
+                      required: false
+                    }
+                  - {
+                      name: section2Heading,
+                      label: Tussenkop 2 (bv. Kennis en ervaring),
+                      widget: string,
+                      required: false
+                    }
+                  - {
+                      name: section2Text,
+                      label: Tekst onder tussenkop 2,
+                      widget: text,
+                      required: false
+                    }
+              - name: dish
+                label: Pagina Maaltijd of Soep
+                widget: object
+                fields:
+                  - { name: title, label: Titel, widget: string, hint: Paginatitel. }
+                  - { name: lead, label: Introtekst, widget: text, hint: Inleidende alinea. }
+                  - { name: body, label: Tekst, widget: text, hint: Hoofdtekst van de pagina. }
+                  - {
+                      name: archive,
+                      label: Kop Archief,
+                      widget: string,
+                      hint: Kop boven de eerdere video's.
+                    }
+              - name: photos
+                label: Pagina Foto's
+                widget: object
+                fields:
+                  - { name: title, label: Titel, widget: string, hint: Paginatitel. }
+                  - { name: lead, label: Introtekst, widget: text, hint: Inleidende alinea. }
+              - name: contact
+                label: Pagina Contact
+                widget: object
+                fields:
+                  - { name: title, label: Titel, widget: string, hint: Paginatitel. }
+                  - { name: lead, label: Introtekst, widget: text, hint: Inleidende alinea. }
+                  - {
+                      name: addressLabel,
+                      label: Label Adres,
+                      widget: string,
+                      hint: 'Label bij het adres.'
+                    }
+                  - {
+                      name: phoneLabel,
+                      label: Label Telefoon,
+                      widget: string,
+                      hint: 'Label bij het telefoonnummer.'
+                    }
+                  - {
+                      name: hoursLabel,
+                      label: Label Openingstijden,
+                      widget: string,
+                      hint: 'Label bij de openingstijden.'
+                    }
+                  - {
+                      name: mapTitle,
+                      label: Kaart-titel,
+                      widget: string,
+                      hint: Toegankelijke titel van de kaart.
+                    }
+                  - {
+                      name: route,
+                      label: Route-knop,
+                      widget: string,
+                      hint: Tekst van de route-in-Google-Maps-link.
+                    }
+          - name: footer
+            label: Footer
+            widget: object
+            hint: Teksten onderaan elke pagina.
+            fields:
+              - {
+                  name: rights,
+                  label: Rechten,
+                  widget: string,
+                  hint: 'Bijvoorbeeld "Alle rechten voorbehouden.".'
+                }
+              - {
+                  name: follow,
+                  label: Volg ons (kop),
+                  widget: string,
+                  hint: Kopje boven de social-links.
+                }
+              - {
+                  name: built,
+                  label: Gemaakt door (optioneel),
+                  widget: string,
+                  required: false,
+                  hint: 'Optionele creditregel in de footer. Leeg laten = niets tonen.'
+                }
+              - {
+                  name: brandLine,
+                  label: Merkregel,
+                  widget: string,
+                  hint: Wervende regel in de footer.
+                }
+              - {
+                  name: slogan,
+                  label: Slogan,
+                  widget: string,
+                  hint: 'Slogan, bijvoorbeeld "Soso Lobi ❤".'
+                }
+          - name: days
+            label: Dagen
+            widget: object
+            hint: De namen van de weekdagen (voor openingstijden).
+            fields:
+              - { name: ma, label: Maandag, widget: string, hint: Naam van maandag. }
+              - { name: di, label: Dinsdag, widget: string, hint: Naam van dinsdag. }
+              - { name: wo, label: Woensdag, widget: string, hint: Naam van woensdag. }
+              - { name: do, label: Donderdag, widget: string, hint: Naam van donderdag. }
+              - { name: vr, label: Vrijdag, widget: string, hint: Naam van vrijdag. }
+              - { name: za, label: Zaterdag, widget: string, hint: Naam van zaterdag. }
+              - { name: zo, label: Zondag, widget: string, hint: Naam van zondag. }
+          - name: closed
+            label: Gesloten (woord)
+            widget: string
+            hint: 'Woord "Gesloten" bij een gesloten dag.'
+          - name: consent
+            label: Cookiemelding
+            widget: object
+            hint: De teksten van de cookie-/consent-melding onderaan de site.
+            collapsed: true
+            fields:
+              - { name: title, label: Titel, widget: string }
+              - { name: text, label: Tekst, widget: text }
+              - { name: intro, label: Intro (uitleg keuzes), widget: text }
+              - { name: necessaryLabel, label: 'Categorie: Noodzakelijk (naam)', widget: string }
+              - { name: necessaryDesc, label: 'Categorie: Noodzakelijk (uitleg)', widget: string }
+              - { name: mediaLabel, label: 'Categorie: Media (naam)', widget: string }
+              - { name: mediaDesc, label: 'Categorie: Media (uitleg)', widget: string }
+              - { name: analyticsLabel, label: 'Categorie: Statistieken (naam)', widget: string }
+              - { name: analyticsDesc, label: 'Categorie: Statistieken (uitleg)', widget: string }
+              - { name: alwaysOn, label: '"Altijd aan"-label', widget: string }
+              - { name: acceptAll, label: Accepteer-cookies-knop (primair), widget: string }
+              - { name: save, label: Keuze-opslaan-knop, widget: string }
+              - { name: accept, label: Accepteren-knop, widget: string }
+              - { name: decline, label: Alleen-noodzakelijk-knop, widget: string }
+              - { name: manage, label: Cookievoorkeuren (footer-link), widget: string }
+              - { name: close, label: Sluiten (label), widget: string }
+              - { name: playHere, label: Video hier afspelen (knop), widget: string }
+              - { name: showHere, label: Social hier tonen (knop), widget: string }
+
+  # ============================================================
+  # TEKSTEN ENGELS — volledige woordenlijst (EN, te reviewen)
+  # ============================================================
+  - name: teksten-en
+    label: Teksten (Engels)
+    delete: false
+    files:
+      - name: ui-en
+        label: Engelse teksten
+        file: data/ui/en.json
+        description: >-
+          Alle vaste teksten op de site in het Engels. De Engelse vertalingen
+          zijn door de bouwer geschreven en nog te reviewen.
+        fields:
+          - name: meta
+            label: Meta
+            widget: object
+            hint: Technische taalgegevens; meestal niet aanpassen.
+            collapsed: true
+            fields:
+              - { name: htmlLang, label: HTML-taalcode, widget: string, hint: 'Bijvoorbeeld "en".' }
+              - {
+                  name: localeOg,
+                  label: OpenGraph-locale,
+                  widget: string,
+                  hint: 'Bijvoorbeeld "en_GB".'
+                }
+              - { name: label, label: Taalnaam, widget: string, hint: 'Bijvoorbeeld "English".' }
+          - name: nav
+            label: Navigatie
+            widget: object
+            hint: Teksten in het menu en de knoppen bovenaan (Engels).
+            fields:
+              - {
+                  name: home,
+                  label: 'Menu — Home',
+                  widget: string,
+                  hint: Engelse naam van de startpagina.
+                }
+              - {
+                  name: menu,
+                  label: 'Menu — Menu',
+                  widget: string,
+                  hint: Engelse naam van de menukaartpagina.
+                }
+              - {
+                  name: about,
+                  label: 'Menu — Over ons',
+                  widget: string,
+                  hint: Engelse naam van de over-ons-pagina.
+                }
+              - {
+                  name: dish,
+                  label: 'Menu — Maaltijd of Soep',
+                  widget: string,
+                  hint: Engelse naam van de dagmaaltijd-pagina.
+                }
+              - {
+                  name: photos,
+                  label: "Menu — Foto's",
+                  widget: string,
+                  hint: Engelse naam van de fotopagina.
+                }
+              - {
+                  name: contact,
+                  label: 'Menu — Contact',
+                  widget: string,
+                  hint: Engelse naam van de contactpagina.
+                }
+              - {
+                  name: callCta,
+                  label: Bel-knop,
+                  widget: string,
+                  hint: Engelse tekst op de bel-en-bestel-knop.
+                }
+              - {
+                  name: skip,
+                  label: Direct-naar-inhoud,
+                  widget: string,
+                  hint: Verborgen link voor toetsenbord-/schermlezergebruikers.
+                }
+              - {
+                  name: langSwitch,
+                  label: Taalwissel (label),
+                  widget: string,
+                  hint: Verborgen omschrijving van de taalwissel.
+                }
+              - {
+                  name: openMenu,
+                  label: Menu openen (label),
+                  widget: string,
+                  hint: Toegankelijkheidslabel voor de menuknop op mobiel.
+                }
+              - {
+                  name: closeMenu,
+                  label: Menu sluiten (label),
+                  widget: string,
+                  hint: Toegankelijkheidslabel voor het sluiten van het menu.
+                }
+              - {
+                  name: langMenu,
+                  label: Taalkiezer (label),
+                  widget: string,
+                  hint: 'Engels label van de taalkiezer, bijvoorbeeld "Language".'
+                }
+          - name: status
+            label: Openingsstatus
+            widget: object
+            hint: Teksten rond de open/gesloten-indicator (Engels).
+            fields:
+              - {
+                  name: openToday,
+                  label: Vandaag geopend,
+                  widget: string,
+                  hint: Engelse tekst wanneer vandaag open.
+                }
+              - {
+                  name: closedToday,
+                  label: Vandaag gesloten,
+                  widget: string,
+                  hint: Engelse tekst wanneer vandaag gesloten.
+                }
+              - { name: from, label: Vanaf, widget: string, hint: 'Engels woord voor "vanaf".' }
+              - {
+                  name: summary,
+                  label: Samenvatting openingstijden,
+                  widget: string,
+                  hint: Engelse samenvatting van de openingstijden.
+                }
+              - {
+                  name: kitchen,
+                  label: Keuken vanaf,
+                  widget: string,
+                  hint: Engelse tekst over de keukentijd.
+                }
+              - {
+                  name: holiday,
+                  label: Vakantiemelding,
+                  widget: string,
+                  hint: Engelse melding over vakanties.
+                }
+              - {
+                  name: closedNow,
+                  label: Nu gesloten,
+                  widget: string,
+                  hint: 'Engelse tekst voor "Nu gesloten".'
+                }
+              - {
+                  name: reopen,
+                  label: Weer open,
+                  widget: string,
+                  hint: 'Engels woord voor "Weer open".'
+                }
+              - {
+                  name: today,
+                  label: Vandaag (woord),
+                  widget: string,
+                  hint: 'Engels woord voor "vandaag".'
+                }
+              - {
+                  name: at,
+                  label: Om (woord),
+                  widget: string,
+                  hint: 'Engels woord voor "om" vóór een tijd.'
+                }
+          - name: home
+            label: Startpagina
+            widget: object
+            hint: Teksten op de homepage (Engels).
+            fields:
+              - {
+                  name: kicker,
+                  label: Bovenkopje hero,
+                  widget: string,
+                  hint: Engels kopje boven de dagmaaltijd.
+                }
+              - {
+                  name: h1Fallback,
+                  label: Titel (terugval),
+                  widget: string,
+                  hint: Engelse terugvaltitel.
+                }
+              - {
+                  name: sub,
+                  label: Introtekst hero,
+                  widget: text,
+                  hint: Engelse tekst onder de titel.
+                }
+              - {
+                  name: ctaMenu,
+                  label: Knop naar menu,
+                  widget: string,
+                  hint: Engelse tekst op de menu-knop.
+                }
+              - {
+                  name: playLabel,
+                  label: Video afspelen (label),
+                  widget: string,
+                  hint: Engels toegankelijkheidslabel op de afspeelknop.
+                }
+              - {
+                  name: todayBadge,
+                  label: 'Badge "Vandaag"',
+                  widget: string,
+                  hint: Engels label op de video van vandaag.
+                }
+              - {
+                  name: watchYoutube,
+                  label: Bekijk op YouTube,
+                  widget: string,
+                  hint: Engelse tekst van de YouTube-link.
+                }
+              - {
+                  name: noticeLabel,
+                  label: Melding (label),
+                  widget: string,
+                  hint: Engels kopje boven een openingsmelding.
+                }
+              - {
+                  name: noticeExample,
+                  label: Melding (voorbeeldtekst),
+                  widget: text,
+                  hint: Engelse voorbeeldtekst voor een melding.
+                }
+              - {
+                  name: menuHeading,
+                  label: Menu-blok kop,
+                  widget: string,
+                  hint: Engelse kop boven de greep uit het menu.
+                }
+              - {
+                  name: menuSub,
+                  label: Menu-blok subkop,
+                  widget: string,
+                  hint: Engelse subtekst bij het menu-blok.
+                }
+              - {
+                  name: menuMore,
+                  label: Menu-blok knop,
+                  widget: string,
+                  hint: Engelse knop naar het volledige menu.
+                }
+              - {
+                  name: bandQuote,
+                  label: Citaat (band),
+                  widget: text,
+                  hint: Engels uitgelicht citaat.
+                }
+              - {
+                  name: bandSource,
+                  label: Citaat-bron,
+                  widget: string,
+                  hint: Engelse bron/score onder het citaat.
+                }
+              - {
+                  name: reviewsHeading,
+                  label: Reviews kop,
+                  widget: string,
+                  hint: Engelse kop boven de reviews.
+                }
+              - {
+                  name: reviewsScorePre,
+                  label: Reviews (tekst vooraf),
+                  widget: string,
+                  required: false,
+                  hint: Optionele Engelse tekst vóór de score. Mag leeg zijn.
+                }
+              - {
+                  name: onGoogle,
+                  label: Op Google,
+                  widget: string,
+                  hint: 'Engelse tekst "op Google".'
+                }
+              - {
+                  name: onFacebook,
+                  label: Op Facebook,
+                  widget: string,
+                  hint: 'Engelse tekst "op Facebook".'
+                }
+              - {
+                  name: instaLabel,
+                  label: Instagram (kop),
+                  widget: string,
+                  hint: Engelse kop boven het Instagram-blok.
+                }
+              - {
+                  name: instaFollow,
+                  label: Instagram (knop),
+                  widget: string,
+                  hint: Engelse tekst op de volg-knop.
+                }
+              - {
+                  name: aboutEyebrow,
+                  label: Intro bovenkopje,
+                  widget: string,
+                  hint: Engels kopje in de introband boven de hero.
+                }
+              - {
+                  name: aboutTitle,
+                  label: Intro titel,
+                  widget: string,
+                  hint: Engelse titel in de introband boven de hero.
+                }
+              - {
+                  name: aboutText,
+                  label: Intro tekst,
+                  widget: text,
+                  hint: Korte Engelse introtekst boven de hero.
+                }
+          - name: pages
+            label: Pagina's
+            widget: object
+            hint: Teksten per losse pagina (Engels).
+            fields:
+              - name: menu
+                label: Pagina Menu
+                widget: object
+                fields:
+                  - { name: title, label: Titel, widget: string, hint: Engelse paginatitel. }
+                  - {
+                      name: lead,
+                      label: Introtekst,
+                      widget: text,
+                      hint: Engelse inleidende alinea.
+                    }
+                  - {
+                      name: note,
+                      label: Opmerking,
+                      widget: text,
+                      hint: Engelse opmerking onder de menukaart.
+                    }
+                  - {
+                      name: downloadPdf,
+                      label: Download-knop,
+                      widget: string,
+                      hint: Engelse tekst op de download-knop.
+                    }
+                  - {
+                      name: downloadHint,
+                      label: Download-hint,
+                      widget: string,
+                      hint: Engelse korte uitleg bij de download.
+                    }
+                  - {
+                      name: notesHeading,
+                      label: Kop "Goed om te weten",
+                      widget: string,
+                      hint: Engelse kop boven de opmerkingen.
+                    }
+                  - {
+                      name: allergensHeading,
+                      label: Kop Allergenen,
+                      widget: string,
+                      hint: Engelse kop boven de allergenen.
+                    }
+                  - {
+                      name: examplesHeading,
+                      label: Kop Voorbeelden,
+                      widget: string,
+                      hint: Engelse kop boven de voorbeeldgerechten.
+                    }
+                  - name: badges
+                    label: Badges
+                    widget: object
+                    hint: Engelse labels bij gerechten.
+                    fields:
+                      - {
+                          name: halal,
+                          label: Halal,
+                          widget: string,
+                          hint: Engelse tekst van de halal-badge.
+                        }
+                      - {
+                          name: nietHalal,
+                          label: Niet halal,
+                          widget: string,
+                          hint: Engelse tekst van de niet-halal-badge.
+                        }
+                      - {
+                          name: vega,
+                          label: Vegetarisch,
+                          widget: string,
+                          hint: Engelse tekst van de vega-badge.
+                        }
+              - name: about
+                label: Pagina Over ons
+                widget: object
+                fields:
+                  - { name: title, label: Titel, widget: string, hint: Engelse paginatitel. }
+                  - {
+                      name: lead,
+                      label: Introtekst,
+                      widget: text,
+                      hint: Engelse inleidende alinea.
+                    }
+                  - { name: body, label: Tekst, widget: text, hint: Engelse hoofdtekst. }
+              - name: dish
+                label: Pagina Maaltijd of Soep
+                widget: object
+                fields:
+                  - { name: title, label: Titel, widget: string, hint: Engelse paginatitel. }
+                  - {
+                      name: lead,
+                      label: Introtekst,
+                      widget: text,
+                      hint: Engelse inleidende alinea.
+                    }
+                  - { name: body, label: Tekst, widget: text, hint: Engelse hoofdtekst. }
+                  - {
+                      name: archive,
+                      label: Kop Archief,
+                      widget: string,
+                      hint: Engelse kop boven de eerdere video's.
+                    }
+              - name: photos
+                label: Pagina Foto's
+                widget: object
+                fields:
+                  - { name: title, label: Titel, widget: string, hint: Engelse paginatitel. }
+                  - {
+                      name: lead,
+                      label: Introtekst,
+                      widget: text,
+                      hint: Engelse inleidende alinea.
+                    }
+              - name: contact
+                label: Pagina Contact
+                widget: object
+                fields:
+                  - { name: title, label: Titel, widget: string, hint: Engelse paginatitel. }
+                  - {
+                      name: lead,
+                      label: Introtekst,
+                      widget: text,
+                      hint: Engelse inleidende alinea.
+                    }
+                  - {
+                      name: addressLabel,
+                      label: Label Adres,
+                      widget: string,
+                      hint: Engels label bij het adres.
+                    }
+                  - {
+                      name: phoneLabel,
+                      label: Label Telefoon,
+                      widget: string,
+                      hint: Engels label bij het telefoonnummer.
+                    }
+                  - {
+                      name: hoursLabel,
+                      label: Label Openingstijden,
+                      widget: string,
+                      hint: Engels label bij de openingstijden.
+                    }
+                  - {
+                      name: mapTitle,
+                      label: Kaart-titel,
+                      widget: string,
+                      hint: Engelse toegankelijke titel van de kaart.
+                    }
+                  - {
+                      name: route,
+                      label: Route-knop,
+                      widget: string,
+                      hint: Engelse tekst van de route-link.
+                    }
+          - name: footer
+            label: Footer
+            widget: object
+            hint: Teksten onderaan elke pagina (Engels).
+            fields:
+              - { name: rights, label: Rechten, widget: string, hint: Engelse rechtenregel. }
+              - {
+                  name: follow,
+                  label: Volg ons (kop),
+                  widget: string,
+                  hint: Engels kopje boven de social-links.
+                }
+              - {
+                  name: built,
+                  label: Gemaakt door,
+                  widget: string,
+                  hint: 'Engelse "gemaakt door"-regel.'
+                }
+              - { name: brandLine, label: Merkregel, widget: string, hint: Engelse wervende regel. }
+              - { name: slogan, label: Slogan, widget: string, hint: Engelse slogan. }
+          - name: days
+            label: Dagen
+            widget: object
+            hint: De Engelse namen van de weekdagen.
+            fields:
+              - { name: ma, label: Maandag, widget: string, hint: Engelse naam van maandag. }
+              - { name: di, label: Dinsdag, widget: string, hint: Engelse naam van dinsdag. }
+              - { name: wo, label: Woensdag, widget: string, hint: Engelse naam van woensdag. }
+              - { name: do, label: Donderdag, widget: string, hint: Engelse naam van donderdag. }
+              - { name: vr, label: Vrijdag, widget: string, hint: Engelse naam van vrijdag. }
+              - { name: za, label: Zaterdag, widget: string, hint: Engelse naam van zaterdag. }
+              - { name: zo, label: Zondag, widget: string, hint: Engelse naam van zondag. }
+          - name: closed
+            label: Gesloten (woord)
+            widget: string
+            hint: 'Engels woord voor "Gesloten".'
+          - name: consent
+            label: Cookiemelding (Engels)
+            widget: object
+            hint: De Engelse teksten van de cookie-/consent-melding.
+            collapsed: true
+            fields:
+              - { name: title, label: Titel, widget: string }
+              - { name: text, label: Tekst, widget: text }
+              - { name: intro, label: Intro (uitleg keuzes), widget: text }
+              - { name: necessaryLabel, label: 'Categorie: Noodzakelijk (naam)', widget: string }
+              - { name: necessaryDesc, label: 'Categorie: Noodzakelijk (uitleg)', widget: string }
+              - { name: mediaLabel, label: 'Categorie: Media (naam)', widget: string }
+              - { name: mediaDesc, label: 'Categorie: Media (uitleg)', widget: string }
+              - { name: analyticsLabel, label: 'Categorie: Statistieken (naam)', widget: string }
+              - { name: analyticsDesc, label: 'Categorie: Statistieken (uitleg)', widget: string }
+              - { name: alwaysOn, label: '"Altijd aan"-label', widget: string }
+              - { name: acceptAll, label: Accepteer-cookies-knop (primair), widget: string }
+              - { name: save, label: Keuze-opslaan-knop, widget: string }
+              - { name: accept, label: Accepteren-knop, widget: string }
+              - { name: decline, label: Alleen-noodzakelijk-knop, widget: string }
+              - { name: manage, label: Cookievoorkeuren (footer-link), widget: string }
+              - { name: close, label: Sluiten (label), widget: string }
+              - { name: playHere, label: Video hier afspelen (knop), widget: string }
+              - { name: showHere, label: Social hier tonen (knop), widget: string }
+
+  # ============================================================
+  # SITE-INSTELLINGEN — telefoon en social media
+  # ============================================================
+  - name: site-instellingen
+    label: Site-instellingen
+    delete: false
+    files:
+      - name: site
+        label: Algemene instellingen
+        file: data/site.json
+        description: Telefoonnummer en links naar social media.
+        fields:
+          - name: phone
+            label: Telefoonnummer (weergave)
+            widget: string
+            hint: 'Zoals getoond op de site, bijvoorbeeld "070-7851813".'
+          - name: phoneE164
+            label: Telefoonnummer (bel-link)
+            widget: string
+            hint: 'Internationale notatie voor de bel-knop, bijvoorbeeld "+31707851813".'
+          - name: social
+            label: Social media
+            widget: object
+            hint: Links naar de social-mediapagina's.
+            fields:
+              - {
+                  name: facebook,
+                  label: Facebook-URL,
+                  widget: string,
+                  required: false,
+                  hint: Volledige link naar de Facebook-pagina.
+                }
+              - {
+                  name: instagram,
+                  label: Instagram-URL,
+                  widget: string,
+                  required: false,
+                  hint: Volledige link naar het Instagram-profiel.
+                }
+              - {
+                  name: instagramHandle,
+                  label: Instagram-gebruikersnaam,
+                  widget: string,
+                  required: false,
+                  hint: 'Bijvoorbeeld "@phiassmulparadijs".'
+                }
+              - {
+                  name: youtube,
+                  label: YouTube-URL,
+                  widget: string,
+                  required: false,
+                  hint: Volledige link naar het YouTube-kanaal.
+                }
+              - {
+                  name: youtubeVideo,
+                  label: Uitgelichte video (URL),
+                  widget: string,
+                  required: false,
+                  hint: 'Video die op de startpagina en de Maaltijd-of-Soep-pagina opent. Leeg = het kanaal wordt gebruikt.'
+                }
+          - name: analytics
+            label: Statistieken
+            widget: object
+            hint: Instellingen voor bezoekcijfers. Wordt pas geladen na cookie-toestemming.
+            fields:
+              - {
+                  name: ga,
+                  label: Google Analytics-meet-ID,
+                  widget: string,
+                  required: false,
+                  hint: 'Bijvoorbeeld "G-XXXXXXXXXX". Leeg laten = Google Analytics volledig uit.'
+                }
+          - name: feeds
+            label: Live feeds (YouTube en Instagram)
+            widget: object
+            hint: Adres van de feeds-worker die de video-van-vandaag en Instagram-posts levert.
+            fields:
+              - {
+                  name: base,
+                  label: Feeds-worker-URL,
+                  widget: string,
+                  required: false,
+                  hint: 'Bijvoorbeeld "https://feeds.phiassmulparadijs.nl". Leeg = statische fallback (geen live feeds).'
+                }
+
+  # ============================================================
+  # OPENINGSTIJDEN — reguliere tijden + uitzonderingen
+  # ============================================================
+  - name: openingstijden
+    label: Openingstijden
+    delete: false
+    files:
+      - name: opening-hours
+        label: Openingstijden
+        file: data/opening-hours.json
+        description: >-
+          De vaste openingstijden per dag en eventuele tijdelijke uitzonderingen
+          (vakanties, feestdagen). Tijden in 24-uursnotatie, bijvoorbeeld "12:00".
+        fields:
+          - name: kitchenFrom
+            label: Keuken open vanaf
+            widget: string
+            hint: 'Tijd waarop de keuken opengaat, bijvoorbeeld "13:30".'
+          - name: regular
+            label: Vaste openingstijden
+            widget: list
+            label_singular: Dag
+            summary: '{{fields.day}}'
+            hint: >-
+              Houd alle 7 dagen aanwezig (ma t/m zo) in de juiste volgorde.
+              Vink "Gesloten" aan voor gesloten dagen.
+            fields:
+              - {
+                  name: day,
+                  label: Dagcode,
+                  widget: string,
+                  hint: 'Korte dagcode: ma, di, wo, do, vr, za of zo.'
+                }
+              - {
+                  name: closed,
+                  label: Gesloten,
+                  widget: boolean,
+                  default: false,
+                  hint: Aanvinken als de zaak deze dag gesloten is.
+                }
+              - {
+                  name: open,
+                  label: Open vanaf,
+                  widget: string,
+                  required: false,
+                  hint: 'Openingstijd, bijvoorbeeld "12:00". Laat leeg bij een gesloten dag.'
+                }
+              - {
+                  name: close,
+                  label: Gesloten om,
+                  widget: string,
+                  required: false,
+                  hint: 'Sluitingstijd, bijvoorbeeld "19:00". Laat leeg bij een gesloten dag.'
+                }
+          - name: exceptions
+            label: Uitzonderingen
+            widget: list
+            required: false
+            label_singular: Uitzondering
+            summary: '{{fields.label_nl}} ({{fields.date_start}} – {{fields.date_end}})'
+            hint: >-
+              Tijdelijke afwijkingen zoals vakanties of feestdagen. Tijdens de
+              periode overschrijft dit de vaste tijden en verschijnt er een
+              melding op de startpagina.
+            fields:
+              - {
+                  name: label_nl,
+                  label: Omschrijving (NL),
+                  widget: string,
+                  hint: 'Korte omschrijving in het Nederlands, bijvoorbeeld "Zomervakantie".'
+                }
+              - {
+                  name: label_en,
+                  label: Omschrijving (EN),
+                  widget: string,
+                  hint: Engelse omschrijving (te reviewen).
+                }
+              - {
+                  name: date_start,
+                  label: Startdatum,
+                  widget: datetime,
+                  format: 'YYYY-MM-DD',
+                  date_format: 'YYYY-MM-DD',
+                  time_format: false,
+                  picker_utc: true,
+                  hint: Eerste dag van de uitzondering.
+                }
+              - {
+                  name: date_end,
+                  label: Einddatum,
+                  widget: datetime,
+                  format: 'YYYY-MM-DD',
+                  date_format: 'YYYY-MM-DD',
+                  time_format: false,
+                  picker_utc: true,
+                  hint: Laatste dag van de uitzondering.
+                }
+              - {
+                  name: closed,
+                  label: Gesloten,
+                  widget: boolean,
+                  default: true,
+                  hint: Aanvinken als de zaak in deze periode gesloten is.
+                }
+              - {
+                  name: open,
+                  label: Open vanaf,
+                  widget: string,
+                  required: false,
+                  hint: 'Afwijkende openingstijd. Laat leeg bij gesloten.'
+                }
+              - {
+                  name: close,
+                  label: Gesloten om,
+                  widget: string,
+                  required: false,
+                  hint: 'Afwijkende sluitingstijd. Laat leeg bij gesloten.'
+                }
+
+  # ============================================================
+  # REVIEWS — handmatig beheren + automatische sync
+  # ============================================================
+  - name: reviews
+    label: Reviews
+    delete: false
+    files:
+      - name: reviews-manual
+        label: Reviews (handmatig)
+        file: data/reviews-manual.json
+        description: >-
+          Eigen, zelfgekozen reviews. Deze worden NOOIT automatisch overschreven.
+          Vink "Uitgelicht" aan om een review vooraan op de startpagina te tonen.
+        fields:
+          - name: reviews
+            label: Reviews
+            widget: list
+            required: false
+            label_singular: Review
+            summary: '{{fields.author}} — {{fields.source}}'
+            fields:
+              - {
+                  name: author,
+                  label: Naam,
+                  widget: string,
+                  hint: 'Naam van de gast, bijvoorbeeld "Nils".'
+                }
+              - {
+                  name: source,
+                  label: Bron,
+                  widget: select,
+                  options: [Google, Facebook, Overig],
+                  default: Overig,
+                  hint: 'Waar komt deze review vandaan?'
+                }
+              - {
+                  name: rating,
+                  label: Sterren,
+                  widget: number,
+                  value_type: int,
+                  min: 1,
+                  max: 5,
+                  default: 5,
+                  hint: Aantal sterren (1 t/m 5).
+                }
+              - { name: text, label: Tekst, widget: text, hint: De review-tekst. }
+              - {
+                  name: url,
+                  label: Link naar de bron,
+                  widget: string,
+                  required: false,
+                  hint: 'Optionele link naar de review of de bronpagina (Google/Facebook). Leeg = automatische link op basis van de bron.'
+                }
+              - {
+                  name: featured,
+                  label: Uitgelicht,
+                  widget: boolean,
+                  default: false,
+                  hint: Toon deze review bovenaan op de startpagina.
+                }
+      - name: reviews-google
+        label: Reviews (Google — automatisch)
+        file: data/reviews-google.json
+        description: >-
+          Wordt dagelijks automatisch bijgewerkt vanuit Google. Handmatige
+          wijzigingen hier kunnen bij de volgende sync worden overschreven —
+          gebruik voor eigen reviews de collectie "Reviews (handmatig)".
+        fields:
+          - { name: source, label: Bron, widget: hidden, default: google }
+          - {
+              name: rating,
+              label: Gemiddelde score,
+              widget: number,
+              value_type: float,
+              min: 0,
+              max: 5,
+              hint: 'Bijvoorbeeld 4.8.'
+            }
+          - { name: count, label: Aantal beoordelingen, widget: number, value_type: int, min: 0 }
+          - { name: updated, label: Laatst bijgewerkt, widget: string, required: false }
+          - name: reviews
+            label: Reviews
+            widget: list
+            required: false
+            label_singular: Review
+            summary: '{{fields.author}}'
+            fields:
+              - { name: author, label: Naam, widget: string }
+              - {
+                  name: rating,
+                  label: Sterren,
+                  widget: number,
+                  value_type: int,
+                  min: 1,
+                  max: 5,
+                  default: 5
+                }
+              - { name: text, label: Tekst, widget: text }
+              - { name: time, label: Datum/tijd, widget: string, required: false }
+      - name: reviews-facebook
+        label: Reviews (Facebook — automatisch)
+        file: data/reviews-facebook.json
+        description: >-
+          Wordt dagelijks automatisch bijgewerkt vanuit Facebook. Facebook levert
+          alleen de gemiddelde score en het aantal; losse teksten voeg je
+          handmatig toe via "Reviews (handmatig)".
+        fields:
+          - { name: source, label: Bron, widget: hidden, default: facebook }
+          - {
+              name: rating,
+              label: Gemiddelde score,
+              widget: number,
+              value_type: float,
+              min: 0,
+              max: 5
+            }
+          - { name: count, label: Aantal beoordelingen, widget: number, value_type: int, min: 0 }
+          - { name: updated, label: Laatst bijgewerkt, widget: string, required: false }
+          - name: reviews
+            label: Reviews
+            widget: list
+            required: false
+            label_singular: Review
+            summary: '{{fields.author}}'
+            fields:
+              - { name: author, label: Naam, widget: string }
+              - {
+                  name: rating,
+                  label: Sterren,
+                  widget: number,
+                  value_type: int,
+                  min: 1,
+                  max: 5,
+                  default: 5
+                }
+              - { name: text, label: Tekst, widget: text }
+              - { name: time, label: Datum/tijd, widget: string, required: false }
+
+  # ============================================================
+  # MENU — de volledige menukaart
+  # ============================================================
+  - name: menu
+    label: Menukaart
+    delete: false
+    files:
+      - name: menu
+        label: Menukaart
+        file: data/menu.json
+        description: >-
+          De volledige menukaart met categorieën, gerechten en prijzen, plus de
+          PDF-versie. NL en EN staan naast elkaar; vul beide in.
+        fields:
+          - {
+              name: edition_nl,
+              label: Editie (NL),
+              widget: string,
+              hint: 'Bijvoorbeeld "Menukaart — editie juli 2026".'
+            }
+          - {
+              name: edition_en,
+              label: Editie (EN),
+              widget: string,
+              hint: 'Engelse editie-aanduiding, bijvoorbeeld "Menu — July 2026 edition".'
+            }
+          - name: pdf
+            label: Menukaart (PDF)
+            widget: file
+            required: false
+            hint: Upload of kies de PDF van de volledige menukaart.
+          - name: categories
+            label: Categorieën
+            widget: list
+            label_singular: Categorie
+            summary: '{{fields.nl}}'
+            hint: De categorieën op de kaart, in de volgorde waarin ze getoond worden.
+            fields:
+              - {
+                  name: id,
+                  label: ID (technisch),
+                  widget: string,
+                  hint: 'Korte unieke code zonder spaties, bijvoorbeeld "gerechten".'
+                }
+              - {
+                  name: nl,
+                  label: Naam (NL),
+                  widget: string,
+                  hint: Naam van de categorie in het Nederlands.
+                }
+              - {
+                  name: en,
+                  label: Naam (EN),
+                  widget: string,
+                  hint: Naam van de categorie in het Engels.
+                }
+              - name: badge
+                label: Badge
+                widget: select
+                required: false
+                default: ''
+                hint: Optioneel label voor de hele categorie.
+                options:
+                  - { label: Halal, value: halal }
+                  - { label: Niet halal, value: niet-halal }
+                  - { label: Vegetarisch, value: vega }
+                  - { label: Geen badge, value: '' }
+              - {
+                  name: note_nl,
+                  label: Notitie (NL),
+                  widget: text,
+                  required: false,
+                  hint: Optionele toelichting bij de categorie (NL).
+                }
+              - {
+                  name: note_en,
+                  label: Notitie (EN),
+                  widget: text,
+                  required: false,
+                  hint: Optionele toelichting bij de categorie (EN).
+                }
+              - name: items
+                label: Gerechten
+                widget: list
+                label_singular: Gerecht
+                summary: '{{fields.nl}}'
+                hint: De gerechten binnen deze categorie.
+                fields:
+                  - {
+                      name: nl,
+                      label: Naam (NL),
+                      widget: string,
+                      hint: Naam van het gerecht in het Nederlands.
+                    }
+                  - {
+                      name: en,
+                      label: Naam (EN),
+                      widget: string,
+                      hint: Naam van het gerecht in het Engels.
+                    }
+                  - {
+                      name: note_nl,
+                      label: Notitie (NL),
+                      widget: string,
+                      required: false,
+                      hint: Optionele toelichting (NL).
+                    }
+                  - {
+                      name: note_en,
+                      label: Notitie (EN),
+                      widget: string,
+                      required: false,
+                      hint: Optionele toelichting (EN).
+                    }
+                  - name: image
+                    label: Afbeelding
+                    widget: image
+                    required: false
+                    hint: Optionele foto van het gerecht.
+                  - name: availableDays
+                    label: Alleen verkrijgbaar op
+                    widget: select
+                    multiple: true
+                    required: false
+                    options:
+                      - { label: Maandag, value: ma }
+                      - { label: Dinsdag, value: di }
+                      - { label: Woensdag, value: wo }
+                      - { label: Donderdag, value: do }
+                      - { label: Vrijdag, value: vr }
+                      - { label: Zaterdag, value: za }
+                      - { label: Zondag, value: zo }
+                    hint: >-
+                      Laat LEEG als het gerecht elke openingsdag verkrijgbaar is. Kies
+                      dagen (bv. alleen vrijdag) om een gekleurde beschikbaarheidslabel
+                      te tonen; op die dagen kleurt de label groen.
+                  - name: links
+                    label: Links (social / review / video)
+                    widget: list
+                    required: false
+                    label_singular: Link
+                    summary: '{{fields.label}} — {{fields.url}}'
+                    hint: >-
+                      Koppel dit gerecht aan Instagram-posts, Google-/Facebook-reviews
+                      of YouTube-video's. Voeg zoveel links toe als je wilt.
+                    fields:
+                      - {
+                          name: label,
+                          label: Omschrijving,
+                          widget: string,
+                          required: false,
+                          hint: 'Bijv. "Instagram-post", "Google-review" of "Video".'
+                        }
+                      - {
+                          name: url,
+                          label: Link (URL),
+                          widget: string,
+                          hint: 'Plak de volledige link, bijvoorbeeld https://instagram.com/p/...'
+                        }
+                  - name: prices
+                    label: Prijzen
+                    widget: list
+                    label_singular: Prijs
+                    summary: '{{fields.label_nl}} {{fields.value}}'
+                    hint: Eén of meer prijzen. Laat de labels leeg bij één enkele prijs.
+                    fields:
+                      - {
+                          name: label_nl,
+                          label: Prijslabel (NL),
+                          widget: string,
+                          required: false,
+                          hint: 'Bijvoorbeeld "Normaal". Mag leeg zijn.'
+                        }
+                      - {
+                          name: label_en,
+                          label: Prijslabel (EN),
+                          widget: string,
+                          required: false,
+                          hint: 'Bijvoorbeeld "Regular". Mag leeg zijn.'
+                        }
+                      - {
+                          name: value,
+                          label: Bedrag,
+                          widget: string,
+                          hint: 'Prijs inclusief euroteken, bijvoorbeeld "€ 12,00".'
+                        }
+          - name: notes_nl
+            label: Opmerkingen (NL)
+            widget: list
+            required: false
+            field: { name: note, label: Opmerking, widget: string, hint: Eén opmerking (NL). }
+            hint: Algemene opmerkingen onder de kaart in het Nederlands.
+          - name: notes_en
+            label: Opmerkingen (EN)
+            widget: list
+            required: false
+            field: { name: note, label: Opmerking, widget: string, hint: Eén opmerking (EN). }
+            hint: Algemene opmerkingen onder de kaart in het Engels.
+          - {
+              name: allergens_nl,
+              label: Allergenen (NL),
+              widget: text,
+              required: false,
+              hint: Allergeneninformatie in het Nederlands.
+            }
+          - {
+              name: allergens_en,
+              label: Allergenen (EN),
+              widget: text,
+              required: false,
+              hint: Allergeneninformatie in het Engels.
+            }
+          - name: examples
+            label: Voorbeeldgerechten
+            widget: list
+            required: false
+            field:
+              {
+                name: example,
+                label: Voorbeeld,
+                widget: string,
+                hint: Eén voorbeeld van een maaltijd of soep.
+              }
+            hint: Voorbeelden van maaltijden en soepen (taalonafhankelijk).
+
+  # ============================================================
+  # NIEUWS — nieuwsberichten (mapcollectie)
+  # ============================================================
+  - name: nieuws
+    label: Nieuws
+    folder: content/news
+    create: true
+    delete: true
+    extension: md
+    format: frontmatter
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    summary: '{{title_nl}} ({{date}})'
+    description: >-
+      Nieuwsberichten. Elk bericht heeft een NL- en EN-versie. Berichten worden
+      nog niet automatisch in het menu getoond.
+    fields:
+      - {
+          name: title_nl,
+          label: Titel (NL),
+          widget: string,
+          hint: Titel van het bericht in het Nederlands.
+        }
+      - {
+          name: title_en,
+          label: Titel (EN),
+          widget: string,
+          hint: Titel van het bericht in het Engels.
+        }
+      - {
+          name: date,
+          label: Datum,
+          widget: datetime,
+          format: 'YYYY-MM-DD',
+          date_format: 'YYYY-MM-DD',
+          time_format: false,
+          picker_utc: true,
+          hint: Publicatiedatum van het bericht.
+        }
+      - name: image
+        label: Afbeelding
+        widget: image
+        required: false
+        hint: Optionele afbeelding bij het bericht.
+      - {
+          name: body_nl,
+          label: Tekst (NL),
+          widget: markdown,
+          hint: De inhoud van het bericht in het Nederlands.
+        }
+      - {
+          name: body_en,
+          label: Tekst (EN),
+          widget: markdown,
+          hint: De inhoud van het bericht in het Engels.
+        }

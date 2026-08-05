@@ -1,0 +1,13 @@
+{
+	"kitchenFrom": "13:30",
+	"regular": [
+		{ "day": "ma", "closed": true, "open": "", "close": "" },
+		{ "day": "di", "closed": false, "open": "12:00", "close": "19:00" },
+		{ "day": "wo", "closed": false, "open": "12:00", "close": "19:00" },
+		{ "day": "do", "closed": false, "open": "12:00", "close": "19:00" },
+		{ "day": "vr", "closed": false, "open": "12:00", "close": "19:00" },
+		{ "day": "za", "closed": false, "open": "12:00", "close": "19:00" },
+		{ "day": "zo", "closed": true, "open": "", "close": "" }
+	],
+	"exceptions": []
+}

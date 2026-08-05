@@ -1,0 +1,580 @@
+<!doctype html>
+<html lang="nl">
+	<head>
+		<meta charset="utf-8" />
+		<title>Definitief concept v3</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+			body {
+				font-family: 'Carlito', 'DejaVu Sans', sans-serif;
+				width: 1200px;
+				background: #fdfaf4;
+				color: #2a1330;
+			}
+			h1,
+			h2,
+			h3,
+			.serif {
+				font-family: 'GFS Baskerville', 'Caladea', 'DejaVu Serif', serif;
+				font-weight: normal;
+			}
+			.wrap {
+				width: 1080px;
+				margin: 0 auto;
+			}
+			.tag {
+				background: #241028;
+				color: #b381b6;
+				text-align: center;
+				padding: 10px;
+				font-size: 14px;
+				letter-spacing: 3px;
+			}
+			.clear {
+				clear: both;
+			}
+			.flag {
+				width: 1200px;
+			}
+			.flag div {
+				height: 4px;
+			}
+
+			/* header light, high contrast */
+			.header {
+				background: #fdfaf4;
+				border-bottom: 1px solid #e9ddea;
+				padding: 16px 0;
+			}
+			.header img.logo {
+				height: 64px;
+				vertical-align: middle;
+			}
+			.nav {
+				float: right;
+				margin-top: 18px;
+			}
+			.nav a {
+				display: inline-block;
+				margin-left: 26px;
+				color: #2a1330;
+				text-decoration: none;
+				font-size: 15px;
+				font-weight: bold;
+				letter-spacing: 1px;
+			}
+			.nav a.cta {
+				background: #c41320;
+				color: #fff;
+				padding: 11px 24px;
+				border-radius: 12px;
+				margin-top: -11px;
+				letter-spacing: 1px;
+			}
+
+			/* HERO: video of the day is the star */
+			.hero {
+				background: -webkit-radial-gradient(75% 40%, circle, #f4e9f5 0%, #fdfaf4 60%);
+				background: radial-gradient(circle at 75% 40%, #f4e9f5 0%, #fdfaf4 60%);
+				padding: 64px 0 56px;
+			}
+			.hleft {
+				display: inline-block;
+				vertical-align: middle;
+				width: 400px;
+				text-align: left;
+			}
+			.hright {
+				display: inline-block;
+				vertical-align: middle;
+				width: 630px;
+				margin-left: 26px;
+			}
+			.hero .kick {
+				display: inline-block;
+				background: #2a1330;
+				color: #f3de24;
+				letter-spacing: 3px;
+				font-size: 13px;
+				font-weight: bold;
+				padding: 9px 22px;
+				border-radius: 999px;
+			}
+			.hero .kick .d {
+				color: #b381b6;
+			}
+			.hero h1 {
+				font-size: 56px;
+				color: #2a1330;
+				letter-spacing: -1.5px;
+				line-height: 1.04;
+				margin: 22px 0 14px;
+			}
+			.hero .sub {
+				color: #6e5a73;
+				font-size: 18px;
+				line-height: 1.55;
+			}
+			/* the big video frame */
+			.vframe {
+				width: 620px;
+				background: #241028;
+				border-radius: 26px;
+				padding: 12px;
+				box-shadow: 0 30px 70px rgba(42, 19, 48, 0.35);
+				position: relative;
+			}
+			.vframe .scr {
+				display: block;
+				width: 596px;
+				height: 400px;
+				border-radius: 16px;
+				background: url('ph-warm.jpg');
+				background-size: cover;
+				background-position: center;
+				position: relative;
+			}
+			.vframe .scr .dim {
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: 596px;
+				height: 400px;
+				border-radius: 16px;
+				background: rgba(20, 8, 10, 0.18);
+			}
+			.vframe .play {
+				position: absolute;
+				left: 262px;
+				top: 154px;
+				width: 96px;
+				height: 96px;
+				background: #c41320;
+				border-radius: 48px;
+				color: #fff;
+				text-align: center;
+				line-height: 96px;
+				font-size: 36px;
+				box-shadow:
+					0 0 0 14px rgba(223, 14, 25, 0.25),
+					0 14px 40px rgba(0, 0, 0, 0.4);
+			}
+			.vframe .badge {
+				position: absolute;
+				left: 22px;
+				top: 22px;
+				background: #f3de24;
+				color: #2a1330;
+				font-weight: bold;
+				letter-spacing: 2px;
+				font-size: 13px;
+				padding: 9px 18px;
+				border-radius: 999px;
+				box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+			}
+			.vframe .yt {
+				position: absolute;
+				right: 22px;
+				bottom: 22px;
+				background: rgba(36, 16, 40, 0.85);
+				border: 1px solid rgba(179, 129, 182, 0.6);
+				color: #fff;
+				font-weight: bold;
+				font-size: 14px;
+				letter-spacing: 1px;
+				padding: 12px 22px;
+				border-radius: 12px;
+			}
+			/* action row under video */
+			.hbtns {
+				margin-top: 26px;
+			}
+			.hbtns a.b1 {
+				display: inline-block;
+				text-decoration: none;
+				background: #c41320;
+				color: #fff;
+				font-weight: bold;
+				font-size: 16px;
+				letter-spacing: 1px;
+				padding: 16px 30px;
+				border-radius: 14px;
+				margin-right: 12px;
+				box-shadow: 0 12px 30px rgba(196, 19, 32, 0.3);
+			}
+			.hbtns a.b2 {
+				display: inline-block;
+				text-decoration: none;
+				background: #fff;
+				color: #2a1330;
+				border: 2px solid #2a1330;
+				font-weight: bold;
+				font-size: 16px;
+				padding: 14px 26px;
+				border-radius: 14px;
+			}
+			.hopen {
+				margin-top: 20px;
+				color: #0e7a33;
+				font-weight: bold;
+				font-size: 15px;
+			}
+			.hopen .dot {
+				display: inline-block;
+				width: 10px;
+				height: 10px;
+				background: #159641;
+				border-radius: 5px;
+				margin-right: 8px;
+			}
+
+			/* notice */
+			.notice {
+				margin: 0 auto;
+				width: 1080px;
+				background: #efdff1;
+				border: 1px solid #c9a9cd;
+				border-radius: 14px;
+				padding: 15px 24px;
+				color: #5a3a60;
+				font-size: 15px;
+				text-align: left;
+			}
+			.notice b {
+				color: #c41320;
+			}
+
+			/* menu — bigger imagery, tighter text */
+			.menu {
+				padding: 64px 0 46px;
+			}
+			.menu h2 {
+				text-align: center;
+				font-size: 48px;
+				color: #2a1330;
+			}
+			.menu .sub {
+				text-align: center;
+				color: #6e5a73;
+				letter-spacing: 3px;
+				font-size: 13px;
+				margin: 12px 0 40px;
+			}
+			.mc {
+				display: inline-block;
+				vertical-align: top;
+				width: 250px;
+				margin-right: 16px;
+				background: #fff;
+				border: 1px solid #e9ddea;
+				border-radius: 20px;
+				overflow: hidden;
+				box-shadow: 0 14px 34px rgba(42, 19, 48, 0.1);
+			}
+			.mc .ph {
+				height: 190px;
+				background-size: cover;
+				background-position: center;
+			}
+			.p1 {
+				background-image: url('ph-warm.jpg');
+			}
+			.p2 {
+				background-image: url('ph-purple.jpg');
+			}
+			.p3 {
+				background-image: url('ph-table.jpg');
+			}
+			.p4 {
+				background-image: url('ph-dark.jpg');
+			}
+			.mc .nm {
+				padding: 16px 18px 2px;
+				font-family: 'GFS Baskerville', serif;
+				font-size: 19px;
+				color: #2a1330;
+			}
+			.mc .pr {
+				padding: 4px 18px 16px;
+				color: #c41320;
+				font-weight: bold;
+				font-size: 16px;
+			}
+			.menu .more {
+				text-align: center;
+				margin-top: 36px;
+			}
+			.menu .more a {
+				display: inline-block;
+				text-decoration: none;
+				background: #c41320;
+				color: #fff;
+				font-weight: bold;
+				padding: 16px 40px;
+				border-radius: 14px;
+				font-size: 15px;
+				letter-spacing: 1px;
+				box-shadow: 0 12px 30px rgba(223, 14, 25, 0.3);
+			}
+
+			/* full-bleed band, short */
+			.band {
+				width: 1200px;
+				height: 380px;
+				background: url('ph-purple.jpg');
+				background-size: cover;
+				background-position: center;
+				position: relative;
+			}
+			.band .shade {
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: 1200px;
+				height: 380px;
+				background: rgba(20, 8, 22, 0.45);
+			}
+			.band .card {
+				position: absolute;
+				left: 200px;
+				top: 86px;
+				width: 800px;
+				background: rgba(253, 250, 244, 0.96);
+				border-radius: 22px;
+				padding: 40px 48px;
+				text-align: center;
+				box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+			}
+			.band h2 {
+				font-size: 30px;
+				color: #2a1330;
+				line-height: 1.35;
+			}
+			.band .src {
+				color: #c41320;
+				font-weight: bold;
+				letter-spacing: 2px;
+				font-size: 13px;
+				margin-top: 14px;
+			}
+
+			/* reviews */
+			.reviews {
+				padding: 60px 0 40px;
+			}
+			.reviews h2 {
+				text-align: center;
+				font-size: 42px;
+				color: #2a1330;
+			}
+			.reviews .score {
+				text-align: center;
+				color: #6e5a73;
+				margin: 10px 0 34px;
+				font-size: 16px;
+			}
+			.reviews .score b {
+				color: #c41320;
+			}
+			.rv {
+				display: inline-block;
+				vertical-align: top;
+				width: 340px;
+				margin-right: 24px;
+				background: #fff;
+				border: 1px solid #e9ddea;
+				border-left: 5px solid #b381b6;
+				border-radius: 16px;
+				padding: 22px 24px;
+				font-size: 15px;
+				line-height: 1.6;
+				color: #544a57;
+				box-shadow: 0 10px 26px rgba(42, 19, 48, 0.08);
+			}
+			.rv .who {
+				margin-top: 12px;
+				font-weight: bold;
+				color: #2a1330;
+				font-size: 13px;
+				letter-spacing: 1px;
+			}
+
+			/* instagram light */
+			.insta {
+				background: #f4e9f5;
+				padding: 56px 0 62px;
+				text-align: center;
+			}
+			.insta .lbl {
+				color: #7a4e82;
+				letter-spacing: 5px;
+				font-size: 13px;
+				font-weight: bold;
+			}
+			.insta h2 {
+				color: #2a1330;
+				font-size: 36px;
+				margin-top: 12px;
+			}
+			.igs {
+				margin-top: 30px;
+			}
+			.ig {
+				display: inline-block;
+				width: 192px;
+				height: 192px;
+				margin: 0 6px;
+				border-radius: 16px;
+				background-size: cover;
+				background-position: center;
+				box-shadow: 0 12px 28px rgba(42, 19, 48, 0.18);
+				border: 3px solid #fff;
+			}
+
+			.footer {
+				background: #241028;
+				color: #b9a6bc;
+				text-align: center;
+				padding: 30px;
+				font-size: 14px;
+				letter-spacing: 1px;
+			}
+			.footer b {
+				color: #b381b6;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="tag">DEFINITIEF CONCEPT v4 — WCAG AA · SPLIT-HERO: TEKST + VIDEO</div>
+		<div class="flag">
+			<div style="background: #159641"></div>
+			<div style="background: #fff"></div>
+			<div style="background: #c41320; height: 6px"></div>
+			<div style="background: #fff"></div>
+			<div style="background: #159641"></div>
+		</div>
+
+		<div class="header">
+			<div class="wrap">
+				<img class="logo" src="logo-trans.png" />
+				<span class="nav"
+					><a href="#">MENU</a><a href="#">OVER ONS</a><a href="#">FOTO'S</a><a href="#">CONTACT</a
+					><a class="cta" href="#">BEL &amp; BESTEL</a></span
+				>
+				<div class="clear"></div>
+			</div>
+		</div>
+
+		<div class="hero">
+			<div class="wrap">
+				<div class="hleft">
+					<span class="kick">▶ MAALTIJD OF SOEP · VANDAAG</span>
+					<h1>Pindasoep met tom-tom</h1>
+					<div class="sub">
+						Elke dag kookt Phia een verse maaltijd of soep en zet de video op YouTube. Bekijk wat er
+						vandaag in de pan staat — of bel direct om te bestellen.
+					</div>
+					<div class="hbtns">
+						<a class="b1" href="#">BEKIJK HET MENU</a><a class="b2" href="#">📞 070 - 785 18 13</a>
+					</div>
+					<div class="hopen"><span class="dot"></span>Vandaag geopend · 13:30 – 19:00</div>
+				</div>
+				<div class="hright">
+					<div class="vframe">
+						<span class="scr"><span class="dim"></span></span>
+						<span class="badge">VANDAAG</span>
+						<span class="play">▶</span>
+						<span class="yt">▶ BEKIJK OP YOUTUBE</span>
+					</div>
+				</div>
+				<div class="clear"></div>
+			</div>
+		</div>
+
+		<div class="notice">
+			<div>
+				★ <b>Aangepaste openingstijden:</b> Koningsdag 27 april gesloten — tijdelijke wijzigingen
+				altijd direct zichtbaar.
+			</div>
+		</div>
+
+		<div class="menu">
+			<div class="wrap">
+				<h2>Uit de keuken van Phia</h2>
+				<div class="sub">EEN GREEP UIT HET MENU — MET PRIJZEN</div>
+				<div class="mc">
+					<div class="ph p1"></div>
+					<div class="nm">Broodje kip kerrie</div>
+					<div class="pr">€ 5,50</div>
+				</div>
+				<div class="mc">
+					<div class="ph p2"></div>
+					<div class="nm">Roti kipfilet speciaal</div>
+					<div class="pr">€ 12,00</div>
+				</div>
+				<div class="mc">
+					<div class="ph p3"></div>
+					<div class="nm">Saoto soep</div>
+					<div class="pr">€ 7,50</div>
+				</div>
+				<div class="mc" style="margin-right: 0">
+					<div class="ph p4"></div>
+					<div class="nm">Nasi speciaal</div>
+					<div class="pr">€ 10,50</div>
+				</div>
+				<div class="more"><a href="#">BEKIJK HET VOLLEDIGE MENU</a></div>
+			</div>
+		</div>
+
+		<div class="band">
+			<div class="shade"></div>
+			<div class="card">
+				<h2 class="serif">“You don't see food with this much passion and heart nowadays.”</h2>
+				<div class="src">★★★★★ · 4.8 GOOGLE (294) · 4.9 FACEBOOK (110)</div>
+			</div>
+		</div>
+
+		<div class="reviews">
+			<div class="wrap">
+				<h2>Wat gasten zeggen</h2>
+				<div class="score"><b>★ 4.8</b> op Google · <b>★ 4.9</b> op Facebook</div>
+				<div class="rv">
+					“The food is delicious, rich in flavour, and freshly prepared daily with real care.”
+					<div class="who">NILS · GOOGLE</div>
+				</div>
+				<div class="rv">
+					“Heerlijk, eerlijk authentiek Surinaams eten. Dit echtpaar kookt met liefde.”
+					<div class="who">PETER · FACEBOOK</div>
+				</div>
+				<div class="rv" style="margin-right: 0">
+					“Grote porties voor een zeer goede prijs. Wij komen zeker terug!”
+					<div class="who">LUCY · FACEBOOK</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="insta">
+			<div class="lbl">VOLG ONS OP INSTAGRAM</div>
+			<h2>@phiassmulparadijs</h2>
+			<div class="igs">
+				<span class="ig p1"></span><span class="ig p2"></span><span class="ig p3"></span
+				><span class="ig p4"></span><span class="ig p1"></span>
+			</div>
+		</div>
+
+		<div class="flag">
+			<div style="background: #159641"></div>
+			<div style="background: #fff"></div>
+			<div style="background: #c41320; height: 6px"></div>
+			<div style="background: #fff"></div>
+			<div style="background: #159641"></div>
+		</div>
+		<div class="footer">
+			<b>PHIA'S SMULPARADIJS</b> · Bouwlustlaan 111, 2544 JP Den Haag · 070-7851813 · Soso Lobi ❤
+		</div>
+	</body>
+</html>

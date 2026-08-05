@@ -1,0 +1,14 @@
+# Aparte Cloudflare Worker voor de CMS-login (GitHub OAuth).
+# STAAT LOS van de site-deploy: de hoofd-site gebruikt /wrangler.toml (static assets).
+# Deze Worker deploy je handmatig vanuit deze map:
+#   cd workers/cms-auth
+#   npx wrangler secret put GITHUB_CLIENT_ID
+#   npx wrangler secret put GITHUB_CLIENT_SECRET
+#   npx wrangler deploy
+name = "phia-cms-auth"
+main = "src/index.js"
+compatibility_date = "2025-01-01"
+
+# Optioneel: beperk later tot de site-origin.
+# [vars]
+# ALLOWED_ORIGIN = "https://www.phiassmulparadijs.nl"

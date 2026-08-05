@@ -1,0 +1,1232 @@
+{
+	"edition_nl": "Menukaart, editie juli 2026",
+	"edition_en": "Menu, July 2026 edition",
+	"pdf": "/menu/phias-menu-juli-2026.pdf",
+	"categories": [
+		{
+			"id": "gerechten",
+			"nl": "Phia's Gerechten",
+			"en": "Phia's Dishes",
+			"badge": "halal",
+			"note_nl": "De keuken is voor deze gerechten om 13.30 u geopend.",
+			"note_en": "The kitchen opens at 13:30 for these dishes.",
+			"items": [
+				{
+					"nl": "Nasi of Bami kip",
+					"en": "Nasi or Bami chicken",
+					"note_nl": "",
+					"note_en": "",
+					"image": "",
+					"prices": [
+						{
+							"label_nl": "Normaal",
+							"label_en": "Regular",
+							"value": "€ 12,00"
+						},
+						{
+							"label_nl": "Speciaal",
+							"label_en": "Special",
+							"value": "€ 14,50"
+						}
+					],
+					"links": [],
+					"availableDays": []
+				},
+				{
+					"nl": "Nasi of Bami kipfilet",
+					"en": "Nasi or Bami chicken fillet",
+					"note_nl": "",
+					"note_en": "",
+					"image": "",
+					"prices": [
+						{
+							"label_nl": "Normaal",
+							"label_en": "Regular",
+							"value": "€ 13,00"
+						},
+						{
+							"label_nl": "Speciaal",
+							"label_en": "Special",
+							"value": "€ 15,50"
+						}
+					],
+					"links": [],
+					"availableDays": []
+				},
+				{
+					"nl": "Nasi of Bami kip groot",
+					"en": "Nasi or Bami chicken large",
+					"note_nl": "",
+					"note_en": "",
+					"image": "",
+					"prices": [
+						{
+							"label_nl": "Normaal",
+							"label_en": "Regular",
+							"value": "€ 15,50"
+						},
+						{
+							"label_nl": "Speciaal",
+							"label_en": "Special",
+							"value": "€ 17,50"
+						}
+					],
+					"links": [],
+					"availableDays": []
+				},
+				{
+					"nl": "Nasi of Bami kipfilet groot",
+					"en": "Nasi or Bami chicken fillet large",
+					"note_nl": "",
+					"note_en": "",
+					"image": "",
+					"prices": [
+						{
+							"label_nl": "Normaal",
+							"label_en": "Regular",
+							"value": "€ 16,00"
+						},
+						{
+							"label_nl": "Speciaal",
+							"label_en": "Special",
+							"value": "€ 18,00"
+						}
+					],
+					"links": [],
+					"availableDays": []
+				},
+				{
+					"nl": "Roti rol",
+					"en": "Roti roll",
+					"note_nl": "",
+					"note_en": "",
+					"image": "",
+					"prices": [
+						{
+							"label_nl": "Normaal",
+							"label_en": "Regular",
+							"value": "€ 11,00"
+						},
+						{
+							"label_nl": "Speciaal",
+							"label_en": "Special",
+							"value": "€ 12,00"
+						}
+					],
+					"links": [],
+					"availableDays": []
+				},
+				{
+					"nl": "Roti kip",
+					"en": "Roti chicken",
+					"note_nl": "",
+					"note_en": "",
+					"image": "",
+					"prices": [
+						{
+							"label_nl": "Normaal",
+							"label_en": "Regular",
+							"value": "€ 13,00"
+						},
+						{
+							"label_nl": "Speciaal",
+							"label_en": "Special",
+							"value": "€ 15,00"
+						}
+					],
+					"links": [],
+					"availableDays": []
+				},
+				{
+					"nl": "Roti kipfilet",
+					"en": "Roti chicken fillet",
+					"note_nl": "",
+					"note_en": "",
+					"image": "",
+					"prices": [
+						{
+							"label_nl": "Normaal",
+							"label_en": "Regular",
+							"value": "€ 14,00"
+						},
+						{
+							"label_nl": "Speciaal",
+							"label_en": "Special",
+							"value": "€ 16,00"
+						}
+					],
+					"links": [],
+					"availableDays": []
+				},
+				{
+					"nl": "Roti rol lams",
+					"en": "Roti roll lamb",
+					"note_nl": "",
+					"note_en": "",
+					"image": "",
+					"prices": [
+						{
+							"label_nl": "Normaal",
+							"label_en": "Regular",
+							"value": "€ 12,50"
+						},
+						{
+							"label_nl": "Speciaal",
+							"label_en": "Special",
+							"value": "€ 13,50"
+						}
+					],
+					"links": [],
+					"availableDays": []
+				},
+				{
+					"nl": "Roti lams",
+					"en": "Roti lamb",
+					"note_nl": "",
+					"note_en": "",
+					"image": "",
+					"prices": [
+						{
+							"label_nl": "Normaal",
+							"label_en": "Regular",
+							"value": "€ 15,00"
+						},
+						{
+							"label_nl": "Speciaal",
+							"label_en": "Special",
+							"value": "€ 17,50"
+						}
+					],
+					"links": [],
+					"availableDays": []
+				},
+				{
+					"nl": "Creoolse roti rol",
+					"en": "Creole roti roll",
+					"note_nl": "",
+					"note_en": "",
+					"image": "",
+					"prices": [
+						{
+							"label_nl": "Normaal",
+							"label_en": "Regular",
+							"value": "€ 11,50"
+						},
+						{
+							"label_nl": "Speciaal",
+							"label_en": "Special",
+							"value": "€ 12,50"
+						}
+					],
+					"links": [],
+					"availableDays": []
+				},
+				{
+					"nl": "Creoolse roti kip",
+					"en": "Creole roti chicken",
+					"note_nl": "Kipfilet in ketjap, aardappelen, kousenband en spitskool.",
+					"note_en": "Chicken fillet in ketjap, potatoes, long beans and pointed cabbage.",
+					"image": "",
+					"prices": [
+						{
+							"label_nl": "Normaal",
+							"label_en": "Regular",
+							"value": "€ 14,50"
+						},
+						{
+							"label_nl": "Speciaal",
+							"label_en": "Special",
+							"value": "€ 16,50"
+						}
+					],
+					"links": [],
+					"availableDays": []
+				},
+				{
+					"nl": "Creoolse roti kipfilet",
+					"en": "Creole roti chicken fillet",
+					"note_nl": "Kipfilet in ketjap, aardappelen, kousenband en spitskool.",
+					"note_en": "Chicken fillet in ketjap, potatoes, long beans and pointed cabbage.",
+					"image": "",
+					"prices": [
+						{
+							"label_nl": "Normaal",
+							"label_en": "Regular",
+							"value": "€ 15,00"
+						},
+						{
+							"label_nl": "Speciaal",
+							"label_en": "Special",
+							"value": "€ 17,00"
+						}
+					],
+					"links": [],
+					"availableDays": []
+				}
+			]
+		},
+		{
+			"id": "soep-maaltijd",
+			"nl": "Phia's Soep & Maaltijd",
+			"en": "Phia's Soup & Meal",
+			"badge": "",
+			"note_nl": "Is Phia’s soep of maaltijd bij jou al bekend? Zorg dan dat jij de 1e met reserveren bent!",
+			"note_en": "Already know Phia’s soup or meal? Make sure you are the first to reserve!",
+			"items": [
+				{
+					"nl": "Phia's soepen",
+					"en": "Phia's soups",
+					"note_nl": "",
+					"note_en": "",
+					"image": "",
+					"prices": [
+						{
+							"label_nl": "vanaf",
+							"label_en": "from",
+							"value": "€ 10,50"
+						}
+					],
+					"links": [],
+					"availableDays": ["di", "do", "za"]
+				},
+				{
+					"nl": "Phia's maaltijden",
+					"en": "Phia's meals",
+					"note_nl": "",
+					"note_en": "",
+					"image": "",
+					"prices": [
+						{
+							"label_nl": "vanaf",
+							"label_en": "from",
+							"value": "€ 17,50"
+						}
+					],
+					"links": [],
+					"availableDays": ["wo", "vr"]
+				}
+			]
+		},
+		{
+			"id": "broodjes",
+			"nl": "Phia's Broodjes",
+			"en": "Phia's Sandwiches",
+			"badge": "halal",
+			"note_nl": "Kies je beleg. Probeer ook eens 2 soorten beleg te mixen!",
+			"note_en": "Choose your filling. Try mixing two fillings!",
+			"items": [
+				{
+					"nl": "Kerrie ei / dubbel",
+					"en": "Curry egg / double",
+					"note_nl": "",
+					"note_en": "",
+					"image": "",
+					"prices": [
+						{
+							"label_nl": "enkel",
+							"label_en": "single",
+							"value": "€ 3,75"
+						},
+						{
+							"label_nl": "dubbel",
+							"label_en": "double",
+							"value": "€ 4,75"
+						}
+					],
+					"links": [],
+					"availableDays": []
+				},
+				{
+					"nl": "Kip kerrie",
+					"en": "Chicken curry",
+					"note_nl": "",
+					"note_en": "",
+					"image": "",
+					"prices": [
+						{
+							"label_nl": "",
+							"label_en": "",
+							"value": "€ 4,75"
+						}
+					],
+					"links": [],
+					"availableDays": []
+				},
+				{
+					"nl": "Maagjes en levertjes",
+					"en": "Gizzards and livers",
+					"note_nl": "",
+					"note_en": "",
+					"image": "",
+					"prices": [
+						{
+							"label_nl": "",
+							"label_en": "",
+							"value": "€ 4,75"
+						}
+					],
+					"links": [],
+					"availableDays": []
+				},
+				{
+					"nl": "Kip ketjap",
+					"en": "Chicken ketjap",
+					"note_nl": "",
+					"note_en": "",
+					"image": "",
+					"prices": [
+						{
+							"label_nl": "",
+							"label_en": "",
+							"value": "€ 4,75"
+						}
+					],
+					"links": [],
+					"availableDays": []
+				},
+				{
+					"nl": "Hete kip",
+					"en": "Hot chicken",
+					"note_nl": "Let op: echt heet!",
+					"note_en": "Warning: really hot!",
+					"image": "",
+					"prices": [
+						{
+							"label_nl": "",
+							"label_en": "",
+							"value": "€ 4,75"
+						}
+					],
+					"links": [],
+					"availableDays": []
+				},
+				{
+					"nl": "Surinaams gehakt",
+					"en": "Surinamese minced meat",
+					"note_nl": "",
+					"note_en": "",
+					"image": "",
+					"prices": [
+						{
+							"label_nl": "",
+							"label_en": "",
+							"value": "€ 5,00"
+						}
+					],
+					"links": [],
+					"availableDays": []
+				},
+				{
+					"nl": "Kousenband garnalen",
+					"en": "Long beans with shrimp",
+					"note_nl": "",
+					"note_en": "",
+					"image": "",
+					"prices": [
+						{
+							"label_nl": "",
+							"label_en": "",
+							"value": "€ 5,00"
+						}
+					],
+					"links": [],
+					"availableDays": []
+				},
+				{
+					"nl": "Saté",
+					"en": "Saté",
+					"note_nl": "",
+					"note_en": "",
+					"image": "",
+					"prices": [
+						{
+							"label_nl": "",
+							"label_en": "",
+							"value": "€ 5,00"
+						}
+					],
+					"links": [],
+					"availableDays": []
+				},
+				{
+					"nl": "Bakkeljauw",
+					"en": "Salted cod (bakkeljauw)",
+					"note_nl": "",
+					"note_en": "",
+					"image": "",
+					"prices": [
+						{
+							"label_nl": "",
+							"label_en": "",
+							"value": "€ 5,00"
+						}
+					],
+					"links": [],
+					"availableDays": []
+				},
+				{
+					"nl": "Stoofvlees",
+					"en": "Stewed meat",
+					"note_nl": "",
+					"note_en": "",
+					"image": "",
+					"prices": [
+						{
+							"label_nl": "",
+							"label_en": "",
+							"value": "€ 5,00"
+						}
+					],
+					"links": [],
+					"availableDays": []
+				},
+				{
+					"nl": "Pom met kip",
+					"en": "Pom with chicken",
+					"note_nl": "",
+					"note_en": "",
+					"image": "",
+					"prices": [
+						{
+							"label_nl": "",
+							"label_en": "",
+							"value": "€ 5,00"
+						}
+					],
+					"links": [],
+					"availableDays": []
+				},
+				{
+					"nl": "Kerrie lams",
+					"en": "Lamb curry",
+					"note_nl": "",
+					"note_en": "",
+					"image": "",
+					"prices": [
+						{
+							"label_nl": "",
+							"label_en": "",
+							"value": "€ 5,00"
+						}
+					],
+					"links": [],
+					"availableDays": []
+				},
+				{
+					"nl": "Mix (2 belegsoorten naar keuze)",
+					"en": "Mix (2 fillings of choice)",
+					"note_nl": "",
+					"note_en": "",
+					"image": "",
+					"prices": [
+						{
+							"label_nl": "v.a.",
+							"label_en": "from",
+							"value": "€ 5,50"
+						}
+					],
+					"links": [],
+					"availableDays": []
+				}
+			]
+		},
+		{
+			"id": "broodjes-niet-halal",
+			"nl": "Overige belegsoorten",
+			"en": "Other fillings",
+			"badge": "niet-halal",
+			"note_nl": "",
+			"note_en": "",
+			"items": [
+				{
+					"nl": "Bloedworst",
+					"en": "Blood sausage",
+					"note_nl": "",
+					"note_en": "",
+					"image": "",
+					"prices": [
+						{
+							"label_nl": "",
+							"label_en": "",
+							"value": "€ 5,00"
+						}
+					],
+					"links": [],
+					"availableDays": []
+				},
+				{
+					"nl": "Varkensspek",
+					"en": "Pork belly",
+					"note_nl": "",
+					"note_en": "",
+					"image": "",
+					"prices": [
+						{
+							"label_nl": "",
+							"label_en": "",
+							"value": "€ 5,00"
+						}
+					],
+					"links": [],
+					"availableDays": []
+				},
+				{
+					"nl": "Char siu",
+					"en": "Char siu",
+					"note_nl": "",
+					"note_en": "",
+					"image": "",
+					"prices": [
+						{
+							"label_nl": "",
+							"label_en": "",
+							"value": "€ 5,00"
+						}
+					],
+					"links": [],
+					"availableDays": []
+				},
+				{
+					"nl": "Kipworst",
+					"en": "Chicken sausage",
+					"note_nl": "",
+					"note_en": "",
+					"image": "",
+					"prices": [
+						{
+							"label_nl": "",
+							"label_en": "",
+							"value": "€ 5,00"
+						}
+					],
+					"links": [],
+					"availableDays": []
+				}
+			]
+		},
+		{
+			"id": "vega-broodjes",
+			"nl": "Vegetarische broodjes",
+			"en": "Vegetarian sandwiches",
+			"badge": "vega",
+			"note_nl": "Voor onze vegetarische gerechten gebruiken wij geen vleesvervangers.",
+			"note_en": "We use no meat substitutes for our vegetarian dishes.",
+			"items": [
+				{
+					"nl": "Kerrie aardappel met kousenband",
+					"en": "Curry potato with long beans",
+					"note_nl": "",
+					"note_en": "",
+					"image": "",
+					"prices": [
+						{
+							"label_nl": "",
+							"label_en": "",
+							"value": "€ 4,75"
+						}
+					],
+					"links": [],
+					"availableDays": []
+				},
+				{
+					"nl": "Mix groente (van de dag)",
+					"en": "Mixed vegetables (today's)",
+					"note_nl": "",
+					"note_en": "",
+					"image": "",
+					"prices": [
+						{
+							"label_nl": "",
+							"label_en": "",
+							"value": "€ 4,75"
+						}
+					],
+					"links": [],
+					"availableDays": []
+				},
+				{
+					"nl": "Tempeh kousenband",
+					"en": "Tempeh with long beans",
+					"note_nl": "",
+					"note_en": "",
+					"image": "",
+					"prices": [
+						{
+							"label_nl": "",
+							"label_en": "",
+							"value": "€ 4,75"
+						}
+					],
+					"links": [],
+					"availableDays": []
+				}
+			]
+		},
+		{
+			"id": "vega-snacks",
+			"nl": "Vegetarische snacks",
+			"en": "Vegetarian snacks",
+			"badge": "vega",
+			"note_nl": "",
+			"note_en": "",
+			"items": [
+				{
+					"nl": "Bara",
+					"en": "Bara",
+					"note_nl": "",
+					"note_en": "",
+					"image": "",
+					"prices": [
+						{
+							"label_nl": "",
+							"label_en": "",
+							"value": "€ 3,50"
+						}
+					],
+					"links": [],
+					"availableDays": ["vr"]
+				},
+				{
+					"nl": "Bara gevuld",
+					"en": "Filled bara",
+					"note_nl": "",
+					"note_en": "",
+					"image": "",
+					"prices": [
+						{
+							"label_nl": "v.a.",
+							"label_en": "from",
+							"value": "€ 5,50"
+						}
+					],
+					"links": [],
+					"availableDays": ["vr"]
+				},
+				{
+					"nl": "Bakabana (3 stuks)",
+					"en": "Bakabana (3 pcs)",
+					"note_nl": "",
+					"note_en": "",
+					"image": "",
+					"prices": [
+						{
+							"label_nl": "",
+							"label_en": "",
+							"value": "€ 4,50"
+						}
+					],
+					"links": [],
+					"availableDays": []
+				},
+				{
+					"nl": "Bakje geb. cassave",
+					"en": "Fried cassava (tub)",
+					"note_nl": "",
+					"note_en": "",
+					"image": "",
+					"prices": [
+						{
+							"label_nl": "",
+							"label_en": "",
+							"value": "€ 4,50"
+						}
+					],
+					"links": [],
+					"availableDays": []
+				},
+				{
+					"nl": "Pitjel",
+					"en": "Pitjel",
+					"note_nl": "",
+					"note_en": "",
+					"image": "",
+					"prices": [
+						{
+							"label_nl": "",
+							"label_en": "",
+							"value": "€ 7,00"
+						}
+					],
+					"links": [],
+					"availableDays": []
+				},
+				{
+					"nl": "Mix groente (van de dag)",
+					"en": "Mixed vegetables (today's)",
+					"note_nl": "",
+					"note_en": "",
+					"image": "",
+					"prices": [
+						{
+							"label_nl": "",
+							"label_en": "",
+							"value": "€ 7,50"
+						}
+					],
+					"links": [],
+					"availableDays": []
+				}
+			]
+		},
+		{
+			"id": "vega-gerechten",
+			"nl": "Vegetarische gerechten",
+			"en": "Vegetarian dishes",
+			"badge": "vega",
+			"note_nl": "",
+			"note_en": "",
+			"items": [
+				{
+					"nl": "Nasi",
+					"en": "Nasi",
+					"note_nl": "",
+					"note_en": "",
+					"image": "",
+					"prices": [
+						{
+							"label_nl": "",
+							"label_en": "",
+							"value": "€ 12,00"
+						}
+					],
+					"links": [],
+					"availableDays": []
+				},
+				{
+					"nl": "Bami",
+					"en": "Bami",
+					"note_nl": "",
+					"note_en": "",
+					"image": "",
+					"prices": [
+						{
+							"label_nl": "",
+							"label_en": "",
+							"value": "€ 12,00"
+						}
+					],
+					"links": [],
+					"availableDays": []
+				},
+				{
+					"nl": "Roti",
+					"en": "Roti",
+					"note_nl": "",
+					"note_en": "",
+					"image": "",
+					"prices": [
+						{
+							"label_nl": "",
+							"label_en": "",
+							"value": "€ 13,00"
+						}
+					],
+					"links": [],
+					"availableDays": []
+				}
+			]
+		},
+		{
+			"id": "snacks",
+			"nl": "Phia's Snacks",
+			"en": "Phia's Snacks",
+			"badge": "",
+			"note_nl": "De keuken is voor deze snacks om 13.30 u geopend.",
+			"note_en": "The kitchen opens at 13:30 for these snacks.",
+			"items": [
+				{
+					"nl": "Stokje saté",
+					"en": "Saté skewer",
+					"note_nl": "",
+					"note_en": "",
+					"image": "",
+					"prices": [
+						{
+							"label_nl": "",
+							"label_en": "",
+							"value": "€ 3,25"
+						}
+					],
+					"links": [],
+					"availableDays": []
+				},
+				{
+					"nl": "Bloedworst",
+					"en": "Blood sausage",
+					"note_nl": "Varkensvlees.",
+					"note_en": "Pork.",
+					"image": "",
+					"prices": [
+						{
+							"label_nl": "",
+							"label_en": "",
+							"value": "€ 3,75"
+						}
+					],
+					"links": [],
+					"availableDays": []
+				},
+				{
+					"nl": "Kipworst",
+					"en": "Chicken sausage",
+					"note_nl": "Niet halal.",
+					"note_en": "Not halal.",
+					"image": "",
+					"prices": [
+						{
+							"label_nl": "",
+							"label_en": "",
+							"value": "€ 4,00"
+						}
+					],
+					"links": [],
+					"availableDays": []
+				},
+				{
+					"nl": "Portie pittige teloballetjes",
+					"en": "Portion spicy telo balls",
+					"note_nl": "",
+					"note_en": "",
+					"image": "",
+					"prices": [
+						{
+							"label_nl": "",
+							"label_en": "",
+							"value": "€ 4,50"
+						}
+					],
+					"links": [],
+					"availableDays": []
+				},
+				{
+					"nl": "Portie bloedworst",
+					"en": "Portion blood sausage",
+					"note_nl": "",
+					"note_en": "",
+					"image": "",
+					"prices": [
+						{
+							"label_nl": "",
+							"label_en": "",
+							"value": "€ 6,75"
+						}
+					],
+					"links": [],
+					"availableDays": []
+				},
+				{
+					"nl": "Portie kipworst",
+					"en": "Portion chicken sausage",
+					"note_nl": "",
+					"note_en": "",
+					"image": "",
+					"prices": [
+						{
+							"label_nl": "",
+							"label_en": "",
+							"value": "€ 7,00"
+						}
+					],
+					"links": [],
+					"availableDays": []
+				},
+				{
+					"nl": "Portie bloed-/kipworst",
+					"en": "Portion blood/chicken sausage",
+					"note_nl": "",
+					"note_en": "",
+					"image": "",
+					"prices": [
+						{
+							"label_nl": "Klein",
+							"label_en": "Small",
+							"value": "€ 7,50"
+						},
+						{
+							"label_nl": "Groot",
+							"label_en": "Large",
+							"value": "€ 11,00"
+						}
+					],
+					"links": [],
+					"availableDays": []
+				},
+				{
+					"nl": "Saoto soep",
+					"en": "Saoto soup",
+					"note_nl": "",
+					"note_en": "",
+					"image": "",
+					"prices": [
+						{
+							"label_nl": "",
+							"label_en": "",
+							"value": "€ 9,00"
+						}
+					],
+					"links": [],
+					"availableDays": ["wo", "vr", "za"]
+				},
+				{
+					"nl": "Telo bakkeljauw",
+					"en": "Telo with salted cod",
+					"note_nl": "",
+					"note_en": "",
+					"image": "",
+					"prices": [
+						{
+							"label_nl": "Klein",
+							"label_en": "Small",
+							"value": "€ 7,50"
+						},
+						{
+							"label_nl": "Groot",
+							"label_en": "Large",
+							"value": "€ 11,00"
+						},
+						{
+							"label_nl": "XL",
+							"label_en": "XL",
+							"value": "€ 15,00"
+						}
+					],
+					"links": [],
+					"availableDays": []
+				},
+				{
+					"nl": "Telo trie",
+					"en": "Telo with trie fish",
+					"note_nl": "",
+					"note_en": "",
+					"image": "",
+					"prices": [
+						{
+							"label_nl": "Klein",
+							"label_en": "Small",
+							"value": "€ 8,00"
+						},
+						{
+							"label_nl": "Groot",
+							"label_en": "Large",
+							"value": "€ 12,00"
+						},
+						{
+							"label_nl": "XL",
+							"label_en": "XL",
+							"value": "€ 16,00"
+						}
+					],
+					"links": [],
+					"availableDays": []
+				},
+				{
+					"nl": "Telo XL mix (bakkeljauw en trie)",
+					"en": "Telo XL mix (cod and trie)",
+					"note_nl": "",
+					"note_en": "",
+					"image": "",
+					"prices": [
+						{
+							"label_nl": "",
+							"label_en": "",
+							"value": "€ 17,50"
+						}
+					],
+					"links": [],
+					"availableDays": []
+				}
+			]
+		},
+		{
+			"id": "diverse",
+			"nl": "Phia's Diverse",
+			"en": "Phia's Extras",
+			"badge": "",
+			"note_nl": "Onze sambal staat bekend om zijn hoge hittegraad.",
+			"note_en": "Our sambal is known for being seriously hot.",
+			"items": [
+				{
+					"nl": "Extra sambal",
+					"en": "Extra sambal",
+					"note_nl": "",
+					"note_en": "",
+					"image": "",
+					"prices": [
+						{
+							"label_nl": "",
+							"label_en": "",
+							"value": "€ 1,25"
+						}
+					],
+					"links": [],
+					"availableDays": []
+				},
+				{
+					"nl": "Extra pindasaus",
+					"en": "Extra peanut sauce",
+					"note_nl": "",
+					"note_en": "",
+					"image": "",
+					"prices": [
+						{
+							"label_nl": "",
+							"label_en": "",
+							"value": "€ 1,50"
+						}
+					],
+					"links": [],
+					"availableDays": []
+				},
+				{
+					"nl": "Los kerrie ei",
+					"en": "Curry egg (single)",
+					"note_nl": "",
+					"note_en": "",
+					"image": "",
+					"prices": [
+						{
+							"label_nl": "",
+							"label_en": "",
+							"value": "€ 2,25"
+						}
+					],
+					"links": [],
+					"availableDays": []
+				},
+				{
+					"nl": "Bakje kousenband",
+					"en": "Long beans (tub)",
+					"note_nl": "",
+					"note_en": "",
+					"image": "",
+					"prices": [
+						{
+							"label_nl": "",
+							"label_en": "",
+							"value": "€ 3,00"
+						}
+					],
+					"links": [],
+					"availableDays": []
+				},
+				{
+					"nl": "Bakje beleg",
+					"en": "Filling (tub)",
+					"note_nl": "Indien voorradig, bv. pom, kip kerrie of maagjes en levertjes.",
+					"note_en": "If in stock, e.g. pom, chicken curry or gizzards and livers.",
+					"image": "",
+					"prices": [
+						{
+							"label_nl": "v.a.",
+							"label_en": "from",
+							"value": "€ 5,25"
+						}
+					],
+					"links": [],
+					"availableDays": []
+				}
+			]
+		},
+		{
+			"id": "dranken",
+			"nl": "Phia's Koude dranken",
+			"en": "Phia's Cold drinks",
+			"badge": "",
+			"note_nl": "",
+			"note_en": "",
+			"items": [
+				{
+					"nl": "Div. frisdranken",
+					"en": "Various soft drinks",
+					"note_nl": "",
+					"note_en": "",
+					"image": "",
+					"prices": [
+						{
+							"label_nl": "v.a.",
+							"label_en": "from",
+							"value": "€ 1,50"
+						}
+					],
+					"links": [],
+					"availableDays": []
+				},
+				{
+					"nl": "Phia's stropen",
+					"en": "Phia's syrups",
+					"note_nl": "Indien voorradig.",
+					"note_en": "If in stock.",
+					"image": "",
+					"prices": [
+						{
+							"label_nl": "",
+							"label_en": "",
+							"value": "€ 3,75"
+						}
+					],
+					"links": [],
+					"availableDays": []
+				}
+			]
+		},
+		{
+			"id": "koeken",
+			"nl": "Phia's Surinaamse koeken",
+			"en": "Phia's Surinamese cakes",
+			"badge": "",
+			"note_nl": "",
+			"note_en": "",
+			"items": [
+				{
+					"nl": "Diverse soorten",
+					"en": "Various kinds",
+					"note_nl": "",
+					"note_en": "",
+					"image": "",
+					"prices": [
+						{
+							"label_nl": "v.a.",
+							"label_en": "from",
+							"value": "€ 4,75"
+						}
+					],
+					"links": [],
+					"availableDays": []
+				}
+			]
+		}
+	],
+	"notes_nl": [
+		"Wilt u geen kipstuk of kipfilet (indien voorradig) bij het gerecht, dan kunt u een andere belegsoort kiezen voor een toeslag vanaf € 2,50 per gerecht.",
+		"Roti Blanco € 2,50 (bij afname van meer dan 4 Roti Blanco's vooraf reserveren).",
+		"Grote bestellingen (meer dan 5 pers.) bij voorkeur een dag van tevoren doorgeven.",
+		"Nasi of Bami: circa 2 à 3 stukken kip (speciaal 1 saté erbij), Groot 3 à 4 stukken kip (speciaal 2 saté's erbij).",
+		"Nasi of Bami wordt standaard geserveerd met kousenband, kip met bot of kipfilet, zuurgoed en sambal apart.",
+		"Roti wordt standaard geserveerd met kip met bot of kipfilet, kousenband, aardappelen en een Roti Blanco. Bij speciaal extra vlees en een kerrie ei.",
+		"Let op: er kunnen mogelijk graatjes in de vis zitten en botjes in de kip kerrie.",
+		"Wij bezorgen niet, je kunt bellen, bestellen en afhalen."
+	],
+	"notes_en": [
+		"Prefer no chicken piece or fillet (if available) with your dish? Choose another filling for a surcharge from € 2.50 per dish.",
+		"Roti Blanco € 2.50 (reserve in advance for more than 4).",
+		"Large orders (more than 5 people) preferably one day in advance.",
+		"Nasi or Bami: about 2–3 pieces of chicken (special +1 saté), Large 3–4 pieces (special +2 saté).",
+		"Nasi or Bami is served with long beans, chicken on the bone or fillet, pickles and sambal on the side.",
+		"Roti is served with chicken on the bone or fillet, long beans, potatoes and a Roti Blanco. Special comes with extra meat and a curry egg.",
+		"Please note: there may be small bones in the fish and in the chicken curry.",
+		"We do not deliver, you can call, order and collect."
+	],
+	"allergens_nl": "In onze gerechten kunnen sporen van de volgende allergenen aanwezig zijn: gluten, ei, vis, pinda, noten, soja, melk (incl. lactose), schaaldieren, weekdieren, selderij, mosterd, sesamzaad, sulfiet en lupine.",
+	"allergens_en": "Our dishes may contain traces of: gluten, egg, fish, peanut, nuts, soy, milk (incl. lactose), shellfish, molluscs, celery, mustard, sesame, sulphite and lupin.",
+	"examples": [
+		"Bitawiri Moksi Alesi",
+		"Witte rijst met gevulde sopropo",
+		"Masoes Moksi Alesi",
+		"Cassave soep",
+		"Her'Heri Moksi Alesi",
+		"Her'Heri",
+		"Bruine bonen",
+		"Pindasoep",
+		"Rijst, pom, kip en pastei"
+	]
+}

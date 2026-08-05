@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Phia's Smulparadijs">
+  <rect width="64" height="64" rx="14" fill="#241028"/>
+  <rect x="10" y="12" width="44" height="4" fill="#159641"/>
+  <rect x="10" y="16" width="44" height="3" fill="#ffffff"/>
+  <rect x="10" y="19" width="44" height="5" fill="#DF0E19"/>
+  <rect x="10" y="24" width="44" height="3" fill="#ffffff"/>
+  <rect x="10" y="27" width="44" height="4" fill="#159641"/>
+  <text x="32" y="52" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif"
+        font-size="26" fill="#F3DE24" font-weight="bold">P</text>
+</svg>

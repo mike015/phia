@@ -1,0 +1,16 @@
+# Cloudflare Workers — Static Assets config.
+# De site is volledig geprerenderd (SvelteKit adapter-static → ./build), dus een
+# "assets-only" Worker (geen `main`-script) serveert alles rechtstreeks.
+# Zowel `wrangler deploy` (productie) als `wrangler versions upload` (preview-
+# branches, die Cloudflare Workers Builds standaard gebruikt) werken hiermee.
+#
+# _headers en _redirects in ./build worden door Workers Static Assets gehonoreerd.
+# LATER: voor dynamische /api/* routes → @sveltejs/adapter-cloudflare met een
+# `main`-Worker naast deze assets.
+name = "phias-smulparadijs"
+compatibility_date = "2025-01-01"
+
+[assets]
+directory = "./build"
+# Onbekende paden -> de SvelteKit fallback (adapter-static: 404.html).
+not_found_handling = "404-page"
