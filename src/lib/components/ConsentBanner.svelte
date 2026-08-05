@@ -12,26 +12,17 @@
 	 */
 	import { onMount, tick } from 'svelte';
 	import { t, type Lang } from '$lib/i18n';
+	import { consentDecided, acceptMedia, declineMedia } from '$lib/consent.svelte';
 
 	let { lang }: { lang: Lang } = $props();
 	const d = $derived(t(lang));
 
-	const STORAGE_KEY = 'phia-consent';
-
-	let show = $state(false);
+	// Alleen client-side tonen (na mount) én zolang er geen keuze is gemaakt.
+	let mounted = $state(false);
 	let acceptBtn = $state<HTMLButtonElement | null>(null);
+	onMount(() => (mounted = true));
 
-	onMount(() => {
-		// Alleen tonen als er nog geen keuze is opgeslagen.
-		try {
-			if (localStorage.getItem(STORAGE_KEY) !== 'accepted') {
-				show = true;
-			}
-		} catch {
-			// localStorage geblokkeerd (privacy-modus): toon de melding gewoon.
-			show = true;
-		}
-	});
+	const show = $derived(mounted && !consentDecided());
 
 	$effect(() => {
 		// Verplaats focus naar de primaire knop zodra de banner verschijnt.
@@ -40,24 +31,11 @@
 		}
 	});
 
-	function accept() {
-		try {
-			localStorage.setItem(STORAGE_KEY, 'accepted');
-		} catch {
-			// Negeer: dan verschijnt de melding een volgende keer opnieuw.
-		}
-		show = false;
-	}
-
-	/** Sluiten zonder op te slaan: de melding komt de volgende sessie terug. */
-	function dismiss() {
-		show = false;
-	}
-
 	function onKeydown(event: KeyboardEvent) {
+		// Escape = alleen noodzakelijk (weigeren), keuze wordt onthouden.
 		if (event.key === 'Escape') {
 			event.stopPropagation();
-			dismiss();
+			declineMedia();
 		}
 	}
 </script>
@@ -81,17 +59,12 @@
 					<p class="font-display text-xl text-[var(--color-plum)]">{d.consent.title}</p>
 					<p class="mt-1 text-sm leading-relaxed text-[var(--color-muted)]">{d.consent.text}</p>
 				</div>
-				<div class="flex shrink-0 items-center gap-2">
-					<button bind:this={acceptBtn} type="button" class="btn-primary" onclick={accept}>
+				<div class="flex shrink-0 flex-wrap items-center gap-2">
+					<button bind:this={acceptBtn} type="button" class="btn-primary" onclick={acceptMedia}>
 						{d.consent.accept}
 					</button>
-					<button
-						type="button"
-						class="grid h-10 w-10 shrink-0 place-items-center rounded-full text-[var(--color-muted)] transition-colors hover:bg-[var(--color-lilac-surface)] hover:text-[var(--color-ink)]"
-						aria-label={d.consent.close}
-						onclick={dismiss}
-					>
-						<span aria-hidden="true" class="text-xl leading-none">×</span>
+					<button type="button" class="btn-outline" onclick={declineMedia}>
+						{d.consent.decline}
 					</button>
 				</div>
 			</div>

@@ -128,8 +128,10 @@
 	"closed": "Gesloten",
 	"consent": {
 		"title": "Even over cookies 🍪",
-		"text": "Wij gebruiken alleen functionele cookies om de site te laten werken. We sluiten geen social media in, we linken je door. Kom je smullen?",
-		"accept": "Oké, lekker!",
-		"close": "Sluiten"
+		"text": "Wij gebruiken functionele cookies om de site te laten werken. Accepteer je ook media-cookies, dan bekijk je YouTube-video’s direct op de site. Anders linken we je door.",
+		"accept": "Accepteren",
+		"decline": "Alleen noodzakelijk",
+		"close": "Sluiten",
+		"playHere": "Video hier afspelen (accepteer cookies)"
 	}
 }

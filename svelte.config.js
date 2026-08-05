@@ -44,6 +44,8 @@ const config = {
 				'img-src': ['self', 'data:'],
 				'font-src': ['self'],
 				'connect-src': ['self'],
+				// YouTube-embeds (na cookie-consent) laden in een iframe van youtube-nocookie.
+				'frame-src': ['self', 'https://www.youtube-nocookie.com', 'https://www.youtube.com'],
 				'frame-ancestors': ['self'],
 				'base-uri': ['self'],
 				'form-action': ['self'],

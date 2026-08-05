@@ -2,6 +2,7 @@
 	import Seo from '$lib/seo/Seo.svelte';
 	import OpenStatus from '$lib/components/OpenStatus.svelte';
 	import AvailabilityBadge from '$lib/components/AvailabilityBadge.svelte';
+	import YouTubeEmbed from '$lib/components/YouTubeEmbed.svelte';
 	import { reveal } from '$lib/actions/reveal';
 	import { t, localizePath } from '$lib/i18n';
 	import { SITE } from '$lib/config';
@@ -67,41 +68,51 @@
 				class="floaty relative mx-auto w-full max-w-[640px] bg-[var(--color-plum)] p-3"
 				style="border-radius: var(--radius-video); box-shadow: var(--shadow-lift);"
 			>
-				<a
-					href={SITE.social.youtubeVideo}
-					target="_blank"
-					rel="noopener"
-					class="group media-zoom relative block rounded-2xl"
-					aria-label={d.home.playLabel}
+				<YouTubeEmbed
+					url={SITE.social.youtubeVideo}
+					title={d.home.h1Fallback}
+					{lang}
+					activate={false}
+					class="rounded-2xl"
 				>
-					<enhanced:img
-						src={food.heriHeri}
-						alt=""
-						class="aspect-[3/2] w-full object-cover"
-						sizes="(min-width: 1024px) 620px, 100vw"
-						fetchpriority="high"
-					/>
-					<span class="absolute inset-0 bg-black/15"></span>
+					{#snippet poster()}
+						<a
+							href={SITE.social.youtubeVideo}
+							target="_blank"
+							rel="noopener"
+							class="group media-zoom relative block rounded-2xl"
+							aria-label={d.home.playLabel}
+						>
+							<enhanced:img
+								src={food.heriHeri}
+								alt=""
+								class="aspect-[3/2] w-full object-cover"
+								sizes="(min-width: 1024px) 620px, 100vw"
+								fetchpriority="high"
+							/>
+							<span class="absolute inset-0 bg-black/15"></span>
 
-					<span
-						class="absolute left-4 top-4 rounded-full bg-[var(--color-yellow)] px-4 py-2 text-xs font-bold uppercase tracking-widest text-[var(--color-ink)] shadow"
-					>
-						{d.home.todayBadge}
-					</span>
+							<span
+								class="absolute left-4 top-4 rounded-full bg-[var(--color-yellow)] px-4 py-2 text-xs font-bold uppercase tracking-widest text-[var(--color-ink)] shadow"
+							>
+								{d.home.todayBadge}
+							</span>
 
-					<span
-						class="play-pulse absolute left-1/2 top-1/2 grid h-20 w-20 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full bg-[var(--color-cta)] text-3xl text-white shadow-[0_0_0_12px_rgba(223,14,25,0.22)] transition duration-300 group-hover:scale-110"
-						aria-hidden="true"
-					>
-						▶
-					</span>
+							<span
+								class="play-pulse absolute left-1/2 top-1/2 grid h-20 w-20 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full bg-[var(--color-cta)] text-3xl text-white shadow-[0_0_0_12px_rgba(223,14,25,0.22)] transition duration-300 group-hover:scale-110"
+								aria-hidden="true"
+							>
+								▶
+							</span>
 
-					<span
-						class="absolute bottom-4 right-4 rounded-xl border border-[var(--color-accent)]/60 bg-[var(--color-plum)]/85 px-4 py-2.5 text-sm font-bold text-white"
-					>
-						▶ {d.home.watchYoutube}
-					</span>
-				</a>
+							<span
+								class="absolute bottom-4 right-4 rounded-xl border border-[var(--color-accent)]/60 bg-[var(--color-plum)]/85 px-4 py-2.5 text-sm font-bold text-white"
+							>
+								▶ {d.home.watchYoutube}
+							</span>
+						</a>
+					{/snippet}
+				</YouTubeEmbed>
 			</div>
 		</div>
 	</div>

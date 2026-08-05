@@ -589,6 +589,18 @@ collections:
             label: Gesloten (woord)
             widget: string
             hint: 'Woord "Gesloten" bij een gesloten dag.'
+          - name: consent
+            label: Cookiemelding
+            widget: object
+            hint: De teksten van de cookie-/consent-melding onderaan de site.
+            collapsed: true
+            fields:
+              - { name: title, label: Titel, widget: string }
+              - { name: text, label: Tekst, widget: text }
+              - { name: accept, label: Accepteren-knop, widget: string }
+              - { name: decline, label: Weigeren-knop, widget: string }
+              - { name: close, label: Sluiten (label), widget: string }
+              - { name: playHere, label: Video hier afspelen (knop), widget: string }
 
   # ============================================================
   # TEKSTEN ENGELS — volledige woordenlijst (EN, te reviewen)

@@ -128,8 +128,10 @@
 	"closed": "Closed",
 	"consent": {
 		"title": "A quick word about cookies 🍪",
-		"text": "We only use functional cookies to make the site work. We don't embed any social media, we link you through instead. Coming to feast?",
-		"accept": "Sounds good!",
-		"close": "Close"
+		"text": "We use functional cookies to make the site work. Accept media cookies too and you can watch YouTube videos right here. Otherwise we link you through.",
+		"accept": "Accept",
+		"decline": "Only necessary",
+		"close": "Close",
+		"playHere": "Play video here (accept cookies)"
 	}
 }
