@@ -1,0 +1,32 @@
+# .gitlab-ci.yml
+#
+# This pipeline does ONE thing: run self-hosted Renovate to open Merge Requests
+# that update outdated npm packages. It does NOT build, test or deploy anything —
+# Cloudflare handles building and deploying the site from GitHub/GitLab directly.
+#
+# The renovate job only runs for *scheduled* pipelines (Pipeline schedules in
+# GitLab CI/CD > Schedules). It will never run on a normal push or MR pipeline.
+#
+# Required setup (see docs/DEPENDENCY-UPDATES.md):
+#   - A masked CI/CD variable RENOVATE_TOKEN holding a project- or group-access
+#     token with the `api` scope and at least the Developer role.
+#   - A weekly Pipeline schedule.
+
+stages:
+  - maintenance
+
+renovate:
+  stage: maintenance
+  image: renovate/renovate:latest
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "schedule"'
+  variables:
+    RENOVATE_PLATFORM: gitlab
+    RENOVATE_AUTODISCOVER: "false"
+    RENOVATE_REPOSITORIES: "$CI_PROJECT_PATH"
+    RENOVATE_ONBOARDING: "false"
+    RENOVATE_CONFIG_FILE: renovate.json
+    LOG_LEVEL: info
+    # RENOVATE_TOKEN is provided by a masked CI/CD variable — never hardcode it.
+  script:
+    - renovate

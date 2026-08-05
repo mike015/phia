@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { SITE } from '$lib/config';
 	import { t, localizePath, type Lang } from '$lib/i18n';
+	import { reopenConsent } from '$lib/consent.svelte';
 
 	let { lang }: { lang: Lang } = $props();
 	const d = $derived(t(lang));
@@ -77,7 +78,16 @@
 		</div>
 	</div>
 
-	<div class="border-t border-white/10 px-4 py-5 text-center text-xs tracking-wide">
-		© {SITE.name} · {SITE.address.city} · {d.footer.rights} · {d.footer.built}
+	<div
+		class="flex flex-col items-center gap-2 border-t border-white/10 px-4 py-5 text-center text-xs tracking-wide sm:flex-row sm:justify-center sm:gap-3"
+	>
+		<span>© {SITE.name} · {SITE.address.city} · {d.footer.rights} · {d.footer.built}</span>
+		<button
+			type="button"
+			class="underline underline-offset-2 hover:text-white"
+			onclick={reopenConsent}
+		>
+			{d.consent.manage}
+		</button>
 	</div>
 </footer>

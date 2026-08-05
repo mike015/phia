@@ -597,8 +597,19 @@ collections:
             fields:
               - { name: title, label: Titel, widget: string }
               - { name: text, label: Tekst, widget: text }
+              - { name: intro, label: Intro (uitleg keuzes), widget: text }
+              - { name: necessaryLabel, label: 'Categorie: Noodzakelijk (naam)', widget: string }
+              - { name: necessaryDesc, label: 'Categorie: Noodzakelijk (uitleg)', widget: string }
+              - { name: mediaLabel, label: 'Categorie: Media (naam)', widget: string }
+              - { name: mediaDesc, label: 'Categorie: Media (uitleg)', widget: string }
+              - { name: analyticsLabel, label: 'Categorie: Statistieken (naam)', widget: string }
+              - { name: analyticsDesc, label: 'Categorie: Statistieken (uitleg)', widget: string }
+              - { name: alwaysOn, label: '"Altijd aan"-label', widget: string }
+              - { name: acceptAll, label: Accepteer-cookies-knop (primair), widget: string }
+              - { name: save, label: Keuze-opslaan-knop, widget: string }
               - { name: accept, label: Accepteren-knop, widget: string }
-              - { name: decline, label: Weigeren-knop, widget: string }
+              - { name: decline, label: Alleen-noodzakelijk-knop, widget: string }
+              - { name: manage, label: Cookievoorkeuren (footer-link), widget: string }
               - { name: close, label: Sluiten (label), widget: string }
               - { name: playHere, label: Video hier afspelen (knop), widget: string }
 
@@ -1104,6 +1115,29 @@ collections:
             label: Gesloten (woord)
             widget: string
             hint: 'Engels woord voor "Gesloten".'
+          - name: consent
+            label: Cookiemelding (Engels)
+            widget: object
+            hint: De Engelse teksten van de cookie-/consent-melding.
+            collapsed: true
+            fields:
+              - { name: title, label: Titel, widget: string }
+              - { name: text, label: Tekst, widget: text }
+              - { name: intro, label: Intro (uitleg keuzes), widget: text }
+              - { name: necessaryLabel, label: 'Categorie: Noodzakelijk (naam)', widget: string }
+              - { name: necessaryDesc, label: 'Categorie: Noodzakelijk (uitleg)', widget: string }
+              - { name: mediaLabel, label: 'Categorie: Media (naam)', widget: string }
+              - { name: mediaDesc, label: 'Categorie: Media (uitleg)', widget: string }
+              - { name: analyticsLabel, label: 'Categorie: Statistieken (naam)', widget: string }
+              - { name: analyticsDesc, label: 'Categorie: Statistieken (uitleg)', widget: string }
+              - { name: alwaysOn, label: '"Altijd aan"-label', widget: string }
+              - { name: acceptAll, label: Accepteer-cookies-knop (primair), widget: string }
+              - { name: save, label: Keuze-opslaan-knop, widget: string }
+              - { name: accept, label: Accepteren-knop, widget: string }
+              - { name: decline, label: Alleen-noodzakelijk-knop, widget: string }
+              - { name: manage, label: Cookievoorkeuren (footer-link), widget: string }
+              - { name: close, label: Sluiten (label), widget: string }
+              - { name: playHere, label: Video hier afspelen (knop), widget: string }
 
   # ============================================================
   # SITE-INSTELLINGEN — telefoon en social media
@@ -1164,6 +1198,18 @@ collections:
                   widget: string,
                   required: false,
                   hint: 'Video die op de startpagina en de Maaltijd-of-Soep-pagina opent. Leeg = het kanaal wordt gebruikt.'
+                }
+          - name: analytics
+            label: Statistieken
+            widget: object
+            hint: Instellingen voor bezoekcijfers. Wordt pas geladen na cookie-toestemming.
+            fields:
+              - {
+                  name: ga,
+                  label: Google Analytics-meet-ID,
+                  widget: string,
+                  required: false,
+                  hint: 'Bijvoorbeeld "G-XXXXXXXXXX". Leeg laten = Google Analytics volledig uit.'
                 }
 
   # ============================================================

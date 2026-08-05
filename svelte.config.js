@@ -39,11 +39,24 @@ const config = {
 			mode: 'hash',
 			directives: {
 				'default-src': ['self'],
-				'script-src': ['self'],
+				// gtag.js (Google Analytics) laadt van googletagmanager.com; pas na consent.
+				'script-src': ['self', 'https://www.googletagmanager.com'],
 				'style-src': ['self', 'unsafe-inline'],
-				'img-src': ['self', 'data:'],
+				// GA-pixels/beacons komen als afbeelding van (region1.)google-analytics.com.
+				'img-src': [
+					'self',
+					'data:',
+					'https://www.googletagmanager.com',
+					'https://www.google-analytics.com'
+				],
 				'font-src': ['self'],
-				'connect-src': ['self'],
+				// GA verzendt metingen via fetch/XHR/beacon naar deze hosts.
+				'connect-src': [
+					'self',
+					'https://www.googletagmanager.com',
+					'https://www.google-analytics.com',
+					'https://region1.google-analytics.com'
+				],
 				// YouTube-embeds (na cookie-consent) laden in een iframe van youtube-nocookie.
 				'frame-src': ['self', 'https://www.youtube-nocookie.com', 'https://www.youtube.com'],
 				'frame-ancestors': ['self'],

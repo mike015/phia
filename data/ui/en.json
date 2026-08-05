@@ -129,8 +129,19 @@
 	"consent": {
 		"title": "A quick word about cookies 🍪",
 		"text": "We use functional cookies to make the site work. Accept media cookies too and you can watch YouTube videos right here. Otherwise we link you through.",
+		"intro": "Choose which cookies you allow. Necessary cookies are always on; switch the rest on or off below.",
+		"necessaryLabel": "Necessary",
+		"necessaryDesc": "Needed to make the site work and to remember your choice.",
+		"mediaLabel": "Media (YouTube)",
+		"mediaDesc": "Embeds YouTube videos right on the site. Otherwise we link you through.",
+		"analyticsLabel": "Statistics (Google Analytics)",
+		"analyticsDesc": "Anonymous visitor numbers, so we can improve the site.",
+		"alwaysOn": "Always on",
+		"acceptAll": "Accept cookies",
+		"save": "Save my choice",
 		"accept": "Accept",
 		"decline": "Only necessary",
+		"manage": "Cookie settings",
 		"close": "Close",
 		"playHere": "Play video here (accept cookies)"
 	}

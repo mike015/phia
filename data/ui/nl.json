@@ -129,8 +129,19 @@
 	"consent": {
 		"title": "Even over cookies 🍪",
 		"text": "Wij gebruiken functionele cookies om de site te laten werken. Accepteer je ook media-cookies, dan bekijk je YouTube-video’s direct op de site. Anders linken we je door.",
+		"intro": "Kies zelf welke cookies je toestaat. Noodzakelijke cookies zijn altijd aan; de rest zet je hieronder aan of uit.",
+		"necessaryLabel": "Noodzakelijk",
+		"necessaryDesc": "Nodig om de site te laten werken en je keuze te onthouden.",
+		"mediaLabel": "Media (YouTube)",
+		"mediaDesc": "Sluit YouTube-video’s direct op de site in. Anders linken we je door.",
+		"analyticsLabel": "Statistieken (Google Analytics)",
+		"analyticsDesc": "Anonieme bezoekcijfers, zodat we de site kunnen verbeteren.",
+		"alwaysOn": "Altijd aan",
+		"acceptAll": "Accepteer cookies",
+		"save": "Mijn keuze opslaan",
 		"accept": "Accepteren",
 		"decline": "Alleen noodzakelijk",
+		"manage": "Cookievoorkeuren",
 		"close": "Sluiten",
 		"playHere": "Video hier afspelen (accepteer cookies)"
 	}

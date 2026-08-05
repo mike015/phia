@@ -2,6 +2,7 @@
 	import Header from '$lib/components/Header.svelte';
 	import Footer from '$lib/components/Footer.svelte';
 	import ConsentBanner from '$lib/components/ConsentBanner.svelte';
+	import Analytics from '$lib/components/Analytics.svelte';
 	import JsonLd from '$lib/seo/JsonLd.svelte';
 	import { restaurantJsonLd, websiteJsonLd } from '$lib/seo/jsonld';
 	import { t } from '$lib/i18n';
@@ -24,3 +25,6 @@
 <Footer lang={data.lang} />
 
 <ConsentBanner lang={data.lang} />
+
+<!-- Google Analytics: dormant tot GA-ID ingesteld én analytics-consent gegeven. -->
+<Analytics />

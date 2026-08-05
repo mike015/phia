@@ -76,6 +76,12 @@ export const SITE = {
 		youtubeVideo: site.social.youtubeVideo || site.social.youtube
 	},
 
+	// Google Analytics-meet-ID (bijv. "G-XXXXXXXXXX") — bron: data/site.json (CMS).
+	// Leeg = analytics volledig uit. Wordt alleen geladen na consent (§5.5).
+	analytics: {
+		ga: site.analytics?.ga ?? ''
+	},
+
 	reviews: {
 		google: { rating: 4.8, count: 294 },
 		facebook: { rating: 4.9, count: 110 }

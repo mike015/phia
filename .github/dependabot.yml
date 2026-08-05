@@ -1,0 +1,28 @@
+# Dependabot configuration — GitHub-native fallback for dependency updates.
+#
+# This is NOT a CI build check: Dependabot is a separate GitHub feature that keeps
+# working even though there are no GitHub Actions workflows in this repo. It opens
+# pull requests to update outdated npm packages and does not build or deploy —
+# Cloudflare still handles deploys.
+#
+# Only the `npm` ecosystem is configured. There is no `github-actions` ecosystem
+# entry on purpose: this repo has no workflows, so there would be nothing to update.
+#
+# NOTE: If you enable the Renovate GitHub App instead, disable this file (or delete
+# it) to avoid duplicate PRs. Pick one. See docs/DEPENDENCY-UPDATES.md.
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "06:00"
+    open-pull-requests-limit: 5
+    labels:
+      - "dependencies"
+    groups:
+      minor-and-patch:
+        update-types:
+          - "minor"
+          - "patch"
