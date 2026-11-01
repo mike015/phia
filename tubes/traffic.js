@@ -5,7 +5,7 @@
 //
 // - DemoSource: invented numbers, smooth and deterministic per port. Used for the concept.
 // - LiveSource: reads /traffic/<portId>.json, which a small server-side job will write from
-//   Zabbix 6.4 (so no Zabbix token ever reaches the browser). Expected file format:
+//   Zabbix 7.0 (so no Zabbix token ever reaches the browser). Expected file format:
 //     { "port": "amsix", "in_bps": 1234567, "out_bps": 7654321, "speed_bps": 100000000000, "ts": 1761999999 }
 
 const DEMO_SPEED_UNKNOWN = 10e9; // nominal size used to draw a tube whose real capacity is unknown

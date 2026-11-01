@@ -34,7 +34,7 @@ URL-opties: `?nowelcome` (geen welkomstscherm), `?site=ams|dhg|rtm|lux` (start i
 
 Alles staat in `data/topology.js`; aannames zijn daar gemarkeerd met `assumed: true`.
 
-## Live data (volgende stap: Zabbix 6.4)
+## Live data (volgende stap: Zabbix 7.0)
 
 De browser praat nooit direct met Zabbix (dan zou het API-token openbaar zijn).
 Een klein server-side script schrijft per poort een bestand `traffic/<poort-id>.json`:
