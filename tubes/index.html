@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="nl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Series of Tubes - AS201290 BlackGATE</title>
+    <meta name="description" content="AS201290 (BlackGATE) als een serie tubes: datacenters, internet exchanges, upstreams en backbone, gevuld met verkeer." />
+    <meta name="theme-color" content="#57C4E5" />
+    <link rel="preload" href="fonts/baloo-2-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="fonts/nunito-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="style.css" />
+    <script type="module" src="app.js"></script>
+  </head>
+  <body>
+    <h1 class="sr-only">AS201290 als een serie tubes: een verkeerskaart van BlackGATE</h1>
+    <canvas id="map" aria-label="Kaart van AS201290: datacenters in Amsterdam, Den Haag, Rotterdam en Bettembourg, met in elk datacenter een tube naar elke internet exchange en upstream. De Tubes-lijst bevat dezelfde informatie."></canvas>
+
+    <header id="hud">
+      <a class="chip brand" href="https://blackgate.nl/" aria-label="BlackGATE">
+        <svg class="tube" viewBox="0 0 32 32" aria-hidden="true"><path d="M4 22c0-7 5-12 12-12h6" fill="none" stroke="#1E2640" stroke-width="7" stroke-linecap="round"/><path d="M4 22c0-7 5-12 12-12h6" fill="none" stroke="#FFD23F" stroke-width="3.5" stroke-linecap="round"/><circle cx="25" cy="10" r="5" fill="#fff" stroke="#1E2640" stroke-width="2.5"/></svg>
+        <div><div class="val">BlackGATE</div><div class="lbl">AS201290</div></div>
+      </a>
+      <button class="chip back" id="backBtn" type="button" hidden>◂ Benelux</button>
+      <div class="chip"><div class="lbl">Verkeer in · uit</div><div class="val num" id="hTraffic">—</div><div class="minibar"><i id="hTrafficBar"></i></div></div>
+      <div class="chip hide-sm"><div class="lbl">Gepeerd</div><div class="val num" id="hPeered">—</div></div>
+      <div class="chip hide-sm hide-md"><div class="lbl">Prefixen</div><div class="val num" id="hPrefixes">—</div></div>
+      <button class="chip noc" id="hNoc" type="button"><span class="lbl">NOC</span><span class="val" id="hNocVal">Alles rustig</span></button>
+      <div class="spacer"></div>
+      <div class="chip demo" title="Het verkeer is gesimuleerd. Live data uit Zabbix volgt."><div class="lbl" id="hMode">Demo</div><div class="val num" id="hTime">--:--</div></div>
+      <div class="chip speed" role="group" aria-label="Kaart">
+        <button type="button" id="animBtn" aria-label="Pauzeer de pakketjes">❚❚</button>
+        <button type="button" id="zoomOut" aria-label="Uitzoomen" class="hide-sm">−</button>
+        <button type="button" id="zoomIn" aria-label="Inzoomen" class="hide-sm">+</button>
+        <button type="button" id="fitBtn" aria-label="Passend maken">⤢</button>
+        <button type="button" id="helpBtn" aria-label="Wat zie ik hier?">?</button>
+      </div>
+    </header>
+
+    <aside id="left" class="card" aria-label="Tubes en over">
+      <nav class="tabs" id="leftTabs" role="tablist"></nav>
+      <div class="scroll" id="leftBody"></div>
+    </aside>
+    <button id="leftToggle" class="b pink" type="button">Tubes &amp; NOC</button>
+
+    <aside id="panel" class="card" hidden>
+      <button class="x" id="panelClose" type="button" aria-label="Sluiten">×</button>
+      <div id="panelBody"></div>
+    </aside>
+
+    <div id="toasts" aria-live="polite"></div>
+
+    <dialog id="welcome" class="card" aria-labelledby="welcomeTitle">
+      <div class="eyebrow">Hoi! 👋</div>
+      <h2 id="welcomeTitle">Dit is AS201290, als een serie tubes</h2>
+      <p class="lead">Het netwerk van <a href="https://blackgate.nl">BlackGATE</a>. Elke tube is een poort, en de pakketjes erin zijn het verkeer dat erdoorheen gaat.</p>
+      <ul>
+        <li><b>Stap naar binnen.</b> Klik op een stad voor het datacenter: onze router, en een rack voor elke internet exchange en upstream waar we op aangesloten zijn.</li>
+        <li><b>Kijk in een tube.</b> Klik erop om te zien hoe vol hij is.</li>
+        <li><b>Vraag het een router.</b> Straks: onze looking glass, rechtstreeks aan de echte router.</li>
+      </ul>
+      <p class="note"><b>Concept.</b> Het verkeer is nu <b>gesimuleerd</b>. Sites, exchanges en upstreams komen uit PeeringDB en RIPEstat; de backbone en routernamen zijn aannames.</p>
+      <p class="thanks">De look is geleend, met liefde en dank, van <a href="https://seriesoftub.es">Series of Tubes</a>, het browserspel van Frederic Jung over het bouwen van het internet. Speel het, en geef het een ster op <a href="https://github.com/fjaeckel/seriesoftubes">GitHub</a>.</p>
+      <form method="dialog" class="btns">
+        <button class="b pink" value="inside" autofocus>Neem me mee naar Amsterdam ▸</button>
+        <button class="b ghost" value="look">Gewoon rondkijken</button>
+      </form>
+    </dialog>
+
+    <noscript>
+      <div class="card noscript">
+        <h2>Series of Tubes</h2>
+        <p>Deze kaart van AS201290 tekent zichzelf met JavaScript. Zonder JavaScript staat hetzelfde verhaal op <a href="https://www.peeringdb.com/net/11569">PeeringDB</a>.</p>
+      </div>
+    </noscript>
+  </body>
+</html>
